@@ -1232,7 +1232,7 @@ console.log('33333333333333333333333333333333333');
 
                 //console.log(trim(currcommit)+'hi'+trim(avcommit)+'hi1');
 
-                console.log('No updates Available..');
+                console.log('No updates Available');
                 return res.json({ status: 'ok', currcommit: currcommit, avcommit: avcommit}, 200);
 
 
