@@ -965,6 +965,295 @@ console.log('33333333333333333333333333333333333');
           }
         });
     },
+
+    updateCode: function (req, res) {
+
+        function createBackupFile(filepath)
+        {
+            console.log('aaaaaaa');
+            var filepathlength = filepath.length;
+            for(var i=0;i<filepathlength;i++)
+            {
+                console.log('bbbbb');
+                var singlefilepath = '';
+                for(var j=0;j<=i;j++)
+                {
+                    console.log('ccccc');
+                    if(j!=0)
+                        singlefilepath = singlefilepath+'/';
+
+                    singlefilepath = singlefilepath + filepath[j];
+
+                }
+                var dir = __dirname + '/../../tmp/'+singlefilepath;
+                console.log(dir);
+
+                if(i == filepathlength-1)
+                {
+                    console.log('file');
+                    localfile = __dirname + '/../../'+singlefilepath;
+                    fsx.readFile(localfile, 'utf8', function (err,data) {
+                          if (err){
+                            console.log(err);return 0;
+                        }
+
+                        backupfile = __dirname + '/../../tmp/'+singlefilepath;
+                        fsx.writeFile(backupfile, data, 'utf8', function (err) {
+                            if (err) {console.log(err);return 0;}
+                            console.log('okfile');
+
+                        });
+                    });
+
+                }
+                else
+                {
+                    console.log('folder');
+                    if (!fsx.existsSync(dir)){
+                        fsx.mkdir(dir, 0777, function (err) {
+                            if (err) {console.log(err);return 0;} 
+                            console.log('ok');
+                        });
+                    }
+                }
+                
+            }
+            //console.log(filename+' Backup Updated Successfully.');
+            //var fs = require('fs');
+            
+            return 1;
+        }
+
+
+        function revertBackupFile(filepath)
+        {
+            console.log('aaaaaaa');
+            var filepathlength = filepath.length;
+            console.log('bbbbb');
+            var singlefilepath = '';
+            for(var j=0;j<=filepathlength-1;j++)
+            {
+                console.log('ccccc');
+                if(j!=0)
+                    singlefilepath = singlefilepath+'/';
+
+                singlefilepath = singlefilepath + filepath[j];
+
+            }
+            var dir = __dirname + '/../../tmp/'+singlefilepath;
+            console.log(dir);
+
+            console.log('file');
+            backupfile = __dirname + '/../../tmp/'+singlefilepath;
+            fsx.readFile(backupfile, 'utf8', function (err,data) {
+                  if (err){
+                    console.log(err);return 0;
+                }
+
+                localfile = __dirname + '/../../'+singlefilepath;
+                fsx.writeFile(localfile, data, 'utf8', function (err) {
+                    if (err) {console.log(err);return 0;}
+                    console.log('okfile');
+
+                });
+            });
+            //console.log(filename+' Backup Updated Successfully.');
+            //var fs = require('fs');
+            
+            return 1;
+        }
+
+
+        console.log('###########################################################');
+        console.log('## Olympus code updation by Superadmin. ');
+        console.log('###########################################################');
+        var exec                = require('child_process').exec;
+
+        var organization = req.param('organization');
+        var username = req.param('username');
+        var password = req.param('password');
+        var repo = req.param('repo');
+
+        ///server
+
+        //var gitpull       = 'git pull https://github.com/deepakpalalcanzar/gt.git';
+        //var gitpull       = 'git pull https://github.com/deepakpalalcanzar/olympus.git';
+        //var gitpull       = 'git pull https://olympusinstaller:Olympu3!@github.com/Olympus-io/olympus-web.git';
+        var gitpull       = 'git pull https://'+username+':'+password+'@github.com/'+organization+'/'+repo+'.git';
+
+        var gitresethard       = 'git reset --hard';
+        //serverchanges
+
+        //var cdpath = '/var/www/html/gt1/gt';
+        var cdpath = '/var/www/html/olympus';
+
+        var dir = __dirname + '/../../tmp';
+
+        if (!fsx.existsSync(dir)){
+            fsx.mkdir(dir, 0777, function (err) {
+                if (err) {console.log(err);return res.json({ status: 'githuberror', 'message': stderr}, 200);} 
+            });
+        }
+
+        // var path[0] = ['master','config','localConfig.js'];
+        // path[1] = ['master','config','local.js'];
+        // path[2] = ['master','config','config.js'];
+        // path[3] = ['api','config','local.js'];
+        // path[4] = ['api','config','bootstrap.js'];
+        // path[5] = ['api','config','application.js'];
+        // path[6] = ['ssl','gd_bundle.crt'];
+        // path[7] = ['ssl','olympus.crt'];
+        // path[8] = ['ssl','olympus.csr'];
+        // path[9] = ['ssl','olympus.key'];
+
+        var path = [
+                        ['index.html'],
+                        ['master','config','localConfig.js'],
+                        ['master','config','local.js'],
+                        ['master','config','config.js'],
+                        ['api','config','local.js'],
+                        ['api','config','bootstrap.js'],
+                        ['api','config','application.js'],
+                        ['ssl','gd_bundle.crt'],
+                        ['ssl','olympus.crt'],
+                        ['ssl','olympus.csr'],
+                        ['ssl','olympus.key']
+                    ];
+
+        var finalresult = 1;
+
+        for(var i=0;i<path.length;i++)
+        {
+            var result = createBackupFile(path[i]);
+            if(result != 1)
+                finalresult = 0;
+        }
+
+        //var result = createBackupFile(path);
+        if(finalresult == 1)
+        {
+            exec( gitresethard, {cwd: cdpath} , function(error, stdout, stderr) {
+              console.log('hi8');console.log(error,'error',stdout, stderr);console.log('hi9');
+              if(error){
+                console.log(stderr);
+                return res.json({ status: 'githuberror', 'message': stderr}, 200);
+              }
+              else{
+                exec( gitpull, {cwd: cdpath} , function(error, stdout, stderr) {
+                  console.log('hi8');console.log(error,'error',stdout, stderr);console.log('hi9');
+                  if(error){
+                    console.log(stderr);
+                    return res.json({ status: 'githuberror', 'message': stderr}, 200);
+                  }
+                  else{
+                    console.log('Code Updated Successfully.');
+                    //var revertpath = ['master','config','localConfig.js'];
+                    //var revertresult = revertBackupFile(revertpath);
+                    var finalresult = 1;
+
+                    for(var i=0;i<path.length;i++)
+                    {
+                        var result = revertBackupFile(path[i]);
+                        if(result != 1)
+                            finalresult = 0;
+                    }
+                    if(finalresult!=1)
+                        return res.json({ status: 'githuberror', 'message': stderr}, 200);
+
+                    return res.json({ status: 'ok'}, 200);
+                  }
+                });
+              }
+            });
+
+            
+        }
+        else
+        {
+            return res.json({ status: 'githuberror', 'message': stderr}, 200);
+        }
+
+
+        
+
+        
+    },
+
+    checkForUpdates: function (req, res) {
+
+
+        console.log('###########################################################');
+        console.log('## Olympus check for updates updation by Superadmin');
+        console.log('###########################################################');
+        var exec                = require('child_process').exec;
+        //var getcurrentcommit       = 'git rev-parse HEAD';
+        var getcurrentcommit       = 'git rev-list --all';
+
+        var organization = req.param('organization');
+        var username = req.param('username');
+        var password = req.param('password');
+        var repo = req.param('repo');
+
+        //var getavailablecommit       = 'git ls-remote https://github.com/deepakpalalcanzar/gt.git';
+        //var getavailablecommit       = 'git ls-remote https://github.com/deepakpalalcanzar/olympus.git';
+        //var getavailablecommit       = 'git ls-remote https://olympusinstaller:Olympu3!@github.com/Olympus-io/olympus-web.git';
+        //var getavailablecommit       = 'git ls-remote https://deepakpalalcanzar:alcanzar%40123@github.com/Olympus-io/olympus-web.git';
+        //var getavailablecommit       = 'git ls-remote https://deepakpalalcanzar:alcanzar%40123@github.com/deepakpalalcanzar/olympus.git';
+        var getavailablecommit       = 'git ls-remote https://'+username+':'+password+'@github.com/'+organization+'/'+repo+'.git';
+
+        //var cdpath = '/var/www/html/gt1/gt';
+        var cdpath = '/var/www/html/olympus';
+
+        exec( getcurrentcommit, {cwd: cdpath} , function(error, stdout, stderr) {
+          console.log('hi8');console.log(error,'error',stdout, stderr);console.log('hi9');
+          if(error){
+            console.log(stderr);
+            return res.json({ status: 'githuberror', 'message': stderr}, 200);
+          }
+          else{
+            var splitcurrcommit = stdout.split("\n");
+            if(splitcurrcommit.length > 1)
+                var currcommit =  splitcurrcommit[1];
+            else
+                var currcommit =  splitcurrcommit[0];
+            currcommit = currcommit.toString();
+            console.log(currcommit);
+            exec( getavailablecommit, {cwd: cdpath} , function(error, stdout, stderr) {
+              console.log('hi5');console.log(error,'error',stdout, stderr);console.log('hi6');
+              if(error){
+                console.log(stderr);
+                return res.json({ status: 'githuberror', 'message': stderr}, 200);
+              }
+              else{
+                var splitavcommit = stdout.split("HEAD");
+                var avcommit =  splitavcommit[0];
+                avcommit = avcommit.toString();
+                console.log(avcommit);
+
+                //console.log(trim(currcommit)+'hi'+trim(avcommit)+'hi1');
+
+                console.log('No updates Available.');
+                return res.json({ status: 'ok', currcommit: currcommit, avcommit: avcommit}, 200);
+
+
+
+                // if(currcommit == avcommit)
+                // {
+                //     console.log('No updates Available.');
+                //     return res.json({ status: 'noupdates'}, 200);
+                // }
+                // else
+                // {
+                //     console.log('updates Available.');
+                //     return res.json({ status: 'updatesavailable'}, 200);
+                // }
+
+              }
+            });
+          }
+        });
+    },
+    
     changeLdapSetting: function (req, res) {
 
         var ldap_enabled        = req.param('ldap_enabled');

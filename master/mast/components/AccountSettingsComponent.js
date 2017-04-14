@@ -24,7 +24,8 @@ Mast.registerComponent('AccountSettingsComponent',{
 		'click a.system-email' 	   	   : 'displaySystemSettingsEmail',
 		'click a.system-trash' 	   	   : 'displaySystemSettingsTrash',
 		'click a.system-ldap' 	   	   : 'displaySystemSettingsLdap',
-		'click a.system-other' 	   	   : 'displaySystemSettingsOthers'
+		'click a.system-other' 	   	   : 'displaySystemSettingsOthers',
+		'click a.system-update' 	   : 'displaySystemSettingsUpdates'
 	},
 
 	bindings: {
@@ -384,6 +385,17 @@ Mast.registerComponent('AccountSettingsComponent',{
 		$('.system-settings-template > div').hide();
 
 		$('.ldap-mod').show();
+
+		// this.attach('.account-settings-page', 'SystemSettingsComponent');
+		// this.set('selectedTab', 'systemSettings');
+	},
+
+	displaySystemSettingsUpdates: function() {
+
+		$('.upload-file').hide();
+		$('.system-settings-template > div').hide();
+
+		$('.update-mod').show();
 
 		// this.attach('.account-settings-page', 'SystemSettingsComponent');
 		// this.set('selectedTab', 'systemSettings');

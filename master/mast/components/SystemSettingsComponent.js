@@ -43,6 +43,8 @@ Mast.components.SystemSettingsComponent  = Mast.Component.extend({
 		'click #saveBox'						: 'saveBox',
 		//other
 		'click #saveOtherSettings' 				: 'saveOtherSettings',
+		'click .update-code'					: 'updateCode',
+		'click #checkforupdates' : 'checkForUpdates',
 	},
 
 	// saveCompanyInfo : function(){
@@ -385,6 +387,129 @@ Mast.components.SystemSettingsComponent  = Mast.Component.extend({
 	        setTimeout(function(){
 	         window.location.href = "https://"+$('#domaininfo').html(); }, 6000);
 	    }
+	},
+
+	updateCode: function(){
+		if(confirm('Are you sure you want to update the olympus code?')){
+			console.log('sending request to update the code.');
+			Mast.Socket.request('/account/updateCode', {
+				'formaction'		: 'update-code'
+			} , function(res, err){
+				alert(err);
+				// console.log(res);
+				if( (typeof res.status != 'undefined') ){
+					if( res.status == 'ok'){
+						//Server would have restarted successfully
+					}else if (res.status == 'githuberror'){
+						console.log(res.message);
+						alert('Some error occurred in updating the code.');
+					}
+				}else if(typeof res.error != 'undefined'){
+					console.log(res.error);
+					alert('Some error occurred in updating the code.');
+				}else{
+					alert('Some error occurred in updating the code.');
+				}
+	        });
+	        // setTimeout(function(){
+	        //  window.location.href = "https://"+$('#domaininfo').html(); }, 6000);
+	    }
+	},
+
+	checkForUpdates: function(){
+
+		function replaceAll(strng, search, replacement) {
+		    return strng.replace(new RegExp(search, 'g'), replacement);
+		}
+
+		var organization 	= $('#git-organization').val();
+		var username 	= $('#git-username').val();
+		var password 	= $('#git-password').val();
+		var repo 	= $('#git-repo').val();
+
+		function replaceChars(organization){
+			organization = replaceAll(organization,'@','%40');
+			organization = replaceAll(organization,"'","%27");
+			organization = replaceAll(organization,'/','%2F');
+			organization = replaceAll(organization,':','%3A');
+			return organization;
+		}
+
+		organization = replaceChars(organization);
+		username = replaceChars(username);
+		password = replaceChars(password);
+		repo = replaceChars(repo);
+
+		
+		$('body').append('<div id="loader" style="background:rgba(0,0,0,0.7);width:100%;height:100%;position:fixed;top:0;left:0;z-index:9999;color:#fff;font-size:25px;padding-top:'+($(window).height()-15)/2+'px;"><center>Please Wait...</center></div>');
+		Mast.Socket.request('/account/checkForUpdates', {
+			'formaction'		: 'check-for-updates',
+			'organization' 	: organization,
+			'username' 	: username,
+			'password' 	: password,
+			'repo' 	: repo,
+		} , function(res, err){
+			$('#loader').remove();
+			//alert(err);
+			// console.log(res);
+			if( (typeof res.status != 'undefined') ){
+				if( res.status == 'ok'){
+					//alert(res.currcommit.trim()+'hi'+res.avcommit.trim()+'hi1');
+					if(res.currcommit.trim() == res.avcommit.trim())
+	                {
+	                    alert('No updates Available.');
+	                    //alert('I have updated some text to check updates');
+	                    //return res.json({ status: 'noupdates'}, 200);
+	                }
+	                else
+	                {
+	                    //alert('I have updated some text to check updates. ');
+	                    //return res.json({ status: 'updatesavailable'}, 200);
+	                    if(confirm('Updates available. Do you want to update the source code?')){
+							console.log('sending request to update the code.');
+							$('body').append('<div id="loader" style="background:rgba(0,0,0,0.7);width:100%;height:100%;position:fixed;top:0;left:0;z-index:9999;color:#fff;font-size:25px;padding-top:'+($(window).height()-15)/2+'px;"><center>Please Wait...</center></div>');
+							Mast.Socket.request('/account/updateCode', {
+								'formaction'		: 'update-code',
+								'organization' 	: organization,
+								'username' 	: username,
+								'password' 	: password,
+								'repo' 	: repo,
+							} , function(res, err){
+								$('#loader').remove();
+								//alert(err);
+								// console.log(res);
+								if( (typeof res.status != 'undefined') ){
+									if( res.status == 'ok'){
+										//Server would have restarted successfully
+										alert('Code Updated Successfully. Please restart the server to apply changes');
+									}else if (res.status == 'githuberror'){
+										console.log(res.message);
+										alert('Some error occurred in updating the code.');
+									}
+								}else if(typeof res.error != 'undefined'){
+									console.log(res.error);
+									alert('Some error occurred in updating the code.');
+								}else{
+									alert('Some error occurred in updating the code.');
+								}
+					        });
+					        // setTimeout(function(){
+					        //  window.location.href = "https://"+$('#domaininfo').html(); }, 6000);
+					    }
+	                }
+					//Server would have restarted successfully
+				}else if (res.status == 'githuberror'){
+					console.log(res.message);
+					alert('Some error occurred.');
+				}
+			}else if(typeof res.error != 'undefined'){
+				console.log(res.error);
+				alert('Some error occurred.');
+			}else{
+				alert('Some error occurred.');
+			}
+        });
+		
 	},
 
 	saveLdapSettings: function(){
