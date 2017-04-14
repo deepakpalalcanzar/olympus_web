@@ -1,0 +1,16 @@
+<!-- inode.m  -->
+<div class="inode-mobile-template clearfix">
+
+	<!-- set first class to be its type "file-img" or "directory-img"-->
+	<!-- add mime class if we recieve a mimetype. Directories do not have a mimetype -->
+	<!-- add orpan class if there is no parent to this inode -->
+	<div class="{{type}}-img 
+							{% if (mimetype) { %}{{mimeClass}}{% } %} 
+							{% if (!parent || !parent.id) { %} orphan {% } %}"></div>
+
+	<div class="inode-info">
+		<h3>{{name}}</h3>
+		<p>Modified {{modified_at}}</p>
+	</div>
+	<div class="inode-details-button"></div>
+</div>

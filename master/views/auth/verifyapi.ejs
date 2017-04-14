@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%- title %></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<%- rigging.css %>
+		
+		<%- rigging.js %>
+		<script type="text/javascript" src="/js/moment.js"></script>
+		<script type="text/javascript" src="/js/fillout.js"></script>
+		
+		<!-- Good ol' css -->
+		<link rel="stylesheet" type="text/css" media="all" href="/stylesheets/reset.css"/>
+		<link rel="stylesheet" type="text/css" media="all" href="/stylesheets/layout.css"/>
+
+		<style>
+
+		</style>
+
+	</head>
+	<body>
+		<div class="login-page portal-only">
+			<a href="/"><img src="/images/logo_loginScreen.png"/></a>
+			<div class="login-outlet login-container"></div>
+		</div>
+
+		<!-- Template library -->
+		<%- rigging.templateLibrary %>
+
+
+		<script type="text/javascript">
+		
+		
+
+
+			Mast.raise({
+
+				afterLoadFn: function () {
+					if (Mast.isMobile) {
+						Olympus.mobileApp = new Mast.components.LoginMobile();
+					}
+				},
+
+				beforeRouteFn: function() {
+
+					// Before router is instantiated and routes are run
+					// If this is mobile, create the mobile app component
+					if (Mast.isMobile) {
+						Olympus = {};
+
+						// Verify API page
+						$(".verifyapi-page").remove();
+
+					} else {
+
+
+						 verifyapi = new Mast.components.VerifyApiAccessComponent({},
+							{
+								// Receive email from controller
+								api_key: "<%- api_key %>",
+								response_type: "<%- response_type %>",
+								state: "<%- state %>",
+								redirect_url: "<%- redirect_url %>",
+								app_name: "<%- app_name %>",
+
+							});
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

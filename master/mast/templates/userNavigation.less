@@ -1,0 +1,42 @@
+.user-nav-template {
+
+	a.user-avatar-link {
+		border: 1px solid @borderGray; 
+		background: white;
+		display: inline-block;
+		float: left;
+		margin-right: 10px;
+		vertical-align: middle;
+	}
+
+	div.name-container {
+		display: inline-block;
+		font: 1em "ProzimanovaRegular",Helvetica,Ariel,sans-serif;
+		vertical-align: middle;
+
+		span.user-name {
+			display: inline-block;
+		}
+
+		div.dropdown-button {
+			color: @textGray;
+			background: url('/images/downarrow.png') no-repeat;
+			display: inline-block;
+			height: 27px;
+			position: relative;
+			top: 10px;
+			right: -2px;
+			width: 27px;
+
+			&:hover {
+				background: url('/images/DownArrow_hover.png') no-repeat;
+				cursor: pointer;
+			}
+		}
+	}
+
+	a.user-name-link {
+		color: @blueLink;
+		font: 1em "ProzimanovaSemiBold",Helvetica,Ariel,sans-serif;
+	}
+}

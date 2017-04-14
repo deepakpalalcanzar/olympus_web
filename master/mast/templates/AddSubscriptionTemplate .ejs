@@ -1,0 +1,90 @@
+<div class="add-subscription-template" style="background-clip: padding-box;border-radius: 7px;box-shadow: 0 1px 5px #b3bac4;margin: 40px 2%;padding: 10px;min-height:700px;">
+<!-- upgrade header -->
+	<div class="title-mod">
+		<div class="title-fix">
+ 			<span>Add Subscription Plan</span>
+			<div class="clear"></div>
+		</div>
+	</div>
+
+<!-- settings content -->
+	<div class="main-mod" id="main-mod"> 
+        <div class="add-subscription account-page-container">
+
+            <div class="page-details-container clearfix">
+                <form action="/account/register" method="POST" class="add-subscription-form">
+
+                    <fieldset>
+                        <div style="width:100%;float:left;">
+                            <label for="features">Plan Name</label>
+                            <input id="features" type="text" name="features" placeholder="Enter Plan Name">
+                        </div>
+
+                    <div style="width:100%;float:left;">
+                        <label for="price">Price</label>
+                        <input id="price" name="price" type="text" placeholder="Enter price" style="float:left;"/>
+                        
+                        <input id="is_free" style="float: left; margin-top: 25px; width: 49px;" name="is_free" type="checkbox" value="0"/>
+                        <label for="is_free" style="float:left;margin-top:24px;">
+                            <i> Set to Free </i>
+                        </label>
+                    </div>
+
+                    <div style="width:100%;float:left;">
+                        <label for="duration">Duration</label>
+                        <select id="duration" name="duration" class="duration-dropdown">
+    						<option value="">Select Duration</option>
+                            <option value="1">1 Month</option>
+                            <option value="6">6 Months</option>
+    						<option value="12">1 Year</option>
+                            <option value="24">2 Years</option>
+                            <option value="60">5 Years</option>
+                            <option value="120">10 Years</option>
+    						<option value="1200">Life Time</option>
+                        </select>
+                    </div>
+
+                    <div style="width:100%;float:left;">
+                        <label for="User-limit">
+                            Maximum Number Of Users 
+                        </label>
+                        <input type="text" placeholder="Enter users limit" name="user_limit" id="User-limit" style="float:left">
+                        <input type="checkbox" value="unlimited" name="unlimited_user" id="unlimited-user" style="float: left; margin-top: 25px; width: 49px;">
+                        <label for="unlimited-user" style="float:left;margin-top:24px;">
+                            <i>Unlimited Users</i>
+                        </label>
+                    </div>
+
+                    <div style="width:100%;float:left;"> 
+                        <label for="quota">Quota</label>
+                        <input id="quota" name="quota" type="text" placeholder="Enter Quota in GB" style="float:left"/>
+                        <input id="unlimited-space" style="float: left; margin-top: 25px; width: 49px;" name="unlimited_space" type="checkbox" value="unlimited"/>
+                        <label for="unlimited-space" style="float:left;margin-top:24px;">
+                            <i>Unlimited Space</i> 
+                        </label>
+                    </div>
+
+                    <div style="width:100%;float:left;"> 
+                        <input type="checkbox" value="1" name="is_default" id="is-default" style="margin-top: 23px;">
+                        <label for="is-default" style="float: left; margin-top: 21px;"> Set as Default Subscription </label>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="account-save-button submit-subscription">
+            Save
+        </div>
+        </div>
+		<div class="clear"></div> 
+	</div> 
+</div>
+
+
+
+
+
+
+
+
+
+

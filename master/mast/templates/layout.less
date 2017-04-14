@@ -1,0 +1,316 @@
+/*variables*/
+@textGray    : #636C78;
+@blueLink    : #547AA4;
+@blueSearch  : #3A6696;
+@bodyOffWhite: #F9F9F9;
+@gray        : #F1F2F4;
+@borderGray  : #D7DBDC;
+@touchBlue   : #274463;
+
+@inputBlue   : #9FBBD2;
+@hoverGray   : #DEE6F5;
+
+
+.loading-spinner {
+	background: url('/images/loading-spinner.gif') no-repeat;
+	background-size: 100%;
+	width: 31px; height: 31px;
+}
+
+/*placholder text fixes*/
+::-webkit-textarea-placeholder {
+   font-family: Helvetica, Arial, san-serif;
+   font-size: 1em;
+
+}
+
+:-moz-placeholder {  
+	font-family: Helvetica, Arial, san-serif;
+	font-size: 0.8em;
+}
+
+
+/*fonts*/
+@font-face {
+    font-family: 'ProzimanovaRegular';
+    src: url('/fonts/proximanova-regular-webfont.eot');
+    src: url('/fonts/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/proximanova-regular-webfont.woff') format('woff'),
+        url('/fonts/proximanova-regular-webfont.ttf') format('truetype'),
+        url('/fonts/proximanova-regular-webfont.svg#ProzimanovaRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ProzimanovaLight';
+    src: url('/fonts/proximanova-light-webfont.eot');
+    src: url('/fonts/proximanova-light-webfont.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/proximanova-light-webfont.woff') format('woff'),
+        url('/fonts/proximanova-light-webfont.ttf') format('truetype'),
+        url('/fonts/proximanova-light-webfont.svg#ProzimanovaRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ProzimanovaSemiBold';
+    src: url('/fonts/proximanova-semibold-webfont.eot');
+    src: url('/fonts/proximanova-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/proximanova-semibold-webfont.woff') format('woff'),
+        url('/fonts/proximanova-semibold-webfont.ttf') format('truetype'),
+        url('/fonts/proximanova-semibold-webfont.svg#ProzimanovaRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/*classes*/
+.box-shadow-inset (@horizontal:0,  @vertical:-2px, @blur:2px,  @color:#B3BAC4) {
+	-moz-box-shadow: inset @horizontal @vertical @blur @color;
+	-webkit-box-shadow: inset @horizontal @vertical @blur @color;
+	box-shadow: inset @horizontal @vertical @blur @color;
+}
+.box-shadow (@horizontal:0,  @vertical:-2px, @blur:2px,  @color:#B3BAC4) {
+	-moz-box-shadow: @horizontal @vertical @blur @color;
+	-webkit-box-shadow: @horizontal @vertical @blur @color;
+	box-shadow: @horizontal @vertical @blur @color;
+}
+.border-radius(@radius){
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
+}
+
+span.dropdown-button {
+	display: block;
+	width: 37px;
+	height: 39px;
+	background: url('/images/downarrow-09.png') no-repeat 5px 11px;
+
+	&:hover {
+		width: 37px;
+		height: 39px;
+		background: url('/images/DownArrow_hover.png') center center no-repeat;
+		cursor: pointer;
+	}
+}
+span.download-button {
+	display: inline-block;
+	width: 130px;
+	height: 39px;
+	background: url('/images/Download_unselected.png') 5px 2px no-repeat;
+
+	&:hover {
+		background: (url('/images/Download_hover.png')) no-repeat;
+		cursor: pointer;
+	}
+}
+div.file-img {
+	height: 35px;
+	width: 50px;
+	// background: url('/images/FileIcon.png') center center no-repeat;
+	float: left;
+}
+.left-side {
+	float: left;
+}
+.right-side {
+	float: left;
+}
+
+/*simple styles*/
+body {
+	background: @bodyOffWhite;
+	font: 1em "ProzimanovaRegular",Helvetica,Ariel,sans-serif;
+}
+
+/*********************************
+*
+*	topbar
+*
+**********************************/
+body {
+	min-width: 768px;
+	// min-width: 950px;
+}
+#topbar {
+	width: 100%;
+	background: white;
+}
+
+#topbar li a div.main-nav-div{/*Rishabh:single line text in topbar*/
+	display: -webkit-inline-flex;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	white-space: nowrap;
+}
+
+#top-nav {
+	margin: 0 2%;
+	padding: 10px 0 8px;
+}
+
+
+img.user-avatar {
+	width: 40px !important;
+	height: 40px !important;
+}
+
+#main-nav {
+	float: left;
+	margin-top: 10px;
+
+	a.logo-link {
+		float: left;
+		width: 200px;
+		height: 40px;
+		vertical-align: middle;
+		padding-top: 5px;
+		margin-right: 15px;
+	}
+
+	img.main-logo{
+		width: 198px;
+		max-height: 38px;
+	}
+
+img.main-nav-imgs{
+float: left;
+width: 18px;
+height: 16px;
+}
+
+
+
+span.main-nav-span{
+float: left;
+padding-left: 5px;
+}
+
+div.special-user-topbar-fix{
+	padding-left:11px;
+}
+
+div.main-nav-div{
+	float: left;
+	width: 100%;
+	
+}
+
+	ul {
+		float: left;
+		// width: 440px;
+		margin-top: 7px;
+
+		li {
+			float: left;
+			background:;
+			text-align: center;
+			font: .75em "ProzimanovaRegular",Helvetica,Ariel,sans-serif;
+
+			a {
+				float: left;
+				width: 75px;
+				text-align: center;
+				padding: 3px 10px 3px 10px;
+					background: white;
+					.border-radius(20px);
+					border: 1px solid white;	
+                margin:0px 2px;
+				color: @blueLink;
+
+				&:hover{
+					float: left;
+					padding: 3px 10px 3px 10px;
+					color: #444444;
+					background: #EEF2FA;
+					.border-radius(20px);
+					border: 1px solid #E7E8EB;		
+
+				}
+			}
+		}
+	} 
+}
+.user-nav-outlet {
+	float: right;
+}
+
+/*********************************
+*
+*	content
+*
+**********************************/
+/*
+#content {
+	background: white;
+	margin: 30px 2%;
+	position: relative;
+	min-height: 50%;
+	.border-radius(7px); 
+	.box-shadow(0, 1px, 5px);
+
+}
+*/
+
+/*********************************
+*
+*	footer
+*
+**********************************/
+#footer {
+	padding: 0 2%;
+}
+#copyright-info {
+	float: left;
+	padding-top: 20px;
+
+	img#footer-logo {
+		display: inline;
+		width: 198px;
+	    padding-right: 15px;
+	}
+	span.copyright-info {
+		color: @blueLink;
+		display: inline-block;
+		vertical-align: top;
+		line-height: 40px;
+		font: .75em "ProzimanovaLight",Helvetica,Ariel,sans-serif;
+		padding-top: 5px;
+	}
+}
+ul#terms-policies {
+	float: right;
+	line-height: 40px;
+ 	padding-top: 20px;
+	li {
+		float: left;
+		padding: 0 8px;
+		color: @blueLink;
+		font: .75em "ProzimanovaLight",Helvetica,Ariel,sans-serif;
+
+		a {
+			color: @blueLink;
+			padding-right: 10px;
+		}
+	}
+}
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (max-width: 480px) {
+	.portal-only {
+		display: none;
+	}
+
+	// need texture for background
+	body {
+		min-width: 320px;
+		background: url(/mobile_images/BKG.png);
+	}
+}
+
+
+
+
+
+

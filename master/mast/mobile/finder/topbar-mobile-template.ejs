@@ -1,0 +1,26 @@
+<!-- topbar.m  -->
+<div class="topbar-mobile-template clearfix">
+	<div class="nav-region topbar-box"></div>
+	<h1>{{pageTitle}}</h1>
+
+	<!-- this optional add-permission attribute allows for defined contextual action buttons -->
+	<!-- just change add-permission to an action that you would like this box to have -->
+	<div class="action-box topbar-box
+							{% if (action) { %}
+									{{action}}
+							{% } %}">
+	</div>
+
+</div>
+
+<div class="topbar-header-mobile-template">
+	<h1>{{pageTitle}}</h1>
+</div>
+
+<div class="topbar-specifics-mobile-template clearfix">
+	<div class="nav-region topbar-box"></div>
+	<h1>{{pageTitle}}</h1>
+	<div class="add-permission-box topbar-box"></div>
+	<div class="add-comment-box topbar-box"></div>
+</div>
+

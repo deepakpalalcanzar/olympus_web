@@ -1,0 +1,60 @@
+/*********************************
+*
+*	Super Admin
+*
+**********************************/
+.superadmin-template {
+	border-top: 1px solid @borderGray;
+	border-bottom: 1px solid @borderGray;
+	background-clip: padding-box; border-radius: 7px;
+	 box-shadow: 0px 1px 5px rgb(179, 186, 196);
+	 padding: 15px;
+	 min-height: 700px;
+	 margin: 40px 2%;
+
+	div.organization-bar {
+		background: @bodyOffWhite;
+		position: relative;
+		z-index: 1;
+		.box-shadow(0, 1px, 3px);
+
+
+		div.dir-files, div.modified, div.information  {
+			font: .6em "ProzimanovaSemiBold",Helvetica,Ariel,sans-serif;
+			padding: 4px 0;
+		}
+		div.dir-files span {
+			margin-left: 20px;
+		}
+	}
+	div#superadmin-outlet {
+		background: white;
+	}
+
+	.loading-spinner {
+	width: 50px;
+	background-color: white;
+	background-position: center center;
+	height: 50px;
+	margin: 0 auto;
+	padding: 50px 0;
+}
+
+	
+}
+.superadmin.focus {
+	.sidebar-button {
+		display: none !important;
+	}
+}
+
+.super-boxes{
+	float: left;
+	
+	margin:5px; 
+}
+
+.menu-text{
+	color:#FFFFFF;
+	text-align: center;
+}

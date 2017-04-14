@@ -1,0 +1,181 @@
+<style>
+	.balder-button {
+		background: #eee;
+		border-radius: 155px 0 0 155px;
+		margin-top: 1em;
+		display:block;
+		width: 3em;
+		text-align:center;
+		padding: 0.25em 0.5em;
+	}
+
+	.balder-invisible-section {
+		margin-bottom: 4em;
+	}
+	.balder-section {
+		border: 3px outset #ccc;
+		margin-top: 1em;
+		padding: 1em 5% 3em;
+	}
+	.balder-section ul li a {
+		background:#eee;
+		opacity: 0.85;
+		padding: 0.25em 2%;
+		color: #666;
+		border:1px solid #eee;
+		display:block;
+	}
+	.balder-section ul li a:hover{
+		background:#aaa;
+		color:#222;
+	}
+
+</style>
+
+<a class="balder-button" href="/">Back</a>
+
+<!--
+<div class="balder-invisible-section">
+	<h1>User management</h1>
+	<div class="balder-section">
+		<h2>Acquire User API identity token</h2>
+		<ul>
+			<li><%= userIdentityToken %></li>
+		</ul>
+	</div>
+
+	<div class="balder-section">
+		<h2>Get users</h2>
+		<ul>
+			<% for (user in users) { %>
+			<li><%= users[user] %></li>
+			<% } %>
+		</ul>
+	</div>
+</div>
+-->
+
+
+<div class="balder-invisible-section">
+	<h1>File management</h1>
+	<div class="balder-section">
+		<h2>Acquire File API identity token</h2>
+		<ul>
+			<li><%= fileIdentityToken %></li>
+		</ul>
+	</div>
+
+	<div class="balder-section">
+		<h2>Get containers</h2>
+		<ul>
+			<% for (container in containers) { %>
+			<li><%= containers[container] %></li>
+			<% } %>
+		</ul>
+	</div>
+
+	<div class="balder-section">
+		<h2>Get files in 'temp'</h2>
+		<ul>
+			<% for (file in files) { %>
+			<li><a href="<%= files[file].tempUrl %>"><%= files[file].name %></a></li>
+			<% } %>
+		</ul>
+	</div>
+
+
+	<div class="balder-section">
+		<h2>Upload file to temp</h2>
+
+		<!-- good ole valums -->
+		<div id="file-uploader">
+			<noscript>
+			<p>Please enable JavaScript to use file uploader.</p>
+			<!-- or put a simple form for upload here -->
+			</noscript>
+		</div>
+		
+		<form  enctype="multipart/form-data" action="/keystone/uploadFile" method="POST">
+		<input name="theFile" id="basic-file-uploader" type="file" multiple />
+		<input type="submit"/>
+		</form>
+		
+		
+		<script src="/js/valums.js"></script>
+		<style type="text/css">
+			.qq-uploader { position:relative; width: 100%;}
+
+.qq-upload-button {
+    display:block; /* or inline-block */
+    width: 105px; padding: 7px 0; text-align:center;    
+    background:#880000; border-bottom:1px solid #ddd;color:#fff;
+}
+.qq-upload-button-hover {background:#cc0000;}
+.qq-upload-button-focus {outline:1px dotted black;}
+
+.qq-upload-drop-area {
+    position:absolute; top:0; left:0; width:100%; height:100%; min-height: 70px; z-index:2;
+    background:#FF9797; text-align:center; 
+}
+.qq-upload-drop-area span {
+    display:block; position:absolute; top: 50%; width:100%; margin-top:-8px; font-size:16px;
+}
+.qq-upload-drop-area-active {background:#FF7171;}
+
+.qq-upload-list {margin:15px 35px; padding:0; list-style:disc;}
+.qq-upload-list li { margin:0; padding:0; line-height:15px; font-size:12px;}
+.qq-upload-file, .qq-upload-spinner, .qq-upload-size, .qq-upload-cancel, .qq-upload-failed-text {
+    margin-right: 7px;
+}
+
+.qq-upload-file {}
+.qq-upload-spinner {display:inline-block; background: url("loading.gif"); width:15px; height:15px; vertical-align:text-bottom;}
+.qq-upload-size,.qq-upload-cancel {font-size:11px;}
+
+.qq-upload-failed-text {display:none;}
+.qq-upload-fail .qq-upload-failed-text {display:inline;}
+</style>
+		<script type="text/javascript">
+			
+			// $(function(){
+				
+			// 	if (true) return;
+				
+			// 	var uploader = new qq.FileUploader({
+			// 		// pass the dom node (ex. $(selector)[0] for jQuery users)
+			// 		element: document.getElementById('file-uploader'),
+			// 		// path to server-side upload script
+			// 		action: 'http://198.101.202.29:8080/v1/AUTH_691f30c7e8ea472087c22bf8823f7e84/temp/newest_obj'
+			// 	});	
+		
+			// });
+		</script>
+
+
+
+		<!-- JQuery file uploader-->
+		<!--			<input id="fileupload" type="file" name="files[]" data-url="http://198.101.202.29:8080/v1/AUTH_691f30c7e8ea472087c22bf8823f7e84/temp/newest_obj" multiple>-->
+		<!--			<script src="/js/jquery.iframe-transport.js"></script>-->
+		<!--			<script src="/js/jquery.fileupload.js"></script>-->
+		<script>
+			//			$(function () {
+			//				$('#fileupload').fileupload({
+			//					dataType: 'json',
+			////					headers: {
+			////						'Access-Control-Allow-Origin': 'http://localhost:5008'
+			////					},
+			////					forceIframeTransport: true,
+			//					done: function (e, data) {
+			//						$.each(data.result, function (index, file) {
+			//							$('<p/>').text(file.name).appendTo(document.body);
+			//						});
+			//					}
+			//				});
+			//			});
+		</script>
+	</div>
+</div>
+
+
+
+

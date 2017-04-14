@@ -1,0 +1,109 @@
+/* login.m.less */
+.login-mobile-template {
+	
+
+	// login form section
+	.form-section {
+		border-bottom: 1px solid @borderGray;
+		padding: 40px 0 20px;
+
+		form {
+			width: 88%;
+			margin: 0 auto;
+
+			fieldset {
+				border: 1px solid @borderGray;
+
+				.border-radius (5px);
+
+				input {
+					display: block;
+					width: 82%;
+					padding: 10px 2% 10px 18%;
+					font-size: 1.2em;
+					border: none;
+
+					.disable-flash ();
+				}
+
+				input[name="email"] {
+					background: #FFF url(/mobile_images/BTN_users.png) no-repeat 7% center;
+					// border-bottom: 1px solid @borderGray;
+
+					.border-radiuses (5px, 0, 0, 5px);
+					.inner-shadow (0, 1px, 1px, 0, 0.25);
+				}
+
+				input[name="prometheus"] {
+					background: #FFF url(/mobile_images/BTN_users.png) no-repeat 7% center;
+
+					.border-radiuses (0, 5px, 5px, 0);
+					.inner-shadow (0, 1px, 1px, 0, 0.25);
+				}
+			}
+
+
+			input[type="submit"] {
+				background: @blueLink;
+				color: #FFF;
+				display: block;
+				border: none;
+				font: 1.2em 'ProzimanovaSemiBold',Helvetica, Arial, sans-serif;
+				margin: 15px auto 0;
+				padding: 10px 0;
+				text-align: center;
+				-webkit-appearance: none;
+				width: 125px;
+
+				.border-radius(5px);
+				.drop-shadow (0, 1px, 2px, 0, 0.9);
+				.text-shadow(0 -1px 1px rgba(0, 0, 0, 0.25));
+				.disable-select ()
+			}
+
+			input.tapped {
+				background-color: @touchBlue;	
+			}
+
+			a {
+				color: @textGray;
+				display: block;
+				font-size: 0.9em;
+				font-style: italic;
+				left: 6%;
+				margin-top: 8px;
+				position: relative;
+				width: 135px;
+			}
+		}
+
+	}
+
+	// create and account section
+	.create-account-container {
+		padding: 30px 0;
+
+		span {
+			color: @textGray;
+			display: block;
+			font-size: 0.9em;
+			text-align: center;
+		}
+
+		// extrapolate this into a mobile mixing.less file when we can
+		.action-button {
+			background: @blueLink;
+			color: #FFF;
+			display: block;
+			font: 1.2em 'ProzimanovaSemiBold',Helvetica, Arial, sans-serif;
+			margin: 7px auto 0;
+			padding: 10px 0;
+			text-align: center;
+			width: 175px;
+
+			.border-radius(5px);
+			.drop-shadow (0, 1px, 2px, 0, 0.9);
+			.text-shadow(0 -1px 1px rgba(0, 0, 0, 0.25));
+		}
+	}
+}

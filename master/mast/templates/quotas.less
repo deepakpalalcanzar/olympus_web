@@ -1,0 +1,51 @@
+.quotas-template {
+	color: @textGray;
+	margin: 0 auto;
+	padding: 10px 0;
+	width: 90%;
+
+	.quota-storage {
+		p {
+			float: left;
+
+			input {
+				width: 30px;
+			}
+		}
+
+		.done-button {
+			margin-left: 10px;
+		}
+
+		.edit-button {
+			
+			float: left;
+			cursor: pointer;
+			background-size: 80%;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-image: url('/images/icon_pencil.png');
+			height: 20px;
+			width: 20px;
+			margin-left: 10px;
+		}
+	}
+
+	.quota-bar {
+		border: 1px solid @borderGray;
+		background: white;
+		height: 8px;
+		margin-top: 5px;
+
+		.border-radius (15px);
+
+		.quota-percentage {
+			background: @blueSearch;
+			height: 8px;
+			width: 0;
+
+			.border-radius (15px);
+		}
+	}
+
+}

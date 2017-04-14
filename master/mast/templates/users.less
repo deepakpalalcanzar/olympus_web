@@ -1,0 +1,61 @@
+/*********************************
+*
+*	users
+*
+**********************************/
+.users-template, .workgroup-row-template, .workgroup-template, enterprises-workgroup-row-template, .enterprises-workgroups-template, .enterprises-user-template, .search-page-template {
+	border-top: 1px solid @borderGray;
+	border-bottom: 1px solid @borderGray;
+	//margin-top: 20px;
+	div.organization-bar {
+		background: @bodyOffWhite;
+		position: relative;
+		z-index: 1;
+		.box-shadow(0, 1px, 3px);
+		div.dir-files, div.modified, div.information  {
+			font: .6em "ProzimanovaSemiBold",Helvetica,Ariel,sans-serif;
+			padding: 4px 0;
+		}
+		div.dir-files span {
+			margin-left: 20px;
+		}
+	}
+	div#user-outlet {
+		background: white;
+	}
+}
+
+/*********************************
+*
+*	user row
+*
+**********************************/
+.user-row-template, .workgroup-row-template, .enterprises-workgroup-row-template, .enterprises-user-row-template, .search-result-row-template {
+	background: white;
+	padding: 10px 20px;
+	border-bottom: 1px solid @borderGray;
+	img {
+		padding: 3px;
+		background: white;
+		border: 1px solid @borderGray;
+		width: 60px;
+		float: left;
+		.border-radius(2px);
+	}
+	.user-name {
+		float: left;
+		line-height: 68px;
+		margin-left: 20px;
+		color: @textGray;
+		cursor: pointer;
+	}
+}
+.user-row-template.highlighted {
+	background: #DEE6F5;
+}
+
+.search-page-template .searchuser-list{
+	cursor:pointer;
+	color:#428BCA;
+	margin-left: 10px;
+}

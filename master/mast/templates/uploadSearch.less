@@ -1,0 +1,125 @@
+/*********************************
+*
+*	user and search styles
+*
+**********************************/
+.upload-search-template {
+	width: 100%;
+	background: #4f7ba9; /* Old browsers */
+	background: -moz-linear-gradient(top,  #4f7ba9 0%, #5887ba 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4f7ba9), color-stop(100%,#5887ba)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #4f7ba9 0%,#5887ba 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #4f7ba9 0%,#5887ba 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #4f7ba9 0%,#5887ba 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #4f7ba9 0%,#5887ba 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4f7ba9', endColorstr='#5887ba',GradientType=0 ); /* IE6-9 */
+
+	min-height: 50px;
+}
+
+.main-action-container {
+	margin: 0 2%;
+}
+.dir-folder-creation {
+	float: left;
+	padding: 10px 0;
+
+	a {
+		display: inline-block;
+		vertical-align: middle;
+		width: 60px;
+		height: 30px;
+		border: none;
+		cursor: pointer;
+		
+		.border-radius (4px);
+
+		.box-shadow-inset;
+
+		div.button-image {
+			display: block;
+		}
+		
+
+	}
+
+	a.create-folder {
+		background: @gray url('/images/CreateFolder.png') no-repeat 13px 3px;
+		.disable-select ();
+
+		&:hover{
+			background-color: @hoverGray;
+		}
+	}
+
+	a.upload-file {
+		margin-left: 2px;
+		background: @gray url('/images/UploadFile.png') no-repeat center center;
+		
+		&:hover{
+			background-color: @hoverGray;
+		}
+	}
+
+	a.activity-list {
+            width:86px;
+            margin-left: 25px;
+            background: @gray url('/images/activity.png') no-repeat 7px 3px;
+            .disable-select ();
+            &:hover{
+                background-color: @hoverGray;
+            }
+	}
+
+    a.sharing-list {
+        width:94px;
+        background: @gray url('/images/sharing.png') no-repeat 7px 3px;
+        .disable-select ();
+        &:hover{
+                background-color: @hoverGray;
+        }
+	}
+
+    a.delete-file {
+        background: @gray url('/images/delete.png') no-repeat center center;
+        .disable-select ();
+        &:hover{
+                background-color: @hoverGray;
+        }
+	}
+
+	a.download-file {
+        background: @gray url('/images/icon_download.png') no-repeat center center;
+        .disable-select ();
+        &:hover{
+                background-color: @hoverGray;
+        }
+	}
+
+
+}
+
+.searchbar {
+	
+	float: left;
+	line-height: 20px;
+	padding: 8px 0;
+
+	input {
+		color: @inputBlue;
+		vertical-align: middle;
+		width: 440px;
+		padding: 8px 35px;
+		border: none;
+		border-radius: 50px;
+		background: @blueSearch url('/images/search.png') 2px 3px no-repeat;
+		font: .8em "ProzimanovaLight",Helvetica,Ariel,sans-serif;
+
+		&::-webkit-input-placeholder {
+			color: @inputBlue;
+		}
+		&:-moz-placeholder {
+			color: @inputBlue;
+		}
+	}
+}

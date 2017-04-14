@@ -1,0 +1,70 @@
+.nav-dropdown-mobile-template {
+
+	background: rgba(0, 0, 0, 0.6);
+	font: 1em 'Helvetica','Arial',sans-serif;
+	padding: 7px;
+	position: absolute;
+	top:45px;left: 10px;
+	width: 250px;
+	z-index: 10000001;
+
+	.border-radius (5px);
+	.drop-shadow (0, 1px, 5px, 2px, 0.25);
+
+	.nav-links{
+		
+		div {
+
+			// cant figure out inner shadows. come back to this!
+
+			// .inner-shadow (1px, 1px, 100px, 5px, 0.75);
+
+			li {
+				color: @textGray;
+				padding: 15px;
+				padding-left: 50px;
+				border-bottom: 1px solid #EAEAEA;
+
+				background: white no-repeat 20px center;
+			}
+
+			li.tapped {
+				background-color: #DDD;
+			}
+
+		}
+		.main-links {
+
+			.overview {
+				background-image: url(/mobile_images/BTN_overview.png);
+			}
+			.settings {
+				background-image: url(/mobile_images/BTN_settings.png);
+			}
+
+			li:first-child {
+				.border-radiuses (5px, 0, 0, 5px);
+			}
+			li:last-child {
+				border: none;
+				.border-radiuses (0, 5px, 5px, 0);
+			}
+
+		}
+		.profile-links {
+			margin-top: 7px;
+
+			li {
+				.border-radius (5px);
+
+				
+			}
+
+			.signout {
+				background-image: url(/mobile_images/BTN_logout.png);
+			}
+
+			
+		}
+	}
+}

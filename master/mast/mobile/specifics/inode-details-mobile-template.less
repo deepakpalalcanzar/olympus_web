@@ -1,0 +1,53 @@
+/* inodeDetails.m.less */
+.inode-details-mobile-template {
+
+	.inode-info-container {
+		border-bottom: 1px solid @borderGray;
+		padding: 30px 0 20px;
+
+
+		.inode-info {
+			margin: 0 auto;
+			width: 90%;
+
+			.file-img, .directory-img {
+				background-size: 100%;
+				float: left;
+				height: 40px;
+				max-width: 50px;
+				position: relative;
+				width: 25%;
+			}
+
+			.file-img {
+				background-size: 66%;
+			}
+
+			.inode-details {
+				float: left;	
+				padding-left: 3%;
+				width: 77%;
+				color: @textGray;
+
+				h3 {
+					font: 1.2em 'ProzimanovaSemiBold',Helvetica, Arial, sans-serif;
+					color: @textGray;
+
+					span {
+						font: 0.6em 'ProzimanovaRegular',Helvetica, Arial, sans-serif;
+						margin-left: 10px;
+					}
+
+				}
+
+				p {
+					font-size: 0.8em;
+
+					.inode-creator {
+						
+					}
+				}
+			}
+		}
+	}	
+}

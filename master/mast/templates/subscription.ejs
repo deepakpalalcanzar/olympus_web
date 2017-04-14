@@ -1,0 +1,52 @@
+<div class="subscription-template">
+	<div class="organization-bar clearfix main-mod" style="width:100%">
+		<div class="dir-files {{column1.className}} header-color mast-critical mast-column-header"><span>{{column1.name}}</span></div>
+		<div class="dir-files {{column2.className}} header-color mast-critical mast-column-header"><span>{{column2.name}}</span></div>
+		<div class="dir-files {{column3.className}} header-color mast-critical mast-column-header"><span>{{column3.name}}</span></div>
+		<div class="dir-files {{column4.className}} header-color mast-critical mast-column-header"><span>{{column4.name}}</span></div>
+		<div class="dir-files {{column5.className}} header-color mast-critical mast-column-header"><span>{{column5.name}}</span></div>
+		<div class="dir-files {{column6.className}} header-color mast-critical mast-column-header"><span>{{column6.name}}</span></div>
+		<div class="dir-files {{column7.className}} header-color mast-critical mast-column-header"><span>{{column7.name}}</span></div>
+	<div class="subscription-outlet clearfix"  style="width:100%;"></div>
+	<div><spna style="margin-left:30px;">* M Month, Y Year</span></div>
+</div>	
+</div>
+
+<!-- user row template -->
+<div class="subscription-row-template clearfix" style="width:100%;float:left;">
+	{% if(features !=='error_123'){ %}
+	<div class="dir-files features-column mast-critical mast-column-header features-column-text">
+		<span>{{features}}</span>
+	</div>
+	
+	<div class="dir-files price-column mast-critical mast-column-header">
+		<span>{{price==='0'?'Free':"$"+price}}</span>
+	</div>
+	<div class="dir-files duration-column mast-critical mast-column-header">
+		<span>{{ durat }}</span>
+	</div>
+	<div class="dir-files sub-users-column mast-critical mast-column-header">
+		<span>{{ users_limit }}</span>
+	</div>
+	<div class="dir-files quota-column mast-critical mast-column-header">
+		<span>{{ quota }}</span>
+	</div>
+	<div class="dir-files is-default-column mast-critical mast-column-header">
+		<span>{{ is_default == '1' ? 'Yes' : 'No' }}</span>
+	</div>
+
+	
+	<div class="dir-files action-column mast-critical mast-column-header" style="float: left;margin-left: -20px;margin-top: -5px;">
+		{% if(id !== 1){ %}
+			<img class="action-delete" src="/images/CloseIcon.png" width="15"style="float:right;" data-id="{{id}}"/>
+			<img class="action-edit" src="/images/icon_pencil.png" width="15" style="float:right;"/>
+		{% }else{ %}
+			<div style="margin-top: 10px;"> - </div>
+		{% } %}
+	</div>
+
+
+	{% }else{%}
+	 <div class="dir-files" style="font-size:13px;margin-left:50px;">No records found !</div>
+	{% }%}
+</div>

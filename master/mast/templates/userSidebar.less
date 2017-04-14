@@ -1,0 +1,94 @@
+.user-sidebar-template {
+	z-index: 100;
+	width: 360px;
+	padding: 10px 30px;
+	background: @gray;
+	.border-radius(7px); 
+	.box-shadow(0, 1px, 5px);
+	position: relative;
+	.close-sidebar {
+		position: absolute;
+		width: 13px;
+		height: 18px;
+		background: url('/images/CloseIcon.png') no-repeat;
+		right: 15px;
+		cursor: pointer;
+	}
+	.user-details-container {
+		margin: 0 10px;
+		//padding: 50px 10px 40px;
+		padding: 5px 7px;
+		.user-pic {
+			background: white;
+			.drop-shadow(2px, 2px, 2px, 0, .10);
+			padding: 3px;
+			border: 1px solid @borderGray;
+			width: 100px;
+			float: left;
+			.border-radius(2px);
+		}
+		.user-details {
+			float: left;
+			//margin-left: 15px;
+			padding: 7px 0;
+			h3, span {
+				cursor: pointer;
+				display: block;
+				color: @textGray;
+			}
+			h3 {
+				font-size: 1.3em;
+			}
+			.user-title {
+				margin-top: 1px;
+				font-size: .9em;
+			}
+			.user-email, .user-phonenumber {
+
+				//margin-top: 12px;
+				//padding-left: 20px;
+				font-size: 0.9em;
+				padding-left: 1px;
+				margin-top: 0px;
+
+			}
+		}
+	}
+	.user-option-buttons {
+		padding: 30px 10px;
+		margin: 0 10px;
+		border-top: 1px solid @borderGray;
+		border-bottom: 1px solid @borderGray;
+		a {
+			display: inline-block;
+			background: gray url('/image/button_lockAccount.png') no-repeat;
+			width: 153px;
+			height: 30px;
+			cursor: pointer;
+		}
+		.lock-account-button {
+			margin-right: 10px;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

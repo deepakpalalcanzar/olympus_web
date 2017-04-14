@@ -1,0 +1,423 @@
+<div class="system-settings-template">
+
+	<!-- upgrade header -->
+	<!-- <div class="title-mod">
+		<div class="title-fix">
+			<span>Need to expand your sharing, storage, and bandwidth capacity?</span>
+			<a class="setting-upgrade-button">
+				<img src="/images/button_upgrade@2x.png" />
+			</a>
+			<div class="clear"></div>
+		</div>
+	</div> -->
+
+	<!--site database setting -->
+	<div class="database-mod">
+		<label>Change Database Connections</label>
+		<label> Database Host: </label>
+		<input id="database_host" type="text" name="database_host" value="localhost" placeholder="Enter Database Host (i.e. localhost or IP address)" /><br>
+
+		<label> Database Name: </label>
+		<input id="database_name" type="text" name="database_name" value="" placeholder="Enter Database Name" /><br>
+
+		<label> Database User Name: </label>
+		<input id="database_user" type="text" name="database_user" value="" placeholder="Enter Database User Name" /><br>
+
+		<label> Database User Password: </label>
+		<input id="database_pass" type="password" name="database_pass" value="" placeholder="Enter Database User Password" /><br>
+	    <input type="button" id="saveDatabase" value="Save">
+	    <img class="test-loader" alt="loading..." src="/images/ajax-loader.gif">
+	    <input type="button" class="restart-server" value="Restart Server">
+		<br><br>
+	</div>
+	<!-- -->
+
+	<!--site database setting -->
+	<div class="ssl-mod">
+		<label>Upload SSL Configuration File</label>
+		<label> GD Bundle Crt: </label>
+		<input id="ssl_gd" type="file" name="ssl_gd" /><br>
+		<label><i>Upload your GD Bundle Crt file as <b>gd_bundle.crt</b> </i></label><br>
+
+		<label> Olympus Crt: </label>
+		<input id="ssl_olympus" type="file" name="ssl_olympus" /><br>
+		<label><i>Upload your Olympus Crt file as <b>olympus.crt</b> </i></label><br>
+
+		<label> Olympus Key: </label>
+		<input id="ssl_key" type="file" name="ssl_key"  /><br>
+		<label><i>Upload your Olympus key file as <b>olympus.key</b> </i></label><br>
+
+	    <input type="button" id="uploadSSL" value="Upload">
+		<br><br>
+	</div>
+	<!-- -->
+
+	<!--site domain setting -->
+	<div class="domain-mod">
+		<label>Change Domain name</label>
+		<input id="domainname" type="text" name="domainname" value="test" placeholder="Enter domain (i.e. www.domain.com -no http:// or https://)" /><br>
+	    <input type="button" id="saveDomain" value="Save">
+	    <input type="button" class="restart-server" value="Restart Server">
+		<br><br>
+	</div>
+	<!-- -->
+
+	<!-- <hr><br> -->
+
+	<!--Adapter Settings -->
+	<div class="adapter-mod">
+		<label>Adapter Settings</label>
+
+		<input type="radio" name="adapter_type" id="adapter_type_disk" value="Disk" />
+		<label class="adapter-label" for="adapter_type_disk">Use Disk</label>
+
+		<input type="radio" name="adapter_type" id="adapter_type_s3" value="S3" />
+		<label class="adapter-label" for="adapter_type_s3">Use Amazon S3</label>
+
+		<input type="radio" name="adapter_type" id="adapter_type_ormuco" value="Ormuco" />
+		<label  class="adapter-label" for="adapter_type_ormuco">Use Ormuco Object Storage</label>
+
+		<br><br>
+
+		<div id="Disk_adapter_details" class="adapter_details">
+			<label> Disk Adapter Path: </label>
+			<span>Default Path : <b id="disk_path_label">/var/www/html/olympus/api/files/</b></span>
+			<input type="hidden" id="disk_path" name="disk_path" value="/var/www/html/olympus/api/files/" >
+			<!-- <input type="file" class="disk-path" placeholder="" value="" id="disk_path" name="disk_path" nwdirectory nwsaveas webkitdirectory directory multiple> -->
+			<br><br>
+			<input type="checkbox" name="mount_cifs" id="mount_cifs" /> Mount a CIFS share :
+			<br><br>
+			<div id="cifs_details" style="display: none;">
+				<label> CIFS Mountpoint :</label>
+				<input type="text" class="mountpoint" placeholder="" value="" id="mountpoint" name="mountpoint">
+				<label> Username :</label>
+				<input type="text" class="mount-username" placeholder="" value="" id="mount_username" name="mount_username">
+				<label> Password :</label>
+				<input type="password" class="mount-password" placeholder="" value="" id="mount_password" name="mount_password">
+				<br>
+				<input type="button" id="cifsmount" value="Mount">
+				<input type="button" id="cifsunmount" value="Unmount">
+			</div>
+		</div>
+
+		<div id="S3_adapter_details" class="adapter_details" style="display:none;">
+			<label> Access Key Id :</label>
+			<input type="text" class="S3-access" placeholder="" value="" id="S3_access" name="S3_access">
+
+			<label> Secret Access Key :</label>
+			<input type="text" class="S3-secret" placeholder="" value="" id="S3_secret" name="S3_secret">
+
+			<label> Bucket :</label>
+			<input type="text" class="S3-bucket" placeholder="" value="" id="S3_bucket" name="S3_bucket">
+
+			<label> Region :</label>
+			<input type="text" class="S3-region" placeholder="" value="" id="S3_region" name="S3_region"><br>
+		</div>
+
+		<div id="Ormuco_adapter_details" class="adapter_details" style="display:none;">
+			<label> Ormuco Username:</label>
+			<input type="text" class="Ormuco-access" placeholder="" value="" id="Ormuco_access" name="Ormuco_access">
+
+			<label> Ormuco Password :</label>
+			<input type="password" class="Ormuco-secret" placeholder="" value="" id="Ormuco_secret" name="Ormuco_secret">
+
+			<label> Container name :</label>
+			<input type="text" class="Ormuco-bucket" placeholder="" value="" id="Ormuco_bucket" name="Ormuco_bucket">
+
+			<!--<label> Region :</label>
+			<input type="text" class="Ormuco-region" placeholder="" value="" id="Ormuco_region" name="Ormuco_region"><br>-->
+		</div>
+	    <input type="button" id="saveAdapter" value="Save">
+		<br><br>
+	</div>
+	<!-- -->
+
+	<!-- <hr><br> -->
+
+	<!--Email Service Settings -->
+	<div class="email-mod">
+		<label>Email Service Settings</label>
+		<input type="radio" name="mail_service" value="mandrill" /> Use Mandrill
+		<input type="radio" name="mail_service" value="internal" /> Use Internal Email Setup
+		<br><br>
+		<div id="mandrill_details">
+			<label> Mandrill Api Key: </label>
+			<input type="text" class="login-input-field mandrill-key" placeholder="" value="" id="mandrill_key" name="mandrill_key">
+		</div>
+		<div id="inernal_email_details" style="display:none;">
+			<label> SMTP Server(Host) :</label>
+			<input type="text" class="smtp-host" placeholder="" value="" id="smtp_host" name="smtp_host">
+			<label> Port :</label>
+			<input type="text" class="smtp-port" placeholder="" value="" id="smtp_port" name="smtp_port">
+			<label> Username :</label>
+			<input type="text" class="smtp-user" placeholder="" value="" id="smtp_user" name="smtp_user">
+			<label> Password :</label>
+			<input type="password" class="smtp-pass" placeholder="" value="" id="smtp_pass" name="smtp_pass"><br>
+		</div>
+	    <input type="button" id="saveEmail" value="Save">
+		<br><br>
+	</div>
+	<!-- -->
+
+	<!-- <hr><br> -->
+
+	<!--trash setting -->
+	<div class="trash-mod">
+		<label>Trash Setting</label>
+		<div style="">
+			<input id="trash_setting" type="radio" name="trash_setting" value="manual"/ checked="checked"> Manually
+			<a class="tooltips" style=" vertical-align: middle; display: inline-block !important;">
+				<img src="images/FAQ.png">
+				<span> Files will only be deleted when a user manually deletes it from trash. </span>
+			</a>
+		</div><br>
+		<div style="">
+			<input id="trash_setting" type="radio" name="trash_setting" value="auto"/> Automatic
+			<a class="tooltips" style="vertical-align: middle; display: inline-block !important;">
+				<img src="images/FAQ.png">
+				<span>Duration for files to keep them in trash before deleting.</span>
+			</a>
+			<div id="trash_auto_setting">
+				Delete trash files <select id="trash_setting_days" name="trash_setting_days">
+					<option value="hourly">Hourly</option>
+					<option value="daily">Daily</option>
+					<option value="weekly">Weekly</option>
+					<option value="monthly">Monthly</option>
+					<option value="yearly">Yearly</option>
+				</select>
+			</div>
+		</div><br>
+	    <input type="button" id="saveTrashSetting" value="Save">
+	    <input type="button" class="restart-server" value="Restart Server">
+		<br><br>
+	</div>
+	<!-- -->
+
+	<!-- <hr><br> -->
+
+	<!--LDAP Settings -->
+	<div class="ldap-mod">
+		<label>LDAP/AD Settings</label>
+		<input type="checkbox" name="ldap_enbled" id="ldap_enbled" /> Enable LDAP/AD
+		<br><br>
+		<input type="radio" name="service_type" value="1" /> LDAP Settings
+		<input type="radio" name="service_type" value="2" /> AD Settings
+		<br><br>
+		<div id="ldap_details">
+			<label> Server IP :</label>
+			<input type="text" class="server-ip" placeholder="" value="" id="server_ip" name="server_ip">
+
+			<label> Organisational Unit (OU) :</label>
+			<input type="text" class="org-unit" placeholder="" value="" id="org_unit" name="org_unit">
+
+			<label> Base DN :</label>
+			<input type="text" class="basedn" placeholder="" value="" id="basedn" name="basedn">
+
+			<label> Administrator :</label>
+			<input type="text" class="ldap-admin" placeholder="" value="" id="ldap_admin" name="ldap_admin"><br>
+
+			<label> Password :</label>
+			<input type="password" class="ldap-pass" placeholder="" value="" id="ldap_pass" name="ldap_pass"><br>
+
+			<input type="hidden" class="ldap-create-user" placeholder="" value="" id="ldap_create_user" name="ldap_create_user"><br>
+		</div>
+		<div id="ad_details" style="display:none;">
+			<label> Server IP :</label>
+			<input type="text" class="server-ip" placeholder="" value="" id="server_ip_ad" name="server_ip_ad">
+
+			<label> Base DN :</label>
+			<input type="text" class="basedn" placeholder="" value="" id="basedn_ad" name="basedn_ad">
+
+			<label> Security Group for Users : (optional)</label>
+			<input type="text" class="memberof" placeholder="" value="" id="memberof" name="memberof">
+
+			<label> Administrator :</label>
+			<input type="text" class="ldap-admin" placeholder="" value="" id="ldap_admin_ad" name="ldap_admin_ad"><br>
+
+			<label> Password :</label>
+			<input type="password" class="ldap-pass" placeholder="" value="" id="ldap_pass_ad" name="ldap_pass_ad"><br>
+
+			<input type="hidden" class="ldap-create-user" placeholder="" value="" id="ldap_create_user_ad" name="ldap_create_user_ad"><br>
+		</div>
+	    <input type="button" id="testldapsettings" value="Test Connection">
+	    <img class="test-loader" alt="loading..." src="/images/ajax-loader.gif">
+	    <input type="button" id="saveldapsettings" value="Save">
+		<br><br>
+	</div>
+	<!-- -->
+
+	<!-- <hr><br> -->
+
+	<!--Other settings -->
+	<div class="other-mod">
+
+		<label>Other Settings</label>
+
+		<hr><br>
+
+		<!--Google Drive Settings -->
+		<div id="gdrive_cont" class="email-mod">
+			<label>Google Drive Settings</label>
+			<input id="gdrive_setting" type="checkbox" name="gdrive_setting" value="enabled" /> Enable Syncing of Google Drive Folders
+			<br>
+			<div id="google_drive_details" style="display:none;">
+				<label> UPLOAD TOKEN FILE HERE(client_secret.json) :</label>
+				<input type="file" value="TEST" id="drive_secret_file" name="drive_secret_file"><br><br>
+				<label> Client ID : </label>
+				<input type="text" class="gdrive-client-id" placeholder="" value="" id="gdrive_client_id" name="gdrive_client_id"><br>
+
+				<!--<label> Project ID :</label>-->
+				<input type="hidden" class="gdrive-project-id" placeholder="" value="" id="gdrive_project_id" name="gdrive_project_id">
+
+				<!--<label> Auth URI : </label>-->
+				<input type="hidden" class="gdrive-auth-uri" placeholder="" value="" id="gdrive_auth_uri" name="gdrive_auth_uri">
+
+				<!--<label> Token URI : </label>-->
+				<input type="hidden" class="gdrive-token-uri" placeholder="" value="" id="gdrive_token_uri" name="gdrive_token_uri">
+
+				<!--<label> Auth Provider : </label>-->
+				<input type="hidden" class="gdrive-auth-x509" placeholder="" value="" id="gdrive_auth_x509" name="gdrive_auth_x509">
+
+				<label> Client Secret : </label>
+				<input type="text" class="gdrive-client-secret" placeholder="" value="" id="gdrive_client_secret" name="gdrive_client_secret"><br>
+
+				<label> Redirect URI : </label>
+				<input type="text" class="gdrive-redirect-uri" placeholder="" value="" id="gdrive_redirect_uri" name="gdrive_redirect_uri"><br>
+			</div>
+		    <input type="button" id="saveDrive" value="Save">
+			<img class="gdrive-loader" alt="loading..." src="/images/ajax-loader.gif">
+			<br><br>
+		</div>
+		<!-- -->
+
+		<!--Dropbox Settings -->
+		<div id="dropbox_cont" class="email-mod">
+			<label>Dropbox Settings</label>
+			<input id="dropbox_setting" type="checkbox" name="dropbox_setting" value="enabled" /> Enable Syncing of Dropbox Folders
+			<br>
+			<div id="dropbox_details" style="display:none;">
+
+				<label> App Key : </label>
+				<input type="text" class="dropbox-client-id" placeholder="" value="" id="dropbox_client_id" name="dropbox_client_id"><br>
+				<label> App Secret : </label>
+				<input type="text" class="dropbox-client-secret" placeholder="" value="" id="dropbox_client_secret" name="dropbox_client_secret"><br>
+			</div>
+			<input type="button" id="saveDropbox" value="Save">
+			<img class="dropbox-loader" alt="loading..." src="/images/ajax-loader.gif">
+			<br><br>
+		</div>
+		<!-- -->
+		<!--Box Settings -->
+		<div id="box_cont" class="email-mod">
+			<label>Box Settings</label>
+			<input id="box_setting" type="checkbox" name="box_setting" value="enabled" /> Enable Syncing of Box Folders
+			<br>
+			<div id="box_details" style="display:none;">
+				<label> Client ID : </label>
+				<input type="text" class="box-client-id" placeholder="" value="" id="box_client_id" name="box_client_id"><br>
+
+				<label> Client Secret : </label>
+				<input type="text" class="box-client-secret" placeholder="" value="" id="box_client_secret" name="box_client_secret"><br>
+			</div>
+			<input type="button" id="saveBox" value="Save">
+			<img class="box-loader" alt="loading..." src="/images/ajax-loader.gif">
+			<br><br>
+		</div>
+		<!-- -->
+		<hr><br>
+
+		<div>
+			<input id="msignup_setting" type="checkbox" name="msignup_setting" value="allow" checked="checked" /> Allow Signups from Mobile
+			<a class="tooltips" style=" vertical-align: middle; display: inline-block !important;">
+				<img src="images/FAQ.png">
+				<span> If checked, new users can signup from mobile apps, Otherwise No Signup Page will appear.  </span>
+			</a>
+		</div>
+	    <input type="button" id="saveOtherSettings" value="Save">
+		<br><br>
+
+		<hr><br>
+
+		<div>
+			<label> Import Database :</label>
+
+			<div id="import_db_cont">
+				
+				<label> Database File (.sql) : </label>
+				<input type="file" value="TEST" id="import_db_file" name="import_db_file"><br><br>
+
+				<input type="button" value="Import" id="import_db" name="import_db">
+				<img class="import-db-loader" alt="loading..." src="/images/ajax-loader.gif">
+				<input type="button" class="restart-server" value="Restart Server">
+			</div>
+		</div><br>
+
+		<hr><br>
+
+		<div>
+			<label> Export Database :<input type="button" value="Download" id="export_db" name="export_db"></label>
+
+			<input id="db_export_setting" type="checkbox" name="db_export_setting" value="export"> Backup Database Dump to server
+
+			<div id="export_db_server_cont" style="display: none;">
+				
+				<label> Host : (IP Address)</label>
+				<input type="text" placeholder="Enter IP address here." value="" id="export_db_host" name="export_db_host"><br>
+
+				<label> Username :</label>
+				<input type="text" placeholder="Enter SSH Username here." value="" id="export_db_user" name="export_db_user"><br>
+
+				<label> Path :
+				<a class="tooltips" style=" vertical-align: middle; display: inline-block !important;">
+					<img src="images/FAQ.png">
+					<span> Directory Path on Remote Server where backup files will be uploaded.  </span>
+				</a>
+				</label>
+				<input type="text" placeholder="/var/www/html/" value="" id="export_db_path" name="export_db_path"><br>
+
+				<label> Password :</label>
+				<input type="password" placeholder="Enter SSH Password." value="" id="export_db_pass" name="export_db_pass"><br>
+
+				<label> Private Key File :
+				<a class="tooltips" style=" vertical-align: middle; display: inline-block !important;">
+					<img src="images/FAQ.png">
+					<span> Upload Private key file (.pem) if required. </span>
+				</a>
+				</label>
+				<input type="file" value="TEST" id="private_key" name="private_key"><br>
+
+				<label> Port(Optional) :</label>
+				<input type="text" placeholder="22" value="" id="export_db_path" name="export_db_path"><br>
+
+				<div id="export_db_auto_setting">
+					Backup Interval Setting : <select id="export_db_days" name="export_db_days">
+						<option value="hourly">Hourly</option>
+						<option value="daily">Daily</option>
+						<option value="weekly">Weekly</option>
+						<option value="monthly">Monthly</option>
+						<option value="yearly">Yearly</option>
+					</select>
+				</div><br>
+
+				<input type="button" value="Check Server Access" id="export_db_test" name="export_db_test">
+				<img class="test-db-loader" alt="loading..." src="/images/ajax-loader.gif">
+				<input type="button" value="Save" id="export_db_save" name="export_db_save">
+			</div>
+		</div><br>
+
+		<hr><br>
+	</div>
+	<!-- -->
+
+	<!-- <hr><br> -->
+</div>
+
+
+
+
+
+
+
+
+
+

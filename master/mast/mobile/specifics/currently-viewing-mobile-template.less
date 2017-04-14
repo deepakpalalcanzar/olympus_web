@@ -1,0 +1,72 @@
+/* currentlyViewing.m */
+.currently-viewing-mobile-template {
+	border-top: 1px solid white;
+	padding-top: 20px;
+
+	.loading-spinner{
+		width: 32px;
+		height: 32px;
+		margin: 18px auto 0;
+		background: url('/images/loading-spinner.gif') no-repeat center center;
+		background-size: 100%;
+	}
+
+	.currently-viewing-container {
+		width: 90%;
+		margin: 0 auto;
+
+		span {
+			color: @textGray;
+			font: 1em 'ProzimanovaSemiBold',Helvetica, Arial, sans-serif;
+
+		}
+
+		.currently-viewing-items-region {
+			background: #FFF;
+
+			border: 1px solid @borderGray;
+			margin-top: 5px;
+			padding: 0 1%;
+			width: 98%; height: 63px;
+			overflow: auto;
+			-webkit-overflow-scrolling: touch;
+
+			.border-radius(5px);
+			.drop-shadow (0, 1px, 1px, 0, 0.05);
+		}
+	}
+}
+
+// We might need a JS solution to get hide the items in the currently-viewing-region.
+// This is possible with only HTML and CSS if you are using fixed widths and some hacks,
+// but I dont think it will work with a responsive design.
+
+.currently-viewing-item-mobile-template {
+	padding: 10px 5px;
+	float: left;
+
+	img {
+		border: 1px solid @borderGray;
+		height: 35px; 
+		padding: 3px;
+		width: 35px;
+
+		.border-radius(3px);
+		.drop-shadow (0, 1px, 1px, 0, 0.05);
+	}
+}
+
+// For overflow, try this:
+//
+// http://www.mikedellanoce.com/2012/09/10-tips-for-getting-that-native-ios.html
+
+// .currently-viewing-items-region {
+// 	-webkit-overflow-scrolling: touch;
+// 	overflow: auto;
+// 	position:static;height: 50px;
+// }
+// .currently-viewing-items-region > * {
+// 	position:static;
+//     // -webkit-transform: translateZ(0px);
+//     -webkit-transform: translate3d(0, 0, 0);
+// }

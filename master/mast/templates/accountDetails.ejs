@@ -1,0 +1,28 @@
+<!-- details template -->
+<div class="account-details-template account-page-container">
+    
+    <div class="page-details-container clearfix">
+    	<div style="float:right;cursor:pointer;padding: 0 15px 15px;">
+		    <p> Current Release Version : 2.5  </p> 
+        	<p> &nbsp; </p>
+      		<span class="btn btn-primary delete-account">Delete Account</span>
+    	</div>	
+
+        <h2>Personal Details</h2> 
+        <div class='image-uploader'></div>
+        <form action="/account/update" method="POST" class="account-details-form">
+            <fieldset>
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" value="{{name}}" />
+                <label for="title">Job Title</label>
+                <input id="title" name="title" type="text" value="{{title}}" />
+                <label for="emails">Email</label>
+                <input id="email" name="email" type="text" value="{{email}}" />
+                <label for="phone">Phone number</label>
+                <input id="phone" name="phone" type="text" value="{{phone}}" />
+            </fieldset>
+        </form>
+    </div>
+    <div class="account-save-button submit-details">Save</div>
+
+</div>

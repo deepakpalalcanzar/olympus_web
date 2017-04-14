@@ -1,0 +1,80 @@
+<div class="add-enterprises-template" style="background-clip: padding-box;border-radius: 7px;box-shadow: 0 1px 5px #b3bac4;margin: 40px 2%;padding: 10px;">
+
+	<!-- upgrade header -->
+	<div class="title-mod">
+		<div class="title-fix">
+ 			<span> Add New Enterprise </span>
+ 			<a class="add-subscription">
+ 				<input type="button" value="Back" class="btn btn-primary" onclick=" window.history.back()">
+			</a>
+			<div class="clear"></div>
+		</div>
+	</div>
+
+<!-- settings content -->
+	<div class="main-mod ent-form-cont" id="main-mod"> 
+		<!-- company details section -->
+		<form action="" method="POST" class="new-user-form">
+			<div class="center-mod">
+				<!-- <h3 class="company-details">New Enterprise</h3> -->
+				<div class="enterprise_name">
+					<div class="company-name"> Enterprise Name </div>
+					<input type="text" name="enterprises_name" placeholder="Enter enterprise name" class="enter_name enterpriseName enterprise-form-fields" style="width:282px;">
+				</div>
+
+				<div class="owner_name">
+					<div class="company-name"> Owner Name </div>
+					<input type="text" name="owner_name" placeholder="Enter owner name" class="enter_name ownerName enterprise-form-fields" style="width:282px;">
+				</div>
+
+				<div class="permission-form user_email">
+					<div class="company-name"> Email </div>
+					<input type="text" name="email" placeholder="Enter email" class="enter_name email enterprise-form-fields" style="width:282px;">
+				</div>
+
+				<div class="password">
+					<div class="company-name"> Password </div>
+					<input type="password" name="password" placeholder="Enter password" class="enter_name enter_password enterprise-form-fields" style="width:282px;">
+				</div>
+
+				<div class="confirmPassword">
+					<div class="company-name"> Confirm Password </div>
+					<input type="password" name="c_password" placeholder="Confirm password" class="enter_name confirm_password enterprise-form-fields" style="width:282px;">
+				</div>	
+
+				<div class="company-name"> Subscription </div>
+				<select id="subscription-drop" name="subscription" class="enterprise-form-select" style="width:305px;"></select>
+				<div class="clear"></div>
+
+			</div>  
+		</form>
+		<div class="clear"></div> 
+	</div> 
+
+	<!-- save button -->
+	<div class="footer-mod ent-form-cont">
+		<a class="setting-save-button add-enterprises">
+			<img src="/images/button_save@2x.png" />
+		</a>
+	</div>
+
+	<div class="footer-mod add-subs-cont">
+		<div class="company-name"> No subscription added yet. Please add
+			subscription plan.
+			<a href="#addsubscription" class="add-subscription">
+			Add Subscription
+		</a>
+		</div>
+	</div>
+	
+</div>
+
+
+
+
+
+
+
+
+
+

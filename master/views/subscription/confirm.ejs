@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%- title %></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<%- rigging.css %>
+		<%- rigging.js %>
+		<script type="text/javascript" src="/js/moment.js"></script>
+		<script type="text/javascript" src="/js/fillout.js"></script>
+		
+		<!-- Good ol' css -->
+		<link rel="stylesheet" type="text/css" media="all" href="/stylesheets/reset.css"/>
+		<link rel="stylesheet" type="text/css" media="all" href="/stylesheets/layout.css"/>
+
+		<style>
+
+		</style>
+
+	</head>
+	<body>
+		<div id="topbar">
+				<div class="clearfix" id="top-nav">
+
+					<!-- logo and main navigation -->
+					<div id="main-nav">
+						<a class="logo-link" href="#"><img alt="Olympus" src="/images/Branding_12.png" class="main-logo"></a>
+						<!-- <ul class="clearfix">
+							<li>
+								<a href="http://www.olympus.io" title="cancel">
+									<div class="main-nav-div">
+										<img class="main-nav-imgs" src="/images/icon_dropdown_delete.png"/>
+										<span class="main-nav-span">Cancel</span>
+									</div>
+								</a>
+							</li>
+						</ul> -->
+					</div>
+
+				</div>
+			</div>
+		<div id="test-outlet">
+
+			<div style="background-clip: padding-box;border-radius: 7px;box-shadow: 0 1px 5px #b3bac4;margin: 40px 2%;padding: 10px;min-height:700px;" class="add-subscription-template">
+<!-- upgrade header -->
+	<div class="title-mod">
+		<div class="title-fix">
+ 			<span>Payment Confirmation</span>
+			<div class="clear"></div>
+		</div>
+	</div>
+
+<!-- settings content -->
+	<div id="main-mod" class="main-mod"> 
+        <div class="add-subscription account-page-container">
+
+            <div class="page-details-container clearfix">
+                <form class="add-subscription-form" method="POST" action="/subscription/impersonate">
+                    <table width="60%">
+                        <tr>
+                            <td width="60%" colspan="2">
+                                <label>Thank you for subscribing.</label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="20%">
+                                <label><b>Transaction ID</b></label>
+                                <input type="hidden" name="email" value="<%- email%>"/>
+                            </td>
+                            <td width="45%">
+                                <label><%- payment_id%></label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="15%">
+                                <label><b>Transaction Amount</b></label>
+                            </td>
+                            <td width="45%">
+                                <label>$<%- amount%></label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="15%">
+                                <label><b>Transaction Time</b></label>
+                            </td>
+                            <td width="45%">
+                                <label><%- create_time%></label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="15%">
+                                <label><b>Status</b></label>
+                            </td>
+                            <td width="45%">
+                                <label><%- state%></label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="15%">
+                                <label><b>Plan Name</b></label>
+                            </td>
+                            <td width="45%">
+                                <label>Default</label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="15%">
+                                <label><b>Duration</b></label>
+                            </td>
+                            <td width="45%">
+                                <label>From <%- duration_from%> To <%- duration_to%></label>
+                            </td>
+                        </tr>
+
+                    </table>
+
+                    <!-- <a href="https://localhost/subscription/index">
+                        <input type="button" value="Dashboard" class="btn-primary"/>
+                    </a> -->
+
+                    <input type="submit" value="Go to Dashboard" class="btn-primary"/>
+                </form>
+            </div>
+            <!-- <div class="account-save-button buy-subscription">Save</div> -->
+        </div>
+		<div class="clear"></div>
+	</div> 
+</div>
+
+		</div>
+		<!-- Template library -->
+		<%- rigging.templateLibrary %>
+	</body>
+</html>
+
+<script>
+	// Mast.raise({
+	// 	beforeRouteFn: function(){
+	// 		new Mast.components.ListSubscriptionPage({
+	// 			outlet: "#test-outlet"
+	// 		});
+	// 	}
+	// });
+</script>

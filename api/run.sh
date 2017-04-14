@@ -1,0 +1,1 @@
+/root/.nvm/v0.10.18/bin/node /usr/lib/node_modules/forever/bin/forever start app.js

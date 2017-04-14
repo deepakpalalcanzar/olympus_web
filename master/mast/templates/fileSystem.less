@@ -1,0 +1,49 @@
+/*********************************
+*
+*	file system
+*
+**********************************/
+.fileSystem-template {
+	border-top: 1px solid @borderGray;
+	border-bottom: 1px solid @borderGray;
+
+
+	div.organization-bar {
+		background: @bodyOffWhite;
+		position: relative;
+		z-index: 1;
+		.box-shadow(0, 1px, 3px);
+
+
+		div.dir-files, div.modified, div.information  {
+			font: .6em "ProzimanovaSemiBold",Helvetica,Ariel,sans-serif;
+			padding: 4px 0;
+		}
+		div.dir-files span {
+			margin-left: 20px;
+		}
+	}
+	div#fileSystem-outlet {
+		background: white;
+	}
+
+	.loading-spinner {
+	width: 50px;
+	background-color: white;
+	background-position: center center;
+	height: 50px;
+	margin: 0 auto;
+	padding: 50px 0;
+}
+
+	
+}
+.fileSystem.focus {
+	.sidebar-button {
+		display: none !important;
+	}
+}
+
+.first-span{
+	margin-left: 100px !important;
+}

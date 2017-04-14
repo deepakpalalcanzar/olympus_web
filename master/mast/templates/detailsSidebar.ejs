@@ -1,0 +1,63 @@
+<div class="details-sidebar-template">
+
+	<!-- top container file info and action buttons -->
+	<div class="top-container clearfix">
+		<div class="left-side">
+			<div class="file-name clearfix">
+				<div class="{{type}}-img {% if (mimeClass) { %}{{mimeClass}}{% } %}"></div>
+				<!-- <input class="inode-name-input" type="text" placeholder="Name your new folder" autofocus="autofocus" /> -->
+				<h2 class="inode-name"> {{name}} </h2>
+			</div>
+			<div class="file-detail">
+				<span class="details-date">Modified: {{modifiedAt}}</span>
+				<!-- <a href="#" class="file-creator">{{modifiedBy}}.</a> -->
+				{% if (type === 'file') { %}
+					<span class="file-size">{{sizeString}}</span>
+				{% } %}
+			</div>
+		</div>
+		<div class="right-side">
+			{% if (type === 'file') { %}
+				<a class="detailsDownload-button"><img src="/images/Download_button.png" /></a>
+			{% } %}
+			<!-- <a class="moreActions-button"><img src="/images/More_button.png" /></a> -->
+		</div>
+		<div class="close-sidebar"></div>
+	</div>
+
+	<!-- activity and sharing content -->
+	<div class="activity-sharing-container">
+		<div class="activity-search-headers">
+			<div class="activity-tab tab {% if (activeTemplate=='activityTemplate') { %} selected {% } %}"><h3><span class="activity-img">&nbsp;</span> Activity</h3></div>
+			<div class="sharing-tab tab {% if (activeTemplate=='sharingTemplate') { %} selected {% } %}"><h3><span class="sharing-img">&nbsp;</span> Sharing</h3></div>
+			
+			<div class="version-tab tab {% if (activeTemplate=='versionTemplate') { %} selected {% } %}"><h3><span class="sharing-img">&nbsp;</span> Version</h3></div>
+
+			<div class="clear-tab"></div>
+		</div>
+		<div class="activity-sharing-outlet"></div>
+
+	</div>
+</div>
+
+<!-- activity template -->
+<div class="activity-template">
+	{% if (!parent.id) { %}
+        <div class="quotas-outlet"></div>
+        <div class="viewers-activity-outlet"></div>
+    {% } else { %}
+        <div class="viewers-activity-outlet no-quota"></div>
+    {% } %}
+</div>
+
+<!-- sharing template -->
+<div class="sharing-template">
+	<div class="permission-outlet"></div>
+</div>
+
+<div class="version-template">
+	<div class="check-version-outlet"></div>
+</div>
+<div class="list-version-template">
+	<div class="list-version-outlet"></div>
+</div>

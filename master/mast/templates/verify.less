@@ -1,0 +1,104 @@
+.verification-page {
+	background: #3C4151 !important;
+	width: 100%;
+	height: 100%;
+	padding-top: 5%;
+	font-family: "ProzimanovaRegular",Helvetica,Ariel,sans-serif;
+	color: @textGray;
+}
+.verify-container {
+	.border-radius(8px);
+	margin:0 auto;
+  width: 400px;
+  background: white;	
+  .verification-header {
+  	.border-radiuses (8px, 0, 0, 8px);
+  	background: #F0F0F0;
+  	padding: 15px;
+  	img {
+  		float: left;
+  		width: 50px;
+  		// background: black;
+  	}
+  	h2 {
+  		font: 1.2em "ProzimanovaSemiBold",Helvetica,Ariel,sans-serif;
+  		float: left;
+  		line-height: 50px;
+  		margin-left: 15px;
+  	}
+  }
+	form {
+		margin-top: 30px;
+	  .image-uploader {
+	  	margin-bottom: 10px;
+	  }
+		fieldset {
+			border: none;
+			padding: 0 15px;
+			margin-bottom: 40px;
+		}
+		fieldset.terms-of-service {
+			margin-bottom: 10px;
+			input[type="checkbox"] {
+				width: 10px;
+				float: left;
+			}
+			label {
+				font-size: 0.9em;
+				float: left;
+				margin: -2px 0 0 10px;
+				a {
+					color: @blueSearch;
+				}
+			}
+		}
+		label, input {
+			display: block;
+			font-size: 0.9em;
+		}
+		label {
+			margin-bottom: 5px;
+		}
+		input {
+			border: 1px solid @borderGray;
+			margin-bottom: 12px;
+			width: 95%;
+			padding: 8px 2%;
+		}
+		.varification-footer {
+			.border-radiuses (0, 8px, 8px, 0);
+			background: #F0F0F0;
+			padding: 10px 15px;
+			a {
+				float: right;
+		    color: @textGray;
+				margin-top: 10px;
+				margin-right: 15px;
+				font-size: .9em;
+				&:hover {
+					cursor: default;
+					text-decoration: underline;
+				}
+			}
+			input[type="submit"] {
+				border: none;
+				background: @blueSearch;
+				display: inline-block;
+				font-size: .9em;
+				width: 112px;
+				padding: 6px 0;
+				text-align: center;
+				color: white;
+				float: right;
+				position: relative;
+				top: 2px;
+
+				.border-radius(3px);
+				.drop-shadow (0, 1px, 2px, 0, 0.9);
+				&:hover {
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}

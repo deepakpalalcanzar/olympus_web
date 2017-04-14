@@ -1,0 +1,56 @@
+<div class="add-adminuser-template" style="background-clip: padding-box;border-radius: 7px;box-shadow: 0 1px 5px #b3bac4;margin: 40px 2%;padding: 10px;min-height:700px;">
+<!-- upgrade header -->
+	<div class="title-mod">
+		<div class="title-fix">
+ 			<span>Add Admin User</span>
+            <a class="add-subscription">
+                <input type="button" value="Back" class="btn btn-primary" onclick=" window.history.back()">
+            </a>
+			<div class="clear"></div>
+		</div>
+	</div>
+
+<!-- settings content -->
+	<div class="main-mod" id="main-mod"> 
+        <div class="add-subscription account-page-container">
+
+            <div class="page-details-container clearfix">
+                <form action="/account/register" method="POST" class="add-subscription-form">
+
+                    <fieldset>
+
+                        <label for="full_name">Full Name</label>
+                        <input id="full_name" type="text" name="full_name" placeholder="Enter Full Name">
+
+                        <div class="permission-form" style="width:300px;">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="text" placeholder="Enter email" class="accounts" />
+                        </div>
+
+                        <label for="profile">Assign Profile</label>
+                        <select id="profile" name="profile">
+                        </select>
+                        
+    	                <label for="title"> Title </label>
+                        <input id="title" name="title" type="text" placeholder="Enter Title" />
+
+                        <label for="password"> Password </label>
+                        <input id="password" name="password" type="password" placeholder="Enter Password" />
+                    </fieldset>
+                </form>
+            </div>
+            <div class="account-save-button submit-adminuser">Save</div>
+        </div>
+		<div class="clear"></div> 
+	</div> 
+</div>
+
+
+
+
+
+
+
+
+
+

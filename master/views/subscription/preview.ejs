@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%- title %></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<%- rigging.css %>
+		<%- rigging.js %>
+		<script type="text/javascript" src="/js/moment.js"></script>
+		<script type="text/javascript" src="/js/fillout.js"></script>
+		
+		<!-- Good ol' css -->
+		<link rel="stylesheet" type="text/css" media="all" href="/stylesheets/reset.css"/>
+		<link rel="stylesheet" type="text/css" media="all" href="/stylesheets/layout.css"/>
+
+		<style>
+
+		</style>
+
+	</head>
+	<body>
+		<div id="topbar">
+				<div class="clearfix" id="top-nav">
+
+					<!-- logo and main navigation -->
+					<div id="main-nav">
+						<a class="logo-link" href="#"><img alt="Olympus" src="/images/Branding_12.png" class="main-logo"></a>
+						<!-- <ul class="clearfix">
+							<li>
+								<a href="http://www.olympus.io" title="cancel">
+									<div class="main-nav-div">
+										<img class="main-nav-imgs" src="/images/icon_dropdown_delete.png"/>
+										<span class="main-nav-span">Cancel</span>
+									</div>
+								</a>
+							</li>
+						</ul> -->
+					</div>
+
+				</div>
+			</div>
+		<div id="test-outlet">
+
+			<div style="background-clip: padding-box;border-radius: 7px;box-shadow: 0 1px 5px #b3bac4;margin: 40px 2%;padding: 10px;min-height:700px;" class="add-subscription-template">
+<!-- upgrade header -->
+	<div class="title-mod">
+		<div class="title-fix">
+ 			<span>Payment Summary</span>
+			<div class="clear"></div>
+		</div>
+	</div>
+
+<!-- settings content -->
+	<div id="main-mod" class="main-mod"> 
+        <div class="add-subscription account-page-container">
+
+            <div class="page-details-container clearfix">
+                <form class="add-subscription-form" method="POST" action="/subscription/payment">
+
+                    <table width="60%">
+                        <tr>
+                            <td width="15%">
+                                <label><b>Name</b></label>
+                                <input type="hidden" name="first_name" value="<%- first_name%>"/>
+                                <input type="hidden" name="last_name" value="<%- last_name%>"/>
+                                <input type="hidden" name="email" value="<%- email%>"/>
+                                <input type="hidden" name="address" value="<%- address%>"/>
+                                <input type="hidden" name="city" value="<%- city%>"/>
+                                <input type="hidden" name="customer_zip" value="<%- customer_zip%>"/>
+                                <input type="hidden" name="state" value="<%- state%>"/>
+                                <input type="hidden" name="card_type" value="<%- card_type%>"/>
+                                <input type="hidden" name="country_code" value="<%- country_code%>"/>
+                                <input type="hidden" name="customer_credit_card_number" value="<%- customer_credit_card_number%>"/>
+                                <input type="hidden" name="cc_cvv2_number" value="<%- cc_cvv2_number%>"/>
+                                <input type="hidden" name="cc_expiration_month" value="<%- cc_expiration_month%>"/>
+                                <input type="hidden" name="cc_expiration_year" value="<%- cc_expiration_year%>"/>
+                                <input type="hidden" name="amount" value="<%- amount%>"/>
+                                <input type="hidden" name="sub_id" value="<%- sub_id%>"/>
+                                <input type="hidden" name="temp" value="<%- temp%>"/>
+                                <input type="hidden" name="duration" value="<%- duration%>"/>
+                                <input type="hidden" name="is_enterprise" value="<%- is_enterprise%>"/>
+                                <input type="hidden" name="sub_name" value="<%- sub_name%>"/>
+                            </td>
+                            <td width="50%">
+                                <label><%- first_name%> <%- last_name%></label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="10%">
+                                <label><b>Address</b></label>
+                            </td>
+                            <td width="50%">
+                                <label><%- address%> <%- city%> <%- customer_zip%>
+                                     <%- state%> <%- country_code%> 
+                                </label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="5%">
+                                <label><b>Card Type</b></label>
+                            </td>
+                            <td width="55%">
+                                <label><%- card_type%></label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="5%">
+                                <label><b>Card No</b></label>
+                            </td>
+                            <td width="55%">
+                                <label><%- customer_credit_card_number%></label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="5%">
+                                <label><b>CVV2</b></label>
+                            </td>
+                            <td width="55%">
+                                <label><%- cc_cvv2_number%></label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="5%">
+                                <label><b>Card Expiration</b></label>
+                            </td>
+                            <td width="55%">
+                                <label><%- cc_expiration_month%> / <%- cc_expiration_year%></label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="5%">
+                                <label><b>Amount</b></label>
+                            </td>
+                            <td width="55%">
+                                <label>$<%- amount%></label>
+                            </td>
+                        </tr>
+
+                    </table>
+
+                    <input type="submit" value="Proceed" class="btn-primary"/>
+                    <a href="https://dev.olympus.io/subscription/index/<%- temp%>" title="cancel">
+                        Cancel
+                    </a>
+                </form>
+            </div>
+            <!-- <div class="account-save-button buy-subscription">Save</div> -->
+        </div>
+		<div class="clear"></div>
+	</div> 
+</div>
+
+		</div>
+		<!-- Template library -->
+		<%- rigging.templateLibrary %>
+	</body>
+</html>
+
+<script>
+	// Mast.raise({
+	// 	beforeRouteFn: function(){
+	// 		new Mast.components.ListSubscriptionPage({
+	// 			outlet: "#test-outlet"
+	// 		});
+	// 	}
+	// });
+</script>

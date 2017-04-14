@@ -1,0 +1,38 @@
+<div class="image-uploader-template change-profile-pic clearfix">
+  	<!--<img src="/images/icon_profilePicture_default@2x.png" class="profile-pic" /> 
+  	<div class="upload-logo">
+    <span>Upload Logo ( 100px x 100px jpg, gif or png format )</span>
+
+     <div class='uploader'></div>  
+	
+	
+  </div> -->
+
+  <div class="container">
+		<div class="avatarBox" style="background-image: url(https://localhost/images/avatar_anonymous.png); background-size: 100%; background-position: 0px 0px; background-repeat: no-repeat;">
+			<div class="thumbBox"></div>
+		</div>
+
+	    <div class="action">
+	        <input type="button" onclick="previewImage()" value="Preview" style="float: right"  >
+	        <input type="button" id="btnZoomIn" value="+" style="float: right; padding:0px 16px 2px 14px;" onclick="zoomIn()">
+	        <input type="button" id="btnZoomOut" value="-" style="float: right;padding:0px 16px 2px 14px;" onclick="zoomOut()">
+	    </div>
+	</div>
+
+	<input id="avatarImgage" type="file" name="uploadField" style="display:none;" onchange="avatarSelected(this)" />
+				
+	<div class="upload-logo-mod">
+		<span>
+			<a class="setting-browse-button" onclick="autoclick('avatarImgage')">
+				<img src="/images/button_browse@2x.png" />
+			</a>
+		</span>
+	</div>
+
+	<div class="cropped_profile_image"></div>
+
+    <!-- <div class="loading-spinner"></div> -->
+
+
+</div>

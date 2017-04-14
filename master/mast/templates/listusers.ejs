@@ -1,0 +1,62 @@
+<div class="listusers-template">
+	<div class="organization-bar clearfix main-mod" >
+		<div class="dir-files {{column1.className}} mast-critical header-color">
+			<span>{{column1.name}}</span>
+		</div>
+		<div class="dir-files {{column2.className}} mast-critical header-color">
+			<span>{{column2.name}}</span>
+		</div>
+		<div class="dir-files {{column4.className}} mast-critical header-color">
+			<span>{{column4.name}}</span>
+		</div>
+		<div class="dir-files {{column3.className}} mast-critical header-color">
+			<span>{{column3.name}}</span>
+		</div>
+		<div class="listusers-outlet" style="width:100%;float:left;"></div>
+	</div>	
+</div>
+
+<!-- user row template -->
+<div class="listusers-row-template clearfix" style="width:100%;">
+	{% if(name !=='error_123'){%}
+	<div class="dir-files list-user-name mast-critical">
+		<div class="margin-user-info">
+			{% if (avatar_image != null) { %}
+				<img class="listusers-pic" src="/images/profile/{{avatar_image}}" />
+			{% }else{ %}	
+				<img class="listusers-pic" src="/images/38.png" />
+			{% } %}	
+			<span class="list-text">{{ name }}</span>
+		</div>	
+	</div>
+	
+	<div class="dir-files list-enterprise-name mast-critical">
+		<div class="margin-enterprise">
+			<span class="listusers-text">
+				{{ enterprise_name === null ? 'Normal User' : enterprise_name  }}</span>
+		</div>	
+	</div>
+
+	<div class="dir-files list-impersonate-name mast-critical">
+		<div class="margin-impersonate">
+			<a href="#" class="impersonate-user">
+				<input class="btn-table-listing btn-primary" type="button" value="Impersonate">
+			</a>
+		</div>	
+	</div>
+	
+	<div class="dir-files list-subscription-name mast-critical">
+		<div class="margin-info">
+			<span class="listusers-text">
+			{% if (features) { %}
+				{{features}}
+			{% }else{ %}	
+				NA
+			{% } %}	
+			</span>
+		</div>	
+	</div>
+	{% }else{%}
+	 <div class="dir-files" style="font-size:13px;margin-left:50px;">No records found !</div>
+	{% }%}
+</div>

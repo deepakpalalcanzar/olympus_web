@@ -1,0 +1,17 @@
+# Ignore git repos
+.git
+**/.git
+**/.git/*
+**/.git/**/*
+
+# Ignore public web files
+**/public/**/*
+
+# Ignore LESS output
+**/mast/templates/less-output.css
+
+# unnecessary, but retained as references for next time I need to change something
+#**/*.css
+#**/public/**/*.js
+#**/public/**/*.png
+#**/public/**/*.jpeg

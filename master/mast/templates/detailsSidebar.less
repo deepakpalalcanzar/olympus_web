@@ -1,0 +1,483 @@
+.details-sidebar-template {
+	display: none;
+	position: fixed;
+	/*top: 153px;*/
+	top:0;
+	right: 0;
+	z-index: 100;
+	overflow: auto;
+	height: 100%;
+	width: 500px;
+	padding: 0px;
+	background: @gray;
+	.border-radius(7px);
+	.box-shadow(0, 1px, 5px);
+
+	div.tab {
+		float: left;
+		text-align: center;
+		padding-top: 15px;
+		padding-bottom: 15px;
+		width: 31%;
+
+		font: "ProzimanovaSemiBold",Helvetica,Ariel,sans-serif;
+		background-color: @borderGray;
+		border-left: 1px solid @borderGray;
+		border-bottom: 1px solid @borderGray;
+	}
+
+	div.tab.selected {
+		background-color: transparent;
+	}
+
+	.display-none {
+		display: none;
+	}
+
+	div.activity-tab{}
+	div.sharing-tab{width: 37%;}
+	span.details-date{color: @textGray;}
+
+
+	div.left-side {
+		width: 54%;
+		margin-top: 3%;
+		div.file-name {
+			height: 35px;
+
+			.file-img {
+				background-size: 60%;
+				float: left;
+			}
+			.directory-img {
+				float: left;
+			}
+
+			h2 {
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				width: 165px;
+				display: block;
+				float: left;
+				font: 1.4em "ProzimanovaSemiBold",Helvetica,Ariel,sans-serif;
+				color: @textGray;
+			}
+			.inode-name {
+				line-height: 35px;
+			}
+		}
+	}
+	div.right-side {
+		width: 46%;
+	}
+
+	div.top-container {
+		border-bottom: 1px solid @borderGray;
+		padding: 0 5px 0 10px;
+		position: relative;
+		min-height: 75px;
+
+		div.close-sidebar {
+			position: absolute;
+			width: 13px;
+			height: 18px;
+			background: url('/images/CloseIcon.png') no-repeat;
+			right: 20px;
+			top: 10px;
+			cursor: pointer;
+		}
+	}
+
+	div.left-side{
+		font-size: .7em;
+	}
+
+	div.file-detail{
+		margin-top: 5px;
+		margin-left: 12px;
+		padding-right: 10px;
+	}
+
+	div.file-detail a {
+		color:@blueLink;
+		font-family: "ProzimanovaSemiBold",Helvetica,Ariel,sans-serif;
+	}
+
+	span.file-size {
+		font-family: "ProzimanovaSemiBold",Helvetica,Ariel,sans-serif;
+		margin-left: 5px;
+	}
+
+	div.right-side a{
+		float:right;
+		position: relative;
+		margin-top: 30px;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+	div.activity-search-headers{
+		min-height: 49px;
+	}
+
+	div.activity-sharing-container{
+		position: relative;
+	}
+
+
+	span.activity-img{
+		background: url('/images/ActivityIcon.png') no-repeat center center;
+		padding: 10px 10px 7px 10px;
+	}
+
+	span.sharing-img{
+		background: url('/images/UsersIcon.png') no-repeat center center;
+		padding: 10px 12px 7px 12px;
+	}
+
+	div.clear-tab{
+		clear:both;
+	}
+
+	div.current-viewers-template{
+		padding-bottom: 15px;
+		width: 92%;
+		height: 10%;
+		min-height: 78px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	div.current-viewers-template h5{
+		padding-left: 0px;
+		color:@blueLink;
+		font: .9em "ProzimanovaSemiBold",Helvetica,Ariel,sans-serif;
+		padding-bottom: 10px;
+	}
+
+	div.current-viewers-template a{
+		float: left;
+		padding: 5px;
+		border-left: 1px solid @borderGray;
+	}
+
+	div.viewing-avatars{
+		border: 1px solid @borderGray;
+		height: 50px;
+	}
+
+	div.comment-container{
+		width: 85%;
+		float: left;
+	}
+
+	div.comment-user-avatar{
+		width: 15%;
+		float: left;
+		position: relative;
+		top: 0px;
+	}
+
+	div.comment-user-avatar a {
+		float: left;
+		padding: 3px;
+		border: 1px solid @borderGray;
+		background-color:white;
+	}
+
+	.no-activity {
+		color: @textGray;
+		font-size: 1.1em;
+		display: block;
+		margin: 40% auto 0;
+		width: 300px;
+		text-align: center;
+	}
+
+	div.commentRow-outlet{
+		background-color: #F8F9FA;
+		border: 1px solid #D7DBDC;
+		margin: 0 auto;
+		width: 90%;
+	}
+
+	div.comment-attire{
+		padding: 10px 0;
+		width:91%;
+		margin-left: auto;
+		margin-right: auto;
+		border-bottom: 1px solid @borderGray;
+	}
+
+	div.float-class{
+		float: left;
+	}
+
+
+	div.comment-container {
+		color: @textGray;
+		font-family: "ProzimanovaRegular",Helvetica,Ariel,sans-serif;
+		font-size: .8em;
+	}
+
+	span.comment-date{
+		font-size: .8em;
+		color: #B0B4B5;
+	}
+
+	div.comment-container a{
+		color: @blueLink;
+
+	}
+
+	p.details-text{
+		margin-top: .4em;
+		line-height: 1.2em;
+	}
+
+	div.comment-border{
+		width: 100%;
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	div.download-comment{
+		color: @textGray;
+		font-family: "ProzimanovaRegular",Helvetica,Ariel,sans-serif;
+		font-size: .9em;
+		width:95%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	div.download-comment a{
+		color: @blueLink;
+	}
+
+	div.comment-form {
+		padding: 13px 15px;
+	}
+
+	div.comment-form textarea{
+		padding:10px;
+		border: 1px solid @borderGray;
+		width: 95%;
+		height: 55px;
+		resize: none;
+	}
+
+	div.comment-form span {
+		color: @textGray;
+		font-family: "ProzimanovaRegular",Helvetica,Ariel,sans-serif;
+		font-size: .9em;
+	}
+
+	div.comment-form-text{
+		padding:5px;
+	}
+
+	div.download_icon{
+		background: #F1F2F4 url('/images/UploadFile.png') no-repeat center center;
+		width: 60px;
+		height: 20px;
+		float: left;
+	}
+	div.download_details{
+		float: left;
+	}
+
+	span.postComment_button{
+
+	}
+	img.addSharedUser-button {
+		display: block;
+		cursor: pointer;
+	}
+	a.postComment_title{
+		display: none;
+	}
+
+	div.comment-form-fix{
+		padding-left: 5px;
+	}
+
+	div.comment-user-avatar-sharing{
+		margin-top:10px;
+	}
+
+	div.permissionRow-template{
+		padding: 8px 0;
+		border-bottom: 1px solid @borderGray;
+		margin: 0 auto;
+		width: 91%;
+
+	}
+	div.sharing-form{
+		padding: 10px;
+	}
+
+	div.sharing-form textarea{
+		border: 1px solid @borderGray;
+		width: 95%;
+		height: 20px;
+		padding: 1% 2%;
+		resize: none;
+	}
+
+	.sharing-form input {
+		border: 1px solid @borderGray;
+		width: 95%;
+		height: 20px;
+		padding: 1% 2%;
+		resize: none;
+	}
+
+	div.sharing-form span {
+		color: @textGray;
+		font-family: "ProzimanovaRegular",Helvetica,Ariel,sans-serif;
+		font-size: .9em;
+	}
+
+	div.comment-container-sharing {
+		color: @textGray;
+		font-family: "ProzimanovaRegular",Helvetica,Ariel,sans-serif;
+		font-size: .9em;
+		float: left;
+		line-height: 48px;
+	}
+
+
+	div.comment-container-sharing a{
+		color: @textGray;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		width: 140px;
+		display: block;
+
+	}
+
+
+	div.detail-container-sharing a{
+		color: @textGray;
+		line-height: 48px;
+	}
+
+	div.detail-container-sharing img {
+		display: inline;
+	}
+
+}
+
+div.directory-img {
+	height: 35px;
+	width: 50px;
+	background: url('/images/FolderIcon.png') center center no-repeat;
+}
+div.file-img {
+	height: 35px;
+	width: 50px;
+	// background: url('/images/FileIcon.png') center center no-repeat;
+}
+
+div.commentRow-outlet {
+	overflow: auto;
+	height: 72%;
+	min-height: 300px;
+}
+div.permissionRow-outlet {
+	overflow: auto;
+	background-color: #F8F9FA;
+	border: 1px solid #D7DBDC;
+	margin: 0 auto;
+	width: 93%;
+}
+
+a.moreActions-button:hover {
+	cursor: pointer;
+}
+a.permission-edit:hover {
+	cursor: pointer;
+}
+h6.remove-shared-user:hover {
+	cursor: pointer
+}
+
+// height for sidebar
+.top-container {
+	height: 10%;
+}
+
+.activity-sharing-container {
+	height: 90%;
+
+	.activity-sharing-headers {
+		height: 6%;
+	}
+
+	.activity-sharing-outlet {
+		height: 94%;
+
+		.activity-template {
+			height: 100%;
+
+			.quotas-outlet {
+				height: 8%;
+			}
+
+			.viewers-activity-outlet {
+				height: 92%;
+
+                &.no-quota {
+                    padding-top: 10px;
+                }
+			}
+		}
+	}
+
+	.inodeComments-template {
+		height: 86%;
+	}
+	.sharing-template, .permission-outlet, .permission-template {
+		height: 100%;
+	}
+	.access {
+		height: 2%;
+		min-height: 15px;
+	}
+	.permissionRow-outlet {
+		height: 66%;
+		min-height: 300px;
+	}
+
+	.sharing-form {
+
+	}
+}
+
+span.num-comments {
+	background: url('/images/icon_comment.png') no-repeat;
+}
+
+.span-version{
+	float: right;
+	width: 80px;	
+}
+
+.span-comment{
+	float: right;
+	width: 61px;	
+	background: url('/images/comment_version.png') no-repeat;
+	text-align:center;
+	height: 20px;
+}
+
+.span-delete{
+	float: right;
+	width: 61px;	
+	background: url('/images/delete_version.png') no-repeat;
+	height: 20px;
+	cursor:pointer;
+}

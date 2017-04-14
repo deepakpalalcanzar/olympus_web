@@ -1,0 +1,75 @@
+.users-details-template {
+	fieldset{
+		border: none;
+	}
+	.page-details-container {
+		min-height: 500px;
+		.change-profile-pic {
+			float: left;
+			img.profile-pic {
+				width: 98px;
+				float: left;
+			}
+		}
+	}
+}
+
+.ent-user-details-container {
+		.ent-user-pic {
+			background: white;
+			.drop-shadow(2px, 2px, 2px, 0, .10);
+			padding: 3px;
+			border: 1px solid @borderGray;
+			width: 100px;
+			float: left;
+			.border-radius(2px);
+		}
+		.enterprises-details {
+			float: left;
+			margin-left: 15px;
+			padding: 7px 0;
+			h3, span {
+				cursor: pointer;
+				display: block;
+				color: @textGray;
+			}
+			h3 {
+				font-size: 1.3em;
+			}
+			.enterprises-title {
+				margin-top: 1px;
+				font-size: .9em;
+			}
+			.enterprises-email, .enterprises-phonenumber {
+				margin-top: 10px;
+				font-size: 0.9em;
+				/*padding-left: 20px;*/
+			}
+		}
+	}
+
+	.user-details-text{
+		  width:70%;
+		  line-height:35px;
+		  color: @textGray;
+		  padding-top: 15px;
+	}
+.account-save-button {
+	border: none;
+	background: @textGray;
+	color: #FFF;
+	display: block;
+	font: 1em 'ProzimanovaSemiBold',Helvetica, Arial, sans-serif;
+	margin: 15px 0 0 60px;
+	padding: 7px 0;
+	text-align: center;
+	width: 125px;
+
+	.border-radius(5px);
+	.drop-shadow (0, 1px, 2px, 0, 0.9);
+	.text-shadow(0 -1px 1px rgba(0, 0, 0, 0.25));
+
+	&:hover {
+		cursor: pointer;
+	}
+}

@@ -1,0 +1,57 @@
+/* inodeActivity.m.less */
+.inode-activity-mobile-template {
+
+	.loading-spinner{
+		width: 32px;
+		height: 32px;
+		margin: 0 auto;
+		margin-top: 100px;
+		background: url('/images/loading-spinner.gif') no-repeat;
+		background-size: 100%;
+	}
+
+	.emptyHTML {
+		margin: 0 auto;
+		margin-top: 150px;
+		text-align: center;
+	}
+
+	.inode-activity-items-region {
+
+	}
+}
+
+.inode-activity-item-mobile-template {
+	background: #FFF;
+	border-bottom: 1px solid @borderGray;
+	color: @textGray;
+	padding: 10px 4%;
+
+	// activity image
+	img {
+		border: 1px solid @borderGray;
+		float: left;
+		height: 35px; 
+		padding: 3px;
+		width: 35px;
+
+		.border-radius(3px);
+		.drop-shadow (0, 1px, 1px, 0, 0.05);
+	}
+
+	// activity info
+	.inode-info-container {
+		float: left;
+		width: 80%;
+		padding-left: 15px;
+		
+		p {
+			margin-bottom: 5px;
+		}
+
+		span {
+			font-size: 0.75em;
+			-webkit-text-size-adjust: none;
+		}
+	}
+}

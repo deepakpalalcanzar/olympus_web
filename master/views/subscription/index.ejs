@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title><%- title %></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<%- rigging.css %>
+		<%- rigging.js %>
+		<script type="text/javascript" src="/js/moment.js"></script>
+		<script type="text/javascript" src="/js/fillout.js"></script>
+			<script type="text/javascript" src="/js/cropbox.js"></script>
+
+		<!-- Good ol' css -->
+		<link rel="stylesheet" type="text/css" media="all" href="/stylesheets/reset.css"/>
+		<link rel="stylesheet" type="text/css" media="all" href="/stylesheets/layout.css"/>
+		<style>
+		#mydiv {  
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	min-height: 100%;
+	min-width: 100%;
+	background-image: url("images/loading-spinner.gif");
+	background-position:center center;
+	background-repeat:no-repeat;
+	background-color: grey;
+	z-index: 500 !important;
+	opacity: 0.8;
+	overflow: hidden;
+ }
+.ajax-loader {
+    position: absolute;
+    left: 36%;
+    top: 50%;
+    margin-left: -32px; /* -1 * image width / 2 */
+    margin-top: -32px;  /* -1 * image height / 2 */
+    display: block;     
+}</style>
+	</head>
+
+	<body>
+
+		<div id="mydiv">
+			<div class="ajax-loader" style="width: 400px;height: 40px;background-color: #fff;padding: 18px 0px 0px 14px;">
+				<p > Please wait until we are processing your request.... </p>
+			</div>
+		</div>
+
+		<div id="topbar">
+			<div class="clearfix" id="top-nav">
+				<!-- logo and main navigation -->
+				<div id="main-nav">
+					<a class="logo-link" href="#"><img alt="Olympus" src="/images/Branding_12.png" class="main-logo"></a>
+					<ul class="clearfix">
+						<li>
+							<a href="http://www.olympus.io" title="cancel">
+								<div class="main-nav-div">
+									<img class="main-nav-imgs" src="/images/icon_dropdown_delete.png"/>
+									<span class="main-nav-span">Cancel</span>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<div id="test-outlet">
+			<div style="background-clip: padding-box;border-radius: 7px;box-shadow: 0 1px 5px #b3bac4;margin: 40px 2%;padding: 15px;min-height:700px;" class="list-subscription-page-template  mast-ui-table">
+				
+				<div class="subscription-title title-mod">
+					<div class="title-fix">
+ 						<span>Subscription Plans</span>
+ 						<a class="add-subscription" href="https://dev.olympus.io" title="cancel">
+ 							<input type="button" value="Cancel" class="btn btn-primary">
+						</a>
+						<div class="clear"></div>
+					</div>
+				</div>
+
+				<div class="list-subscription-table-region"><div class="list-subscription-template">
+					<div class="organization-bar clearfix main-mod">
+					<div class="dir-files list-features-column header-color mast-critical mast-column-header">
+						<span>Features</span>
+					</div>
+		<div class="dir-files list-price-column header-color mast-critical mast-column-header"><span>Price</span></div>
+		<div class="dir-files list-duration-column header-color mast-critical mast-column-header"><span>Duration</span></div>
+		<div class="dir-files list-sub-users-column header-color mast-critical mast-column-header"><span>User's Limit</span></div>
+		<div class="dir-files list-quota-column header-color mast-critical mast-column-header"><span>Quota Limit (GB)</span></div>
+		<div class="dir-files list-btn-column header-color mast-critical mast-column-header"><span>Buy</span></div>
+
+
+
+
+	<div style="width:100%;" class="list-subscription-outlet clearfix">
+
+		<% subscription.forEach(function(plans){ %>
+
+		<div style="width:100%;float:left;" class="list-subscription-row-template clearfix">
+	<div class="dir-files list-features-column mast-critical mast-column-header features-column-text"><span><%- plans.features %></span></div>
+	<div class="dir-files list-price-column mast-critical mast-column-header"><span>
+			
+				<% if (plans.price==='' || plans.price==='0') { 
+					var action='/subscription/free/';
+				%>
+				Free
+			<% }else{
+				var action='/subscription/paid/';
+			 %>	
+				 $<%- plans.price %>
+			<% } %>	
+				
+	</span></div>
+	<div class="dir-files list-duration-column mast-critical mast-column-header"><span>
+		<%- plans.durat %>
+	</span></div>
+	<div class="dir-files list-sub-users-column mast-critical mast-column-header"><span>
+		<%- plans.users_limit %>
+	</span></div>
+	<div class="dir-files list-quota-column mast-critical mast-column-header"><span>
+		<%- plans.quota == '10000000000' ? 'unlimited' : plans.quota %>
+	</span></div>
+	<div class="dir-files list-btn-column">
+		<div class="subscribe-option-buttons">
+			<a class="btn-primary" href="<%- action+ plans.id%>/<%- temp_id%>"><span>Buy now<span></span></span></a>
+		</div>
+	</div>
+</div>
+<%	}); %>
+<div><spna style="margin-left:30px;">* M Month, Y Year</span></div>
+</div>
+</div>	
+</div></div>
+</div>
+
+		</div>
+		<!-- Template library -->
+		<%- rigging.templateLibrary %>
+	</body>
+</html>
+
+<script>
+	$(window).load(function(){
+		$("#mydiv").hide();
+	});
+
+</script>

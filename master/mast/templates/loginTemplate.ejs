@@ -1,0 +1,29 @@
+<div class="login-template">
+	<div class="login-box-head">Log In</div>
+
+	<!-- form section -->
+	<form class="login-box-body" action="/auth/login" method="post">
+
+		{% if (loginError) { %} 
+			<p class="error-message">{{ loginErrorMsg }}
+			</p>
+		{% } %}
+
+		<label for="email">Email address:</label>
+		<input name="api_key" type="hidden" value="{{ api_key }}" />
+		<input name="response_type" type="hidden" value="{{ response_type }}" />
+		<input name="state" type="hidden" value="{{ state }}" />
+		<input name="redirect_url" type="hidden" value="{{ redirect_url }}" />
+
+		<input name="email" type="text" value="{{ email }}" placeholder="What is your email address"
+					class="login-input-field {% if (loginError) { %} error-input {% } %}" />
+		<label for="prometheus">Password:</label>
+		<input name="prometheus" placeholder="What is your password?" id="prometheus" type="password"
+					class="login-input-field {% if (loginError) { %} error-input {% } %}" />
+	</form>
+	<!-- footer section -->
+	<div class="login-box-footer clearfix">
+		<a class="signin-button"><img src="/images/button_signIn@2x.png" class="signin-button"/></a>
+		<a class="reset-password" href="/auth/resetPassword">Forgot your password?</a>
+	</div>
+</div>

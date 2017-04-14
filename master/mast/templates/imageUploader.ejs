@@ -1,0 +1,19 @@
+<div class="image-uploader-template change-profile-pic clearfix">
+  <div class="container">
+        <div class="avatarBox" style="{% if (Mast.Session.Account.avatar_image !== null){ %} background-image: url({{ Mast.Socket.baseurl }}/images/profile/{{ Mast.Session.Account.avatar_image }}); {% } else { %} background-image: url({{ Mast.Socket.baseurl }}/images/avatar_anonymous.png); {% } %} background-size: 100%; background-position: 0px 0px; background-repeat: no-repeat;">
+		<div class="thumbBox"></div>
+	</div>
+        <div class="action">
+	    <input type="button" onclick="previewImage()" style="float: right;padding:0px 8px 2px 7px;" value="Preview" style="float: right"  >
+	    <input type="button" id="btnZoomIn" value="+" style="float: right; padding:0px 16px 2px 14px;" onclick="zoomIn()">
+	    <input type="button" id="btnZoomOut" value="-" style="float: right;padding:0px 16px 2px 14px;" onclick="zoomOut()">
+            <div class="upload-logo-mod">
+                <input type="button"  class="setting-browse-button" onclick="autoclick('avatarImgage')" style="float: right;padding:0px 8px 2px 7px;" value="Browse" style="float: right"  >
+            </div>
+        </div>
+  </div>
+  <div style="margin-left: 50px;">
+        <input id="avatarImgage" type="file" name="uploadField" style="display:none;" onchange="avatarSelected(this)" />
+        <div class="cropped_profile_image"></div>
+  </div>
+</div>

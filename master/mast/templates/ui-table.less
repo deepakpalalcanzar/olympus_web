@@ -1,0 +1,55 @@
+/*********************************
+*
+*	ui-tableview
+*
+**********************************/
+
+.mast-ui-table {
+	border-top: 1px solid @borderGray;
+	border-bottom: 1px solid @borderGray;
+	
+	.dir-left, .dir-middle, .dir-right, .file-left, .file-middle, .file-right {
+		float: left;
+	}
+
+	.dir-left, .file-left {
+		width: 45%;
+	}
+
+	.dir-middle, .file-middle {
+		width: 22%;
+	}
+	.dir-right, .file-right {
+		width: 33%;
+	}
+
+	div.organization-bar {
+		background: @bodyOffWhite;
+		position: relative;
+		z-index: 1;
+		.box-shadow(0, 1px, 3px);
+
+
+		div.dir-files, div.modified, div.information  {
+			font: .6em "ProzimanovaSemiBold",Helvetica,Arial,sans-serif;
+			padding: 4px 0;
+		}
+		div.dir-files span {
+			margin-left: 20px;
+		}
+	}
+	
+	div.list-outlet {
+		background:white;
+	}
+}
+
+.mast-ui-table.mast-backgrounded {
+/*	.mast-non-critical {
+		display:none;
+	}*/
+	
+	.mast-critical.mast-column, .mast-critical.mast-column-header {
+/*		width:auto!important;*/
+	}
+}

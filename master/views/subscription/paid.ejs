@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%- title %></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<%- rigging.css %>
+		<%- rigging.js %>
+		<script type="text/javascript" src="/js/moment.js"></script>
+		<script type="text/javascript" src="/js/fillout.js"></script>
+		
+		<!-- Good ol' css -->
+		<link rel="stylesheet" type="text/css" media="all" href="/stylesheets/reset.css"/>
+		<link rel="stylesheet" type="text/css" media="all" href="/stylesheets/layout.css"/>
+
+		<style>
+
+		</style>
+
+	</head>
+	<body>
+		<div id="topbar">
+				<div class="clearfix" id="top-nav">
+
+					<!-- logo and main navigation -->
+					<div id="main-nav">
+						<a class="logo-link" href="#"><img alt="Olympus" src="/images/Branding_12.png" class="main-logo"></a>
+						<!-- <ul class="clearfix">
+							<li>
+								<a href="http://www.olympus.io" title="cancel">
+									<div class="main-nav-div">
+										<img class="main-nav-imgs" src="/images/icon_dropdown_delete.png"/>
+										<span class="main-nav-span">Cancel</span>
+									</div>
+								</a>
+							</li>
+						</ul> -->
+					</div>
+
+				</div>
+			</div>
+		<div id="test-outlet">
+
+			<div style="background-clip: padding-box;border-radius: 7px;box-shadow: 0 1px 5px #b3bac4;margin: 40px 2%;padding: 10px;min-height:700px;" class="add-subscription-template">
+<!-- upgrade header -->
+	<div class="title-mod">
+		<div class="title-fix">
+ 			<span>Payment</span>
+			<div class="clear"></div>
+		</div>
+	</div>
+
+<!-- settings content -->
+	<div id="main-mod" class="main-mod"> 
+        <div class="add-subscription account-page-container">
+
+            <div class="page-details-container clearfix">
+                <form id="paid-form" class="add-subscription-form" method="POST" action="/subscription/proceed">
+
+                    <table width="60%">
+                        <tr>
+                            <td colspan="2" style="background:#5887BA;color:white;padding:4px;">Basic Details</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="first_name">First Name</label>
+                                <input type="text" name="first_name" id="first_name" value="<%- f_name%>" readonly>
+                                <input type="hidden" name="sub_id" id="sub_id" value="<%- id%>">
+                                <input type="hidden" name="temp" id="temp" value="<%- temp %>">
+                                <input type="hidden" name="email" id="email" value="<%- email %>">
+                                <input type="hidden" name="is_enterprise" id="is_enterprise" value="<%- is_enterprise %>">
+                                <input type="hidden" name="duration" id="duration" value="<%- duration %>">
+                                <input type="hidden" name="sub_name" id="sub_name" value="<%- sub_name %>">
+                            </td>
+                            <td>
+                                <label for="last_name">Last Name</label>
+                                <input type="text" name="last_name" id="last_name" value="<%- l_name%>" readonly>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="address">Address</label>
+                                <input type="text" placeholder="Enter Address" name="address" id="address">
+                            </td>
+                            <td>
+                                <label for="city">City</label>
+                                <input type="text" placeholder="Enter city" name="city" id="city">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="customer_zip">Zip</label>
+                                <input type="text" placeholder="Enter zip" name="customer_zip" id="customer_zip">
+                            </td>
+                            <td>
+                                <label for="state">State</label>
+                                <input type="text" placeholder="Enter state" name="state" id="state">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="country_code">Country</label>
+                        <select class="duration-dropdown" name="country_code" id="country_code">
+                            <option value="GB">United Kingdom</option>
+<option value="US">United States</option>
+<option value="AF">Afghanistan</option>
+<option value="AL">Albania</option>
+<option value="DZ">Algeria</option>
+<option value="AS">American Samoa</option>
+<option value="AD">Andorra</option>
+<option value="AO">Angola</option>
+<option value="AI">Anguilla</option>
+<option value="AQ">Antarctica</option>
+<option value="AG">Antigua And Barbuda</option>
+<option value="AR">Argentina</option>
+<option value="AM">Armenia</option>
+<option value="AW">Aruba</option>
+<option value="AU">Australia</option>
+<option value="AT">Austria</option>
+<option value="AZ">Azerbaijan</option>
+<option value="BS">Bahamas</option>
+<option value="BD">Bangladesh</option>
+<option value="BB">Barbados</option>
+<option value="BY">Belarus</option>
+<option value="BE">Belgium</option>
+<option value="BZ">Belize</option>
+<option value="BJ">Benin</option>
+<option value="BM">Bermuda</option>
+<option value="BT">Bhutan</option>
+<option value="BO">Bolivia</option>
+<option value="BA">Bosnia And Herzegowina</option>
+<option value="BW">Botswana</option>
+<option value="BV">Bouvet Island</option>
+<option value="BR">Brazil</option>
+<option value="IO">British Indian Ocean Territory</option>
+<option value="BN">Brunei Darussalam</option>
+<option value="BG">Bulgaria</option>
+<option value="BF">Burkina Faso</option>
+<option value="BI">Burundi</option>
+<option value="KH">Cambodia</option>
+<option value="CM">Cameroon</option>
+<option value="CA">Canada</option>
+<option value="CV">Cape Verde</option>
+<option value="KY">Cayman Islands</option>
+<option value="CF">Central African Republic</option>
+<option value="TD">Chad</option>
+<option value="CL">Chile</option>
+<option value="CN">China</option>
+<option value="CX">Christmas Island</option>
+<option value="CC">Cocos (Keeling) Islands</option>
+<option value="CO">Colombia</option>
+<option value="KM">Comoros</option>
+<option value="CG">Congo</option>
+<option value="CD">Congo, The Democratic Republic Of The</option>
+<option value="CK">Cook Islands</option>
+<option value="CR">Costa Rica</option>
+<option value="CI">Cote D'Ivoire</option>
+<option value="HR">Croatia (Local Name: Hrvatska)</option>
+<option value="CU">Cuba</option>
+<option value="CY">Cyprus</option>
+<option value="CZ">Czech Republic</option>
+<option value="DK">Denmark</option>
+<option value="DJ">Djibouti</option>
+<option value="DM">Dominica</option>
+<option value="DO">Dominican Republic</option>
+<option value="TP">East Timor</option>
+<option value="EC">Ecuador</option>
+<option value="EG">Egypt</option>
+<option value="SV">El Salvador</option>
+<option value="GQ">Equatorial Guinea</option>
+<option value="ER">Eritrea</option>
+<option value="EE">Estonia</option>
+<option value="ET">Ethiopia</option>
+<option value="FK">Falkland Islands (Malvinas)</option>
+<option value="FO">Faroe Islands</option>
+<option value="FJ">Fiji</option>
+<option value="FI">Finland</option>
+<option value="FR">France</option>
+<option value="FX">France, Metropolitan</option>
+<option value="GF">French Guiana</option>
+<option value="PF">French Polynesia</option>
+<option value="TF">French Southern Territories</option>
+<option value="GA">Gabon</option>
+<option value="GM">Gambia</option>
+<option value="GE">Georgia</option>
+<option value="DE">Germany</option>
+<option value="GI">Gibraltar</option>
+<option value="GH">Ghana</option>
+<option value="GR">Greece</option>
+<option value="GL">Greenland</option>
+<option value="GD">Grenada</option>
+<option value="GP">Guadeloupe</option>
+<option value="GU">Guam</option>
+<option value="GT">Guatemala</option>
+<option value="GN">Guinea</option>
+<option value="GW">Guinea-Bissau</option>
+<option value="GY">Guyana</option>
+<option value="HT">Haiti</option>
+<option value="HM">Heard And Mc Donald Islands</option>
+<option value="VA">Holy See (Vatican City State)</option>
+<option value="HN">Honduras</option>
+<option value="HK">Hong Kong</option>
+<option value="HU">Hungary</option>
+<option value="IS">Iceland</option>
+<option value="IN">India</option>
+<option value="ID">Indonesia</option>
+<option value="IR">Iran (Islamic Republic Of)</option>
+<option value="IQ">Iraq</option>
+<option value="IE">Ireland</option>
+<option value="IL">Israel</option>
+<option value="IT">Italy</option>
+<option value="JM">Jamaica</option>
+<option value="JP">Japan</option>
+<option value="JO">Jordan</option>
+<option value="KZ">Kazakhstan</option>
+<option value="KE">Kenya</option>
+<option value="KI">Kiribati</option>
+<option value="KP">Korea, Democratic People's Republic Of</option>
+<option value="KR">Korea, Republic Of</option>
+<option value="KW">Kuwait</option>
+<option value="KG">Kyrgyzstan</option>
+<option value="LA">Lao People's Democratic Republic</option>
+<option value="LV">Latvia</option>
+<option value="LB">Lebanon</option>
+<option value="LS">Lesotho</option>
+<option value="LR">Liberia</option>
+<option value="LY">Libyan Arab Jamahiriya</option>
+<option value="LI">Liechtenstein</option>
+<option value="LU">Luxembourg</option>
+<option value="LT">Lithuania</option>
+<option value="MO">Macau</option>
+<option value="MK">Macedonia, Former Yugoslav Republic Of</option>
+<option value="MG">Madagascar</option>
+<option value="MW">Malawi</option>
+<option value="MY">Malaysia</option>
+<option value="MV">Maldives</option>
+<option value="ML">Mali</option>
+<option value="MT">Malta</option>
+<option value="MH">Marshall Islands</option>
+<option value="MQ">Martinique</option>
+<option value="MR">Mauritania</option>
+<option value="MU">Mauritius</option>
+<option value="YT">Mayotte</option>
+<option value="MX">Mexico</option>
+<option value="FM">Micronesia</option>
+<option value="MD">Moldova, Republic Of</option>
+<option value="MC">Monaco</option>
+<option value="MN">Mongolia</option>
+<option value="MS">Montserrat</option>
+<option value="MA">Morocco</option>
+<option value="MZ">Mozambique</option>
+<option value="MM">Myanmar</option>
+<option value="NA">Namibia</option>
+<option value="NR">Nauru</option>
+<option value="NP">Nepal</option>
+<option value="NL">Netherlands</option>
+<option value="AN">Netherlands Antilles</option>
+<option value="NC">New Caledonia</option>
+<option value="NZ">New Zealand</option>
+<option value="NI">Nicaragua</option>
+<option value="NE">Niger</option>
+<option value="NG">Nigeria</option>
+<option value="NU">Niue</option>
+<option value="NF">Norfolk Island</option>
+<option value="MP">Northern Mariana Islands</option>
+<option value="NO">Norway</option>
+<option value="OM">Oman</option>
+<option value="PK">Pakistan</option>
+<option value="PW">Palau</option>
+<option value="PA">Panama</option>
+<option value="PG">Papua New Guinea</option>
+<option value="PY">Paraguay</option>
+<option value="PE">Peru</option>
+<option value="PH">Philippines</option>
+<option value="PN">Pitcairn</option>
+<option value="PL">Poland</option>
+<option value="PT">Portugal</option>
+<option value="PR">Puerto Rico</option>
+<option value="QA">Qatar</option>
+<option value="RE">Reunion</option>
+<option value="RO">Romania</option>
+<option value="RU">Russian Federation</option>
+<option value="RW">Rwanda</option>
+<option value="KN">Saint Kitts And Nevis</option>
+<option value="LC">Saint Lucia</option>
+<option value="VC">Saint Vincent And The Grenadines</option>
+<option value="WS">Samoa</option>
+ <option value="SM">San Marino</option>
+<option value="ST">Sao Tome And Principe</option>
+<option value="SA">Saudi Arabia</option>
+ <option value="SN">Senegal</option>
+<option value="SC">Seychelles</option>
+ <option value="SL">Sierra Leone</option>
+<option value="SG">Singapore</option>
+<option value="SK">Slovakia (Slovak Republic)</option>
+<option value="SI">Slovenia</option>
+<option value="SB">Solomon Islands</option>
+<option value="SO">Somalia</option>
+<option value="ZA">South Africa</option>
+<option value="GS">South Georgia, South Sandwich Islands</option>
+<option value="ES">Spain</option>
+<option value="LK">Sri Lanka</option>
+<option value="SH">St. Helena</option>
+<option value="PM">St. Pierre And Miquelon</option>
+<option value="SD">Sudan</option>
+<option value="SR">Suriname</option>
+<option value="SJ">Svalbard And Jan Mayen Islands</option>
+<option value="SZ">Swaziland</option>
+<option value="SE">Sweden</option>
+<option value="CH">Switzerland</option>
+<option value="SY">Syrian Arab Republic</option>
+<option value="TW">Taiwan</option>
+<option value="TJ">Tajikistan</option>
+<option value="TZ">Tanzania, United Republic Of</option>
+<option value="TH">Thailand</option>
+<option value="TG">Togo</option>
+<option value="TK">Tokelau</option>
+<option value="TO">Tonga</option>
+<option value="TT">Trinidad And Tobago</option>
+<option value="TN">Tunisia</option>
+<option value="TR">Turkey</option>
+<option value="TM">Turkmenistan</option>
+<option value="TC">Turks And Caicos Islands</option>
+<option value="TV">Tuvalu</option>
+<option value="UG">Uganda</option>
+<option value="UA">Ukraine</option>
+<option value="AE">United Arab Emirates</option>
+<option value="UM">United States Minor Outlying Islands</option>
+<option value="UY">Uruguay</option>
+<option value="UZ">Uzbekistan</option>
+<option value="VU">Vanuatu</option>
+<option value="VE">Venezuela</option>
+<option value="VN">Viet Nam</option>
+<option value="VG">Virgin Islands (British)</option>
+<option value="VI">Virgin Islands (U.S.)</option>
+<option value="WF">Wallis And Futuna Islands</option>
+<option value="EH">Western Sahara</option>
+<option value="YE">Yemen</option>
+<option value="YU">Yugoslavia</option>
+<option value="ZM">Zambia</option>
+<option value="ZW">Zimbabwe</option>
+                        </select>
+                            </td>
+                            
+                        </tr>
+
+                        <tr>
+                            <td colspan="2" style="background:#5887BA;color:white;padding:4px;">Card Details</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="card_type">Credit Card Type</label>
+                            <select class="duration-dropdown" name="card_type" id="card_type">
+                            <option value="visa">Visa</option>
+                                <option value="master_card">Master Card</option>
+                                <option value="discocer">Discover</option>
+                                <option value="visa">Visa</option>
+                        </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="customer_credit_card_number">Credit Card No</label>
+                                <input type="text" placeholder="Enter card no." name="customer_credit_card_number" id="customer_credit_card_number">
+                            </td>
+                            <td>
+                                <label for="cc_cvv2_number">Card Varification No</label>
+                                <input type="text" placeholder="Enter CVV" name="cc_cvv2_number" id="cc_cvv2_number">
+
+                                <!-- <label for="amount">Amount</label> -->
+                                <input type="hidden" name="amount" id="amount" value="<%- amount%>" readonly>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="cc_expiration_month">Expiration Month</label>
+                        <select class="duration-dropdown" name="cc_expiration_month" id="cc_expiration_month">
+                                <option value="">mm</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                        </select>
+                            </td>
+                            <td>
+                                <label for="cc_expiration_year">Expiration Year</label>
+                        <select class="duration-dropdown" name="cc_expiration_year" id="cc_expiration_year">
+                             <option value="">yyyy</option>
+                             <option value="2012">2012</option>
+                             <option value="2013">2013</option>
+                             <option value="2014">2014</option>
+                             <option value="2015">2015</option>
+                             <option value="2016">2016</option>
+                             <option value="2017">2017</option>
+                             <option value="2018">2018</option>
+                             <option value="2019">2019</option>
+                             <option value="2020">2020</option>
+                        </select>
+                            </td>
+                        </tr>
+
+                    </table>
+
+                    <input type="button" value="Proceed" class="btn-primary" onClick="validateForm()"/>
+                    <a href="https://dev.olympus.io/subscription/index/<%- temp%>" title="cancel">
+                        Cancel
+                    </a>
+                </form>
+            </div>
+            <!-- <div class="account-save-button buy-subscription">Save</div> -->
+        </div>
+		<div class="clear"></div> 
+	</div> 
+</div>
+
+		</div>
+		<!-- Template library -->
+		<%- rigging.templateLibrary %>
+	</body>
+</html>
+
+<script>
+function validateForm(){
+    if (this.$('input[name="first_name"]').val() === '') {
+            alert('Please enter first name !');
+            return false;
+        }else if(this.$('input[name="last_name"]').val() === ''){
+            alert('Please enter last name !');
+            return false;
+        }else if(this.$('input[name="address"]').val() === ''){
+            alert('Please enter address !');
+            return false;
+        }else if(this.$('input[name="city"]').val() === ''){
+            alert('Please enter city !');
+            return false;
+        }else if(this.$('input[name="customer_zip"]').val() === ''){
+            alert('Please enter zip !');
+            return false;
+        }else if(this.$('input[name="state"]').val() === ''){
+            alert('Please enter state !');
+            return false;
+        }else if(this.$('select[name="country_code"]').val() === ''){
+            alert('Please select country !');
+            return false;
+        }else if(this.$('select[name="card_type"]').val() === ''){
+            alert('Please select card type !');
+            return false;
+        }else if(this.$('input[name="customer_credit_card_number"]').val() === ''){
+            alert('Please enter card number !');
+            return false;
+        }else if(this.$('input[name="cc_cvv2_number"]').val() === ''){
+            alert('Please enter cvv number !');
+            return false;
+        }else if(this.$('select[name="cc_expiration_month"]').val() === ''){
+            alert('Please select a month !');
+            return false;
+        }else if(this.$('select[name="cc_expiration_year"]').val() === ''){
+            alert('Please select a year !');
+            return false;
+        }else{
+            $('#paid-form').submit();
+        }
+} 
+</script>

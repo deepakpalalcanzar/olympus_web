@@ -1,0 +1,42 @@
+<div class="transaction-template">
+   
+    <div class="organization-bar">
+       <div id="list_pagignation" align="right"  style="width:100%;"></div>
+    </div>
+    <div class="organization-bar clearfix">
+        <div class="dir-files {{column1.className}} header-color mast-critical"><span>{{column1.name}}</span></div>
+        <div class="dir-files {{column2.className}} header-color mast-critical"><span>{{column2.name}}</span></div>
+        <div class="dir-files {{column3.className}} header-color mast-critical"><span>{{column3.name}}</span></div>
+        <div class="dir-files {{column4.className}} header-color mast-critical"><span>{{column4.name}}</span></div>
+        <div class="dir-files {{column5.className}} header-color mast-critical"><span>{{column5.name}}</span></div>
+        <div class="transaction-outlet clearfix"  style="width:100%;"></div>
+    </div>
+</div>
+
+<!-- log row template -->
+
+<div class="transaction-row-template clearfix" style="width:100%;float:left;">
+    {% if(text_message !=='error_123'){ %}
+    
+    <div class="dir-files transaction-user-column mast-critical transaction-column-text">
+        <span>{{ name }}</span>
+    </div>
+    <div class="dir-files transaction-activity-column mast-critical transaction-column-text">
+        <span>{{ plan_name }}</span>
+    </div>
+    <div class="dir-files transaction-clientip-column mast-critical transaction-column-text">
+        <span>{% if(price !=='0'){ %} {{ price }} $ {% }else{ %} Free  {% } %}</span>
+    </div>
+    <div class="dir-files transaction-userslimit-column mast-critical transaction-column-text">
+        <span>{{ users_limit }}</span>
+    </div>
+    <div class="dir-files transaction-date-column mast-critical transaction-column-header">
+        <span>{{ created_at }}</span>
+    </div>
+    
+    {% }else{ %}
+    <div class="dir-files" style="font-size:13px;margin-left:50px;">No records found !</div>
+   
+    {% } %}
+     
+</div>

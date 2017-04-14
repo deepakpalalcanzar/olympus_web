@@ -1,0 +1,21 @@
+<div class="verifyapi-template">
+	<div class="login-box-head">Verify App</div>
+
+	<!-- form section -->
+	<form class="login-box-body" action="/verifyapi" method="post">
+
+		<div>The app <strong>{{ app_name }}</strong> is requesting permissions to access your Olympus account.
+		</div>
+
+		<input name="api_key" type="hidden" value="{{ api_key }}" />
+		<input name="response_type" type="hidden" value="{{ response_type }}" />
+		<input name="state" type="hidden" value="{{ state }}" />
+		<input name="redirect_url" type="hidden" value="{{ redirect_url }}" />
+
+		<!-- footer section -->
+		<div class="login-box-footer clearfix">
+			<input type="submit" name="accept" value="accept" />
+			<input type="submit" name="deny" value="deny" />
+		</div>
+	</form>
+</div>

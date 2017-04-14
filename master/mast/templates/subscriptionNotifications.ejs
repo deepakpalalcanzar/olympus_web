@@ -1,0 +1,40 @@
+<div class="subscription-notifications-template account-page-container">
+    <div class="page-details-container">
+        <h2> Subscription Plan </h2> 
+        <ul class="notification-list">
+
+            <li class="download-notification clearfix">
+                <span>Plan Name</span>
+                <span>{{features}}</span>
+            </li>
+
+            <li class="comment-notification clearfix">
+                <span>Users Limit</span>
+                <span>{{user_limit}}</span>
+            </li>
+
+            <li class="delete-notification clearfix">
+                <span>Amount</span>
+                <span>{{price==='0'?'Free':"$"+price}}</span>
+            </li>
+
+            <li class="delete-notification clearfix">
+                <span>Duration</span>
+                <span>{{duration_from}} - {{duration_to}}</span>
+            </li>
+	       
+            <li class="delete-notification clearfix">
+                <span>Quota</span>
+                <span> {{ quota }} </span>
+            </li>
+
+        </ul>
+    </div>
+    {% if(Mast.Session.Account.isSuperAdmin != 1){ %}
+        <div class="update-container">
+            <div class="account-save-button upgrade-subscription">
+                Upgrade Plan
+            </div>
+        </div>
+  {% }%}
+</div>

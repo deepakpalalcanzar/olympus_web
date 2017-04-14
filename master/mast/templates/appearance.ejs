@@ -1,0 +1,64 @@
+<!-- details template -->
+<div class="account-appearance-template account-page-container">
+    <div class="page-details-container clearfix">
+        <h2> Set your appearance </h2> 
+        <form action="/account/update" method="POST" class="">
+            <fieldset>
+
+            <div style="width: 90%; float: left; margin: 2% 5%;">
+                <div style="width:50%;float:left;cursor:pointer;">
+                    <p class="olympusHeader"> Select color of your header </p>
+                </div>
+                <div style="width:50%;float:left;cursor:pointer;">
+                    <p class="olympusNav"> Select color of navigation bar </p>
+                </div>
+            </div> 
+
+            <div style="width:100%; float:left;">&nbsp;</div>
+
+            <div style="width: 90%; float: left; margin: 2% 5%;">
+                <div style="width:50%;float:left;cursor:pointer;">
+                    <p class="olympusBody">  Select color of your body </p>
+                </div>
+                <div style="width:50%;float:left;cursor:pointer;">    
+                    <p class="olympusFooter"> Select color of your footer </p>
+                </div>
+            </div>  
+
+            <div style="width:100%; float:left;">&nbsp;</div>
+
+            <div style="width: 90%; margin: 2% 5%;">
+                <div style="width:50%;float:left;cursor:pointer;">
+                    <p class="olympusFont">  Select font-color  </p>
+                </div>
+                <div style="width:50%;float:left;cursor:pointer;">
+                    <p class=""> Select font-family </p>
+                    <select name="fontFamily" class="fontfamily" size="12">
+                        <!-- <option value=''> Select </option> -->
+                        <option value="Georgia, serif"> Georgia, serif </option>
+                        <option value="Palatino Linotype, Book Antiqua, Palatino, serif"> "Palatino Linotype", "Book Antiqua", Palatino, serif </option>
+                        <option value="Times New Roman, Times, serif"> "Times New Roman", Times, serif </option>
+                        <option value="Arial, Helvetica, sans-serif"> Arial, Helvetica, sans-serif </option>
+                        <option value="Arial Black, Gadget, sans-serif"> "Arial Black", Gadget, sans-serif </option>
+                        <option value="Comic Sans MS, cursive, sans-serif"> "Comic Sans MS", cursive, sans-serif </option>
+                        <option value="Impact, Charcoal, sans-serif"> Impact, Charcoal, sans-serif </option>
+                        <option value="Lucida Sans Unicode, Lucida Grande, sans-serif"> "Lucida Sans Unicode", "Lucida Grande", sans-serif </option>
+                        <option value="Tahoma, Geneva, sans-serif"> Tahoma, Geneva, sans-serif </option>
+                        <option value="Trebuchet MS, Helvetica, sans-serif"> "Trebuchet MS", Helvetica, sans-serif </option>
+                        <option value="Courier New, Courier, monospace"> "Courier New", Courier, monospace </option>
+                        <option value="Lucida Console , Monaco, monospace"> "Lucida Console", Monaco, monospace </option>
+                    </select>
+                </div>
+                    
+            </div> 
+
+            <div style="width:100%; float:left;">&nbsp;</div>
+
+            </fieldset>
+        </form>
+    </div>
+    <div style="width: 90%; float: left; margin: 2% 8%;">
+        <button class="appearance-save-button submit-appearance" style="cursor:pointer;"> Save </button>
+        <button class="appearance-reset-button reset-appearance" style="cursor:pointer;"> Reset to default theme </button> 
+    </div>
+</div>

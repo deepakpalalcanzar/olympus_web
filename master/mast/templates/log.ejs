@@ -1,0 +1,63 @@
+<div class="log-template">
+    <div  class="subscription-title title-mod"> 
+        <span>Date From </span>
+        <input type="text" id="from" name="from" value="" style="width:15%;padding: 7px 14px;" placeholder="yyyy-mm-dd"/>
+        <span >To </span>
+        <input type="text" id="to" name="to" value="" style="width:15%;padding: 7px 14px;" placeholder="yyyy-mm-dd"/>
+        <span >By Activity </span>
+       
+        <select id="activity" name="activity">
+            <option value="all">All</option>
+            <option value="update">Update</option>
+            <option value="add">Add</option>
+            <option value="change">Change</option>
+            <option value="delete">Delete</option>
+            <option value="create">Create</option>
+            <option value="comment">Comment</option>
+            <option value="upload">Upload</option>
+            <option value="opened">Opened</option>
+            <option value="Downloaded">downloaded</option>
+            <option value="rename">Rename</option>
+            <option value="Downloaded">downloaded</option>
+            <option value="Downloaded">downloaded</option>
+        </select>
+
+        <div class="account-save-button search-details" style="float:right;margin-right:9%;margin-top:0%">Search</div>
+        
+    </div>
+    <div class="organization-bar">
+       <div id="list_pagignation" align="right"  style="width:100%;"></div>
+    </div>
+    <div class="organization-bar clearfix">
+        <div class="dir-files {{column1.className}} header-color mast-critical"><span>{{column1.name}}</span></div>
+        <div class="dir-files {{column2.className}} header-color mast-critical"><span>{{column2.name}}</span></div>
+        <div class="dir-files {{column3.className}} header-color mast-critical"><span>{{column3.name}}</span></div>
+        <div class="dir-files {{column4.className}} header-color mast-critical"><span>{{column4.name}}</span></div>
+        <div class="log-outlet clearfix"  style="width:100%;"></div>
+    </div>
+</div>
+
+<!-- log row template -->
+
+<div class="log-row-template clearfix" style="width:100%;float:left;">
+    {% if(text_message !=='error_123'){ %}
+    
+    <div class="dir-files log-user-column mast-critical log-column-text">
+        <span>{{ name }}</span>
+    </div>
+    <div class="dir-files log-activity-column mast-critical log-column-text">
+        <span>{{ text_message }}</span>
+    </div>
+    <div class="dir-files log-clientip-column mast-critical log-column-text">
+        <span>{{ ip_address }}</span>
+    </div>
+    <div class="dir-files log-date-column mast-critical mast-column-header">
+        <span>{{ created_at }}</span>
+    </div>
+   
+    {% }else{ %}
+    <div class="dir-files" style="font-size:13px;margin-left:50px;">No records found !</div>
+   
+    {% } %}
+     
+</div>

@@ -1,0 +1,74 @@
+.add-user-template, .user-details-template, .account-details-template {
+	fieldset{
+		border: none;
+	}
+	
+	.user-details-container, .page-details-container {
+		.change-profile-pic {
+			float: left;
+			img.profile-pic {
+				width: 98px;
+				float: left;
+			}
+			.upload-logo{
+				float: left;
+				width: 110px;
+				margin-left: 10px;
+				margin-top: 10px;
+				span {
+					display: block;
+					color: @textGray;
+					font: .8em "ProzimanovaRegular",Helvetica,Ariel,sans-serif;
+					margin-bottom: 7px; 
+				}
+			}
+		}
+
+		.new-user-form, .user-details-form, .account-details-form {
+			float: left;
+			margin-left: 50px;
+
+			fieldset{
+				border: none;
+			}
+			label, input {
+				display: block;
+			}
+			label {
+				color: @textGray;
+				font: .9em "ProzimanovaRegular", Helvetica, Ariel, sans-serif;
+				margin-bottom: 8px; 
+			}
+			input {
+				border: 1px solid @borderGray;
+				margin-bottom:12px;
+				width: 275px;
+				padding: 10px 15px;
+			}
+		}
+	}
+}
+
+.profile-update-button, .plan-update-button, .user-save-button, .account-save-button {
+	border: none;
+	background: @textGray;
+	color: #FFF;
+	display: block;
+	font: 1em 'ProzimanovaSemiBold',Helvetica, Arial, sans-serif;
+	margin: 15px 0 0 60px;
+	padding: 7px 0;
+	text-align: center;
+	width: 125px;
+
+	.border-radius(5px);
+	.drop-shadow (0, 1px, 2px, 0, 0.9);
+	.text-shadow(0 -1px 1px rgba(0, 0, 0, 0.25));
+
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.new-user-fields { border: 1px solid @borderGray; padding: 7px 14px; margin-bottom:15px; width:275px; height:26px; display: block;}
+.new-user-select { border: 1px solid #d7dbdc;margin-bottom: 12px;padding: 10px 15px;width: 305px; }
+

@@ -1,0 +1,88 @@
+<div class="profile-template">
+	<div class="organization-bar clearfix main-mod" style="width:100%;">
+		
+		<div class="dir-files {{column1.className}} header-color mast-critical mast-column-header">
+			<span>{{column1.name}}</span>
+		</div>
+		
+		<div class="dir-files {{column2.className}} header-color mast-critical mast-column-header">
+			<span>{{column2.name}}</span>
+		</div>
+		
+		<div class="dir-files {{column3.className}} header-color mast-critical mast-column-header">
+			<span>{{column3.name}}</span>
+		</div>
+		
+		<div class="dir-files {{column4.className}} header-color mast-critical mast-column-header">
+			<span>{{column4.name}}</span>
+		</div>
+		
+		<div class="dir-files {{column5.className}} header-color mast-critical mast-column-header">
+			<span>{{column5.name}}</span>
+		</div>
+		
+		<div class="dir-files {{column6.className}} header-color mast-critical mast-column-header">
+			<span>{{column6.name}}</span>
+		</div>
+
+		<div class="dir-files {{column7.className}} header-color mast-critical mast-column-header">
+			<span>{{column7.name}}</span>
+		</div>
+
+		<div class="dir-files {{column8.className}} header-color mast-critical mast-column-header">
+			<span>{{column8.name}}</span>
+		</div>
+		<div class="dir-files {{column9.className}} header-color mast-critical mast-column-header">
+			<span>{{column9.name}}</span>
+		</div>
+		<div class="profile-outlet clearfix"  style="width:100%;"></div>
+</div>	
+</div>
+
+<!-- user row template -->
+<div class="profile-row-template clearfix" style="width:100%;float:left;">
+	{% if(name !== 'error_123'){%}
+	<div class="dir-files profiles-column mast-critical mast-column-header features-column-text">
+		<span>{{ name }}</span>
+	</div>
+	
+	<div class="dir-files users-managment-column mast-critical mast-column-header">
+		<span>
+			{{ user_managment === true ? "YES" : "NO"  }}
+		</span>
+	</div>
+	
+	<div class="dir-files enterprises-managment-column mast-critical mast-column-header">
+		<span>{{ subscription_managment === true ? "YES" : "NO" }}</span>
+	</div>
+	
+	<div class="dir-files subscription-users-column mast-critical mast-column-header">
+		<span>{{ enterprises_managment === true ? "YES" : "NO" }}</span>
+	</div>
+	
+	<div class="dir-files user-workgroup-column">
+		<span>{{ user_workgroup_mangment === true ? "YES" : "NO" }}</span>
+	</div> 
+	
+	<div class="dir-files rest-column">
+		<span>{{ manage_admins === true ? "YES" : "NO" }}</span>
+	</div>
+	
+	<div class="dir-files rest-column">
+		<span>{{ superadmins === '1' ? "YES" : "NO" }}</span>
+	</div>
+	
+	<div class="dir-files rest-column">
+		<span>{{ manage_admin_user === true ? "YES" : "NO" }}</span>
+	</div>
+
+
+	<div class="dir-files rest-column action-column" style="float:right;margin-top:-7px">
+		<img class="delete-profile" src="/images/CloseIcon.png" width="15"style="float:right;" data-id="{{ id }}"/>
+		<img class="action-edit" src="/images/icon_pencil.png" width="15" style="float:right;"/>
+	</div>
+	{% }else{%}
+	 <div class="dir-files" style="font-size:13px;margin-left:50px;">No records found !</div>
+	{% }%}
+	
+</div>

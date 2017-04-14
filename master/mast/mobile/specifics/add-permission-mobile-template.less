@@ -1,0 +1,64 @@
+.add-permission-mobile-template {
+
+	fieldset {
+		color: @textGray;
+		border: none;
+		font: 1em 'ProzimanovaSemiBold',Helvetica,Arial,sans-serif;
+		padding: 20px 15px;
+
+		label {
+			display: block;
+			margin-bottom: 5px;
+
+			.disable-flash () 
+		}
+
+		input {
+			border: 1px solid @borderGray;
+			display: block;
+			font: 1em 'ProzimanovaRegular',Helvetica,Arial,sans-serif;
+			margin-bottom: 13px;
+			padding: 10px 2%;
+			width: 96%;
+
+			.disable-flash () ;
+		}
+
+		// need to figure out these cutome styles
+		select {
+			-webkit-appearance: textfield;
+			font: 1em 'ProzimanovaRegular',Helvetica,Arial,sans-serif;
+			width: 98%;
+			background: white;
+			padding: 10px 2%;
+			border: 1px solid @borderGray;
+
+			.disable-flash ();
+
+			option {
+				color: @textGray;
+				font: 1em 'ProzimanovaRegular',Helvetica,Arial,sans-serif;
+			}
+		}
+
+		.auto-complete{
+
+			ul.ui-autocomplete {
+				width: 90% !important;
+				height: 100px;
+
+				li.ui-menu-item {
+					padding: 7px 2%;
+					border-bottom: 1px solid @borderGray;
+
+				}
+
+				a.ui-state-hover {
+					background: transparent;
+				}
+			}
+		}
+	}
+
+
+}

@@ -1,0 +1,65 @@
+<div class="update-enterprise-template">
+
+	<div style="width:100%;background: none repeat scroll 0 0 #dee6f5;color: #636c78;padding: 10px;">
+        <h1>Update Enterprise</h1>
+  </div> 
+<div style="width:100%;background: none repeat scroll 0 0 #dee6f5;color: #636c78;padding: 10px;">
+        <h1> Using {{size/1000000}} MB of {{ quota/1000000000 }} GB</h1>
+  	</div> 
+  <div style="width:98%;">&nbsp;</div>
+
+<!-- settings content -->
+	<div class="main-mod ent-form-cont" id="main-mod"> 
+		<div class="dir-files action-ent-column mast-critical mast-column-header" style="float:right;cursor:pointer;">
+    	<span class="btn btn-primary delete-enterprise" data-id="{{id}}">Delete</span>
+    	<!--<span class="ent-update">Update</span> -->
+  		</div>
+		<!-- company details section -->
+		<form action="" method="POST" class="new-user-form">
+			<div class="center-mod">
+				<!-- <h3 class="company-details">New Enterprise</h3> -->
+				<div class="company-name">Enterprise Name</div>
+					<input type="text" name="enterprises_name" placeholder="Enter First Name" class="enter_name" style="border: 1px solid @borderGray;
+				margin-bottom:12px;width: 275px;padding: 7px 14px;"
+				value="{{name}}" />
+				<input type="hidden" name="ent_id" value="{{id}}" />
+
+				<div class="company-name">Owner Name</div>
+				<input type="text" name="owner_name" placeholder="Enter Owner Name" class="enter_name" style="border: 1px solid @borderGray;
+				margin-bottom:12px;width: 275px;padding: 7px 14px;"
+				value="{{acc_name}}" >
+
+				<div class="permission-form">
+				<div class="company-name">Email</div>
+					<input type="text" name="email" placeholder="Enter Email" class="enter_name accounts" style="border: 1px solid @borderGray;
+				margin-bottom:12px;width: 275px;padding: 7px 14px;"
+				value="{{acc_email}}">
+				</div>
+
+				<div class="company-name"> Subscription</div>
+				<select id="subscription-drop" name="subscription" style="border: 1px solid #d7dbdc;margin-bottom: 12px;padding: 10px 15px;width: 305px;"></select>
+				<div class="clear"></div>
+
+			</div>  
+		</form>
+		<div class="clear"></div> 
+	</div> 
+
+	<!-- save button -->
+	<div class="footer-mod ent-form-cont">
+		<a class="setting-save-button update-enterprises">
+			<img src="/images/button_save@2x.png" />
+		</a>
+	</div>
+	
+</div>
+
+
+
+
+
+
+
+
+
+

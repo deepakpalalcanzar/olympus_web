@@ -1,0 +1,23 @@
+<div class="workgroup-template mast-ui-table">
+    <div style="width:98%;background: none repeat scroll 0 0 #dee6f5;color: #636c78;padding: 10px;">
+        <h1>User Workgroup</h1>
+        <input type="button" name="Assign Workgroup" class="assign_workgroup btn btn-primary" value="Assign Workgroup" style="float:right;margin-top:-28px;">
+    </div> 
+    <div style="width:98%;">&nbsp;</div>   
+    <div class="workgroup-outlet clearfix"></div>
+</div>
+
+<div class="workgroup-row-template clearfix">
+    <img src="{{avatarSrc}}" />
+    <span class="user-name">
+        {{ name }} 
+        <i><b>( {{ type }} )</i></b>
+    </span>
+    {% if (OwnerId !== Mast.Session.User.id) { %} 
+    <span class="delete-workgroup"><img src="/images/delete.png" style="float:right;float: right;height: 32px;padding: 0;width: 36px;" data-id="{{id}}" data-name="{{name}}"/></span>
+    {% } %}
+</div>
+
+<div class="update-container">
+    <a class="setting-save-button notification-updater"><img src="/images/button_save@2x.png" /></a>
+</div>

@@ -1,0 +1,9 @@
+echo "Pulling..."
+git pull  > /dev/null && 
+
+echo
+# echo "Installing latest version of sails and rigging..."
+# bash -c 'npm install rigging sails  --loglevel error > /dev/null' > /dev/null 2>&1
+
+# echo "Replacing database..."
+# mysql -u olympus -polympus olympus < olympus.sql

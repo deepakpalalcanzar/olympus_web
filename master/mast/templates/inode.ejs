@@ -1,0 +1,85 @@
+<div class="inode-template clearfix {% if (selected) { %}selected{% } %}">
+    <div class="inode-row clearfix">
+        <div class="inode-left leftside mast-critical mast-column">
+            <div class="inode-content pushover">
+                <div class="inode-info-container clearfix">
+                    <div class="expand-close-arrow {{type}} {% if (!num_children) { %} empty {% } %}"></div>
+
+                    {%  if ( isOnDrive ) { %}
+
+                        <div class="file-img tooltips" style="height: 38px;width: 52px; background: url('{{ iconLink }}') center center no-repeat; background-size: auto 100%;">
+                            <span>
+                                <div class="file-img" style="height: 80px;width: 130px; margin-left: 5px;margin-top: 8px; background: url('{{ iconLink }}') center center no-repeat; background-size: auto 100%;"></div>
+                            </span>
+                        </div>
+
+                    {% } else { %}
+                        {%  if ( name.match(/jpg/g) || name.match(/jpeg/g) ||  name.match(/png/g) || name.match(/gif/g) || name.match(/tif/g) || name.match(/JPEG/g) || name.match(/JPG/g) || name.match(/PNG/g) || name.match(/GIF/g) || name.match(/TIF/g)) { %}
+
+                            {%  if ( isOnDropbox || isOnBox) { %}
+
+                                <div class="file-img"></div>
+                            {% } else { %}
+                        <div class="file-img tooltips" style="height: 38px;width: 52px; background: url('{{ url }}file/thumbnail/{{ id }}/{{ name }}') center center no-repeat; background-size: auto 100%;">
+                            <span>
+                                <div class="file-img" style="height: 80px;width: 130px; margin-left: 5px;margin-top: 8px; background: url('{{ url }}file/thumbnail/{{ id }}/{{ name }}') center center no-repeat; background-size: auto 100%;"></div>
+                            </span>
+                        </div>
+
+                            {% } %}
+                        {% } else { %}	
+
+                        <div class="{% if (!num_children) { %} empty {% } %} {{type}}-img {% if (mimeClass) { %} {{ mimeClass }}{% } %} {% if ( !parent || !parent.id ) { %} orphan {% } %} {% if (isOlympusDriveDir) { %} olympus-drive-dir {% } %} {% if (isOlympusDropboxDir) { %} olympus-dropbox-dir {% } %}"></div>
+
+                        {% } %}
+                    {% } %}
+
+                    <!-- {% if (editing) { %}<input class="inode-name-input" type="text" value="{{name}}" placeholder="Name your new folder" autofocus="autofocus"/> -->
+                    <!-- {% } else { %}<span class="inode-name">{{name}}</span>{% } %} -->
+
+                    <span class="inode-name"> {{ name }}  </span>
+                    <input class="inode-name-input" type="text" value="{{ name }}" placeholder="Name your new folder" autofocus="autofocus"/> 					
+                    <div class="dropdown-button" title="Click here to view options"></div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="inode-middle mast-non-critical mast-column">
+            <div class="inode-content">
+                <div class="modified-info">
+                    <span class="modified-date">{{modifiedAt}}</span>
+                    <span class="file-size">{{sizeString}}</span>
+                    <!-- <span class="modified-by">{{modifiedBy}}</span> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="inode-right">
+            <div class="inode-content mast-non-critical mast-column">
+                <div class="information-stats">
+                    <span class="num-comments" title="Comments">{{numComments}}</span>
+                    <span class="num-users" title="Active people">{{numActive}}</span>
+                    <span class="num-shared shared_peop" title="Shared people"></span>
+                    <!-- <div class="sidebar-button"></div> -->
+                </div>
+                <div class="progress">
+                    <div class="progress-bar">
+                        <div class="bar"></div>
+                    </div>
+                    <span class="number"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="branchOutlet"></div>
+</div>
+
+<div id="inode-drag-helper-template" class="inode-drag-helper">
+    <div class="icon"></div>
+    <span class="inode-name-holder">
+        <div class="inode-name"></div>
+    </span>
+</div>
+

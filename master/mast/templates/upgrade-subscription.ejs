@@ -1,0 +1,48 @@
+<div class="upgrade-subscription-template">
+	<div class="organization-bar clearfix main-mod" >
+		<div class="dir-files {{column1.className}} header-color mast-critical mast-column-header"><span>{{column1.name}}</span></div>
+		<div class="dir-files {{column2.className}} header-color mast-critical mast-column-header"><span>{{column2.name}}</span></div>
+		<div class="dir-files {{column3.className}} header-color mast-critical mast-column-header"><span>{{column3.name}}</span></div>
+		<div class="dir-files {{column4.className}} header-color mast-critical mast-column-header"><span>{{column4.name}}</span></div>
+		<div class="dir-files {{column6.className}} header-color mast-critical mast-column-header"><span>{{column6.name}}</span></div>
+		<div class="dir-files {{column7.className}} header-color mast-critical mast-column-header"><span>{{column7.name}}</span></div>
+	<div class="upgrade-subscription-outlet clearfix"  style="width:100%;"></div>
+	<div><spna style="margin-left:30px;">* M Month, Y Year</span></div>
+</div>	
+</div>
+
+<!-- user row template -->
+<div class="upgrade-subscription-row-template clearfix" style="width:100%;float:left;">
+	{% if(is_active === null){%}
+	<div class="dir-files features-column mast-critical mast-column-header features-column-text">
+		<span>{{features}}</span>
+	</div>
+	
+	<div class="dir-files price-column mast-critical mast-column-header">
+		<span>{{price==='0'?'Free':"$"+price}}</span>
+	</div>
+	<div class="dir-files duration-column mast-critical mast-column-header">
+		<span>{{durat}}</span>
+	</div>
+	<div class="dir-files sub-users-column mast-critical mast-column-header">
+		<span>{{users_limit}}</span>
+	</div>
+	<div class="dir-files quota-column mast-critical mast-column-header">
+		<span>{{ quota == '10000000000' ? 'unlimited' : quota }}</span>
+	</div>
+
+	<div class="dir-files is-default-column mast-critical mast-column-header">
+		
+		{% if(price==='0'){%}
+		<div class="subscribe-option-buttons upgrade-free">
+			<a class="btn-primary"><span>Buy now</span><span></span></a>
+		</div>
+		{% }else{ %}
+			<div class="subscribe-option-buttons upgrade-subscription">
+			<a class="btn-primary" href="#subscription/upgradeform"><span>Buy now</span><span></span></a>
+			</div>
+		{% }%}
+	</div>
+	
+	{% }%}
+</div>

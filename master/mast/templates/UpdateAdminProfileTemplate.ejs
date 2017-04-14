@@ -1,0 +1,77 @@
+<div class="update-admin-profile-template profile-list">
+	<div class="title-mod">
+		<div class="title-fix">
+ 			<span> Update New Profile </span>
+			<div class="clear"></div>
+		</div>
+	</div>
+
+<!-- settings content -->
+	<div class="main-mod" id="main-mod"> 
+		<!-- company details section -->
+		<form action="" method="POST" class="new-user-form">
+			<div class="center-mod">
+				<div class="company-name">&nbsp;</div>
+				<div class="company-name">Profile Name</div>
+					<input type="text" name="profile_name" placeholder="Enter Profile Name" class="enter_name profile_name" value ="{{ name }}">
+
+				<div class="company-name">&nbsp;</div>
+				<div class="company-name">Select Access Rights</div>
+				<div class="company-name">&nbsp;</div>
+
+				<div class="company-name">
+					<input type ="checkbox" name="user_managment"> 
+					User Managment
+				</div>
+				
+				<div class="company-name">
+					<input type ="checkbox" name="subscription">
+					 Subscription Management
+				</div>
+				
+				<div class="company-name">
+					<input type ="checkbox" name="enterprises_management">
+					 Enterprises Management
+				</div>
+				
+				<div class="company-name">
+					<input type ="checkbox" name="workgroup_managment"> 
+					 Workgroup Managment
+				</div>
+				
+				<div class="company-name">
+					<input type ="checkbox" name="manage_admins"> 
+					 Manage Admins
+				</div>
+
+				<div class="company-name">
+					<input type ="checkbox" name="manage_superadmins"> 
+					 Manage SuperAdmins
+				</div>
+
+				<div class="company-name">
+					<input type ="checkbox" name="manage_admin_user"> Manage Admin User
+				</div>
+			</div>  
+		</form>
+		<div class="clear"></div> 
+	</div> 
+
+	<!-- save button -->
+	<div class="footer-mod">
+		<a class="profile-save-button">
+			<img src="/images/button_save@2x.png" />
+		</a>
+	</div>
+	
+</div>
+
+
+
+
+
+
+
+
+
+

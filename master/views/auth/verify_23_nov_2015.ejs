@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%- title %></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<%- rigging.css %>
+		
+		<%- rigging.js %>
+		
+		<!-- Good ol' css -->
+		<link rel="stylesheet" type="text/css" media="all" href="/stylesheets/reset.css"/>
+		<link rel="stylesheet" type="text/css" media="all" href="/stylesheets/layout.css"/>
+
+		<style>
+
+		</style>
+
+	</head>
+	<body>
+		<div class="verification-page">
+			<div class="verify-container">
+				<div class="verification-header clearfix">
+					<img src="<%= sails.config.organization.squareLogoSrc %>" />
+					<h2>Register your <%= sails.config.organization.name %> account</h2>
+				</div>
+				<!-- <div class="image-uploader"></div> -->
+				<form action="/verify?code=<%= code %>" method="POST">
+					<fieldset>
+						<label for="full-name">Full Name: </label>
+						<input id="full-name" name="full_name" placeholder="e.g. John Smith" autocomplete="off" />
+					</fieldset>
+					<fieldset>
+						<label for="password">Please choose a password:</label>
+						<input type="password" id="password" name="password" autocomplete="off" placeholder="At least 6 letters, numbers, and/or symbols" />
+						<label for="confirm-password">Retype password:</label>
+						<input type="password" id="confirm-password" name="confirm_password" placeholder="What's that password one more time?" />
+					</fieldset>
+					<fieldset>
+						<label for="job-title">Job Title: </label>
+						<input id="job-title" name="job_title" placeholder="e.g. Lead Sales" />
+						<label for="phone-number">Phone Number: </label>
+						<input id="phone-number" name="phone_number" placeholder="e.g. 555-555-5555" />
+					</fieldset>
+					<fieldset class='terms-of-service'>
+						<input id="terms-of-service-checkbox" type="checkbox" name="terms_of_service" value="agree" />
+						<label for="terms-of-service-checkbox">I agree to the 
+							<a target="_blank" href="<%= sails.config.organization.links.termsOfUse %>">
+								<%= sails.config.organization.name %> Terms of Service
+							</a>
+						</label>
+					</fieldset>
+					<fieldset>
+						<div class='image-uploader'></div>
+					</fieldset>
+					<fieldset class="varification-footer clearfix">
+						<input type="hidden" value="submitted" name="submitted"/>
+						<input type="submit" value="Register"/>
+						<!-- <a href="">Sign In</a> -->
+					</fieldset>
+				</form>
+			</div>
+		</div>
+
+		<%- rigging.templateLibrary %>
+
+		<script type="text/javascript">
+			Mast.raise({beforeRouteFn: function() {
+
+			    //var imageUploader = new Mast.components.ImageUploaderComponent({'outlet': '.image-uploader'});
+				var verify = new Mast.components.VerifyComponent({'code':"<%= code %>"});
+				
+			}});
+		</script>
+	</body>
+</html>

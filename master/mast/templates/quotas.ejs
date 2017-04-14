@@ -1,0 +1,22 @@
+<div class="quotas-template">
+	<div class="quota-storage clearfix">
+		<p> Using <span class='size-string'>{{sizeString}}</span> of
+
+			<!-- check to see if we are editing and if we are we put in an input field. If we arent we
+						put in the quota specified -->
+			<input class="set-quota" type="text" value="{{quotaString}}" />
+			<span class='quota-string'>{{quotaString}}</span>
+			<!-- <span>GB</span> -->
+
+		</p>
+
+		<!-- check to see if we are editing and if we are we put in a done button. If we arent we
+				put in the editing button -->
+			<input class="quota-editing done-button" type="submit" value="Done" />
+			<!-- <div class="quota-editing edit-button"></div> -->
+
+	</div>
+	<div class="quota-bar">
+		<div class="quota-percentage"></div>
+	</div>
+</div>

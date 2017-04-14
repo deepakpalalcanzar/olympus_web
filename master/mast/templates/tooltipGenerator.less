@@ -1,0 +1,49 @@
+/****************************
+
+	tooltipGenerator styling
+
+****************************/
+.tooltipGenerator {
+	position: relative;
+	margin-top: 50px;
+	
+
+	input {
+		display: block;
+		padding: 20px 10px;
+		cursor: pointer;
+	}
+}
+
+
+/****************************
+
+	tooltip styling
+
+****************************/
+.tooltip-container{
+	display: none;
+	position: absolute;
+	top: -41px;
+	left: 10px;
+	z-index: -1;
+
+	span.tooltip {
+		display: inline;
+		background: black;
+		color: white;
+		padding: 5px 10px;
+		border-radius: 5px;
+		font: .8em Helvertica, Ariel, sans-serif;
+
+	}
+	span.triangle-image {
+		display: block;
+		background: url('/images/triangle.png') no-repeat 5px -14px;
+		width: 42px;
+		height: 39px;
+		position: relative;
+		z-index: -1;
+	}
+	
+}

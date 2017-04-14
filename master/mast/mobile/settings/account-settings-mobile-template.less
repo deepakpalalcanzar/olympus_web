@@ -1,0 +1,58 @@
+.account-settings-mobile-template {
+
+	.disable-flash ();
+	.disable-select ();
+
+
+	ul {
+		background: #EBEBEB;
+		border-bottom: 1px solid white;
+		color: @textGray;
+		font: 1em 'ProzimanovaSemiBold',Helvetica,Arial,sans-serif;
+		position: fixed;
+		max-height: 50px;
+		width: 100%;
+		z-index: 5;
+
+
+		.drop-shadow (0, 1px, 2px, 1px, 0.15);
+
+		li {
+	 		float: left;
+	 		padding: 15px 0; 
+	 		text-align: center;
+	 		width: 50%;
+	 		-webkit-text-size-adjust: none;
+		}
+
+		li.tapped {
+			background: #DDD;
+		}
+
+		li.profile {
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			border-right: 1px solid #BCBCBC;
+		}
+
+		li.password {
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			border-left: 1px solid white;
+			border-right: 1px solid #BCBCBC;
+		}
+
+		li.alerts {
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			border-left: 1px solid white;
+		}
+	}
+
+	.selected-tab-content-region {
+		padding-top: 51px;
+	}
+}

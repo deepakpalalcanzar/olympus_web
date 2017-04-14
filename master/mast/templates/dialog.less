@@ -1,0 +1,245 @@
+div.clear-tab{
+		clear:both;
+}
+
+
+.selected-popup{
+	color:@textGray;
+	overflow: hidden;
+	font-size:.90em;
+	border: 1px solid #ccc;
+	width:360px;
+	margin-top:7px;
+	height:30px;
+}
+
+/**
+ * dialog styles
+ */
+.search-dialog-template, .upload-dialog-template, .update-dialog-template, .trash-dialog-template, .drive-consent-template{
+	.border-radius(8px);
+	border: 2px solid #FFF;
+	background: #f0f0f0;
+	width: 450px !important;
+	margin: 0 auto;
+	-webkit-box-shadow: 0 0 15px 3px white;
+	box-shadow: 0 0 70px 3px #555;
+
+	.popup-head {
+		text-align:center;
+		padding:20px 0px;
+		color: @textGray;
+		font: "ProzimanovaSemiBold",Helvetica,Ariel,sans-serif;
+		font-size:1.25em;
+	}
+	.popup-body{
+		padding: 30px 40px 40px;
+		background:white;
+
+		border-top: 1px solid @borderGray;
+		border-bottom: 1px solid @borderGray;
+		.files-text{
+			display: block;
+			font-family: "ProzimanovaRegular",Helvetica,Ariel,sans-serif;
+			color: @textGray;
+			overflow-wrap: break-word;
+		}
+		.popup-box-input {
+			border: 1px solid @borderGray;
+			margin-top:7px;
+			margin-bottom:20px;
+			width:272px;
+			height:30px;
+			padding-left:10px;
+			float:left;
+			font-size:.90em;
+		}
+
+		.drive-box-input{
+			width: 355px;
+		}
+		
+		.upload-path-name {
+			width: 96%;
+			margin-top: 7px;
+			padding-left: 10px;
+			padding: 8px 0 8px 10px;
+			overflow: hidden;
+			font: .9em 'Lucida Grande';
+			color: @textGray;
+			border: 1px solid @borderGray;
+		}
+	}
+	.popup-foot{
+	padding:20px 43px;
+
+		.upload-button {
+			background: @blueSearch;
+			display: inline-block;
+			font-size: .9em;
+			width: 112px;
+			padding: 6px 0;
+			text-align: center;
+			color: white;
+			float: right;
+			position: relative;
+			top: 2px;
+
+			.border-radius(3px);
+			.drop-shadow (0, 1px, 2px, 0, 0.9);
+		
+		}
+		.no-submit {
+			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+			filter: alpha(opacity=50);
+			opacity: .5;
+			&:hover {
+				cursor: default;
+			}
+		}
+		.submit {
+			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+			filter: alpha(opacity=100);
+			opacity: 1;
+			&:hover {
+				cursor: pointer;
+			}
+		}
+	}
+	.popup-upgrade{
+		height:32px;
+		float:left;
+	}
+	.cancel{
+		float: right;
+    color: @textGray;
+		font: "ProzimanovaSemiBold",Helvetica,Ariel,sans-serif;
+		margin-top: 10px;
+		margin-right: 15px;
+		font-size: .9em;
+		&:hover {
+			cursor: default;
+			text-decoration: underline;
+		}
+	}
+	.loading-spinner {
+		display: none;
+		float: right;
+		position: relative;
+		top: 6px;
+		right: 10px;
+		width: 20px;
+		height: 20px;
+	}
+}
+
+/**
+ * override jquery ui styles
+ */
+.ui-dialog {
+}
+
+/* the veil */
+.ui-widget-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: black;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	filter: alpha(opacity=50);
+	opacity: .5;
+}
+
+
+
+
+
+
+
+
+// THIS IS FOR SHOWING FILE AND FOLDERS
+.css-treeview ul, .css-treeview li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+ 
+.css-treeview input {
+    position: absolute;
+    //opacity: 0;
+}
+ 
+.css-treeview {
+    font: normal 11px "Segoe UI", Arial, Sans-serif;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+ 
+.css-treeview a {
+    color: #00f;
+    text-decoration: none;
+}
+ 
+.css-treeview a:hover {
+    text-decoration: underline;
+}
+ 
+.css-treeview input + label + ul {
+    margin: 0 0 0 22px;
+}
+ 
+
+.css-treeview label, .css-treeview label::before {
+    cursor: pointer;
+}
+ 
+.css-treeview input:disabled + label {
+    cursor: default;
+    opacity: .6;
+}
+ 
+.css-treeview input:checked:not(:disabled) ~ ul {
+    display: block;
+}
+ 
+.css-treeview label, .css-treeview label::before {
+    background: url("/images/icon_workgroup@2x.png") no-repeat;
+        background-size: 16px 16px;
+}
+ 
+.css-treeview label, .css-treeview a, .css-treeview label::before {
+    display: inline-block;
+    height: 16px;
+    line-height: 16px;
+    vertical-align: middle;
+}
+ 
+.css-treeview label {
+    background-position: 18px 0;
+}
+ 
+.css-treeview label::before {
+    content: "";
+    width: 16px;
+    margin: 0 22px 0 0;
+    vertical-align: middle;
+    background-position: 0 -32px;
+}
+ 
+.css-treeview input:checked + label::before {
+    background-position: 0 -16px;
+}
+ 
+/* webkit adjacent element selector bugfix */
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .css-treeview {
+        -webkit-animation: webkit-adjacent-element-selector-bugfix infinite 1s;
+    }
+ 
+    @-webkit-keyframes webkit-adjacent-element-selector-bugfix {
+        from { padding: 0; } 
+        to { padding: 0; }
+    }
+}

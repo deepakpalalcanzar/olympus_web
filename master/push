@@ -1,0 +1,5 @@
+git push
+echo *****************
+echo Schema diff:
+echo *****************
+mysqldump -u olympus -polympus olympus | diff olympus.sql -

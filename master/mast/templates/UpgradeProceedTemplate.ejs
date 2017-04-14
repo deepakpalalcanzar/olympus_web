@@ -1,0 +1,106 @@
+<div class="upgrade-proceed-template" style="background-clip: padding-box;border-radius: 7px;box-shadow: 0 1px 5px #b3bac4;margin: 40px 2%;padding: 10px;min-height:700px;">
+<!-- upgrade header -->
+    <div class="title-mod">
+        <div class="title-fix">
+            <span>Payment Summary</span>
+            <div class="clear"></div>
+        </div>
+    </div>
+<!-- settings content -->
+    <div id="main-mod" class="main-mod"> 
+        <div class="add-subscription account-page-container">
+
+            <div class="page-details-container clearfix">
+                <form class="add-subscription-form" method="POST" action="/subscription/payment">
+
+                    <table width="60%">
+                        <tr>
+                            <td width="15%">
+                                <label><b>Name</b></label>
+                            </td>
+                            <td width="50%">
+                                <label>{{f_name }} {{l_name }}</label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="10%">
+                                <label><b>Address</b></label>
+                            </td>
+                            <td width="50%">
+                                <label>{{address }} {{city }} {{customer_zip }}
+                                     {{state}} {{country_code}} 
+                                </label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="5%">
+                                <label><b>Card Type</b></label>
+                            </td>
+                            <td width="55%">
+                                <label>{{card_type}}</label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="5%">
+                                <label><b>Card No</b></label>
+                            </td>
+                            <td width="55%">
+                                <label>{{customer_credit_card_number}}</label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="5%">
+                                <label><b>CVV2</b></label>
+                            </td>
+                            <td width="55%">
+                                <label>{{ cc_cvv2_number}}</label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="5%">
+                                <label><b>Card Expiration</b></label>
+                            </td>
+                            <td width="55%">
+                                <label> {{cc_expiration_month}} / {{ cc_expiration_year}}</label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="5%">
+                                <label><b>Amount</b></label>
+                            </td>
+                            <td width="55%">
+                                <label>${{ amount}}</label>
+                            </td>
+                        </tr>
+
+                    </table>
+
+                    <span class="upgrade-proceed-loader">
+                        <input type="button" value="Proceed" class="btn-primary upgrade-pay"/>
+                    </span>
+                    <a href="#" title="cancel" id="cancel_pay">
+                        Cancel
+                    </a>
+                </form>
+            </div>
+            <!-- <div class="account-save-button buy-subscription">Save</div> -->
+        </div>
+        <div class="clear"></div>
+    </div>  
+</div>
+
+
+
+
+
+
+
+
+
+

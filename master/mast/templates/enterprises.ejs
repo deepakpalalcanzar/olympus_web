@@ -1,0 +1,66 @@
+<div class="enterprises-template">
+	<div class="organization-bar clearfix main-mod" >
+		
+		<div class="dir-files {{column1.className}}  mast-critical mast-column-header header-color" style="color:#FFF;">
+			<span>{{column1.name}}</span>
+		</div>
+
+		<div class="dir-files {{column6.className}}  mast-critical mast-column-header header-color">
+			<span>{{column6.name}}</span>
+		</div>
+
+		<div class="dir-files {{column7.className}}  mast-critical mast-column-header header-color">
+			<span>{{column7.name}}</span>
+		</div>
+
+		<div class="dir-files {{column2.className}}  mast-critical mast-column-header header-color">
+			<span>{{column2.name}}</span>
+		</div>
+
+		<div class="dir-files {{column5.className}}  mast-critical mast-column-header header-color">
+			<span>{{column5.name}}</span>
+		</div>
+
+		<div class="dir-files {{column4.className}}  mast-critical mast-column-	header header-color">
+			<span>{{column4.name}}</span>
+		</div>
+		<div class="enterprises-outlet" style="width:100%;float:left;"></div>
+	</div>	
+</div>
+
+<!-- user row template -->
+<div class="enterprises-row-template clearfix" style="width:100%;">
+	
+	{% if(name !=='error_123'){%}
+	<div class="dir-files enterprises-column mast-critical mast-column-header">
+		<span>{{name}}</span>
+	</div>
+
+	<div class="dir-files owner-column mast-critical mast-column-header">	<span>{{acc_name}}</span>
+	</div>
+
+	<div class="dir-files subscription-column mast-critical mast-column-header">
+		<span>{{features}}</span>
+	</div>
+
+	<div class="dir-files users-column mast-critical mast-column-header">	<span>{{users_limit}}</span>
+	</div>
+
+	<div class="dir-files impersonate-column mast-critical mast-column-header" style="cursor:pointer;">
+		<div class="impersonate">
+			<a href="#" class="impersonate-user">
+				<input class="btn-table-listing btn-primary" type="button" value="Impersonate">
+			</a>
+		</div>
+	</div>
+
+	<div class="dir-files users-column mast-critical mast-column-header">
+		<div class="impersonate-option-buttons">
+			<span class="ent-delete" data-id="{{id}}"> Delete </span>
+		</div>
+	</div>
+	{% }else{%}
+	 <div class="dir-files" style="font-size:13px;margin-left:50px;">No records found !</div>
+	{% }%}
+	
+</div>

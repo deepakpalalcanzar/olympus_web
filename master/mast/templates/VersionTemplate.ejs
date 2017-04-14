@@ -1,0 +1,75 @@
+<!-- inodeComments -->
+<div class="inodeVersion-template">
+	<!-- comment row outlet -->
+	<div class="versionRow-outlet"></div>
+
+	<div class="commentRow-outlet" id="vers-com" style="display:none;"></div>
+
+	<!-- comment form -->
+	<div class="comment-form" id="vers-comm-form" style="display:none;">
+		<div class="comment-form-fix">
+		<span class="postComment_title">Add a Comment</span>
+	    </div>
+		<div class="comment-form-text">
+		<textarea placeholder="Add a comment here..."></textarea>
+	    </div>
+	    <div class="comment-form-fix">
+			<img class="postVersion-button" src="/images/PostComment_button.png" />
+	    </div>
+	</div>
+</div>
+
+<div class="versionRow-template comment-attire">
+
+	<div class="version-thumb-container" id="avatar_{{ id }}" style="float: left;margin-right: 4px;width: 58px; height:44px;">
+		<a class="version-thumb-link" href="#">
+		{%  if ( mimetype.match(/image/g) ) { %}
+			<img class="version-thumb" style="height:auto; margin: auto; max-height:100%; max-width:100%; width:auto;" src="/file/thumbnail/{{id}}/{{message}}" />
+		{% }else{ %}
+			<div style="background-size: contain;height: 44px;width: 58px;" class="{{item.type}}-img {{mimeClass}} "></div>
+		{% } %}
+		</a> 
+	</div>
+
+	<div class="comment-container" id="version_{{ id }}">
+		<h4>
+			<b>
+				<a href="#" class="file_download" style="font-size: 16px;font-weight: 700;">{{ message }}</a>
+			</b>
+			<span class="span-delete" id="{{ id }}"> </span>
+			<span class="span-comment comm-num-{{id}}" id="{{ id }}"> (1) </span>  
+			<span class="span-version"> version {{ item.id }} </span>
+		</h4>
+		<p style=""><a><i> Author: {{ created_by.name }} </i></a></p>
+	</div>
+
+	<div class="clear-tab"></div>
+	<div class="comment-border"></div>
+
+</div>
+
+
+
+
+<!-- <div class="inodeVersion-template" style="margin-top:-135px;">
+	<div class="versionRow-outlet" style="margin-top:45px;"></div>
+	<div class="top-container clearfix">
+		<div class="left-side">
+			<div class="file-name clearfix">
+				<div class="file-img image-png"></div>
+				<h2 class="inode-name" style="color:#585858;margin-top:-7px;"><b> FileName </b></h2>
+				<h2 class="inode-name" style="color:#585858;margin-top:-17px;font-size:12px;"><i>Author: Geoff</i></h2>
+
+			</div>
+		</div>
+		<div class="right-side">
+			<div style="margin-top:25px;width:90px;"><i>version 1.1</i></div>
+			<div class="information-stats">
+				<span class="num-comments">0</span>
+				<span class="num-users">1</span>
+				<div class="sidebar-button" style="display: none;"></div>
+			</div>
+		</div>
+		<div class="close-sidebar"></div>
+	</div>
+</div> -->

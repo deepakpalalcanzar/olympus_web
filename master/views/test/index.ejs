@@ -1,0 +1,21 @@
+
+
+<h1>AJAX file upload test</h1>
+
+
+<script type="text/javascript" src="/js/blueimp/vendor/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="/js/blueimp/jquery.iframe-transport.js"></script>
+<script type="text/javascript" src="/js/blueimp/jquery.fileupload.js"></script>
+
+<div id="test-outlet"></div>
+
+
+<script>
+	Mast.raise({
+		afterLoadFn: function(){
+			new Mast.components.Uploader({
+				outlet: "#test-outlet"
+			})
+		}
+	});
+</script>

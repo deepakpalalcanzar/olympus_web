@@ -1,0 +1,52 @@
+<!-- inodeComments -->
+<div class="inodeComments-template">
+	<!-- comment row outlet -->
+	<div class="commentRow-outlet"></div>
+	<!-- comment form -->
+	<div class="comment-form">
+		<div class="comment-form-fix">
+		<span class="postComment_title">Add a Comment</span>
+	    </div>
+		<div class="comment-form-text">
+		<textarea placeholder="Add a comment here..."></textarea>
+	    </div>
+	    <div class="comment-form-fix">
+			<img class="postComment-button" src="/images/PostComment_button.png" />
+	    </div>
+	</div>
+</div>
+
+<!-- comment template -->
+<div class="commentRow-template comment-attire">
+	
+	{% if (created_by.avatar != null) { %}
+		<div class="file-img" style="height: 42px;width: 42px; background: url('{{created_by.avatar}}') center center no-repeat; background-size: 100%;margin: 3px;"></div>
+  	{% }else{ %}
+		<div class="file-img" style="height: 42px;width: 42px; background: url('images/avatar_anonymous.png') center center no-repeat; background-size: 100%;margin: 3px;"></div>
+	{% } %}
+
+<!--	<div class="comment-user-avatar">
+		<a class="user-avatar-link"  href="#"><img src="{{created_by.avatar}}" class="user-avatar" /></a> 
+	</div> -->
+
+	<div class="comment-container">
+		<h6><a href="#">{{created_by.name}}</a></h6>
+		<span class="comment-date">{{ created_at }}</span>
+		<p class="details-text">{{- message }}</p>
+	</div>
+	<div class="clear-tab"></div>
+	<div class="comment-border"></div>
+</div>
+
+
+<!-- activity item -->
+<div class="download-comment">
+	<div class="download_icon"></div>
+	<div class="download-details">
+		<h6>Downloaded by <a href="#">Gabe Hernandez </a></h6>
+		<span class="details-date">5th July at 3:30pm</span>
+	</div>
+	<div class="clear-tab"></div>
+	<div class="comment-border"></div>
+</div>	
+

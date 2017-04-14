@@ -1,0 +1,97 @@
+<div class="update-subscription-template" style="background-clip: padding-box;border-radius: 7px;box-shadow: 0 1px 5px #b3bac4;margin: 40px 2%;padding: 10px;min-height:700px;">
+<!-- upgrade header -->
+	<div class="title-mod">
+		<div class="title-fix">
+ 			<span>Update Subscription Plan</span>
+			<div class="clear"></div>
+		</div>
+	</div>
+<!-- settings content -->
+	<div class="main-mod" id="main-mod"> 
+        <div class="add-subscription account-page-container">
+            <div class="page-details-container clearfix">
+                <form action="/account/register" method="POST" class="add-subscription-form">
+                    <fieldset>
+
+                        <div style="width:100%;float:left;">
+                            <label for="features">Name</label>
+                            <input id="features" type="text" name="features" placeholder="Enter Name" value="{{ features }}">
+                        </div>
+
+                    <div style="width:100%;float:left;"> 
+                        
+                        <label for="price">Price</label>
+                        <input id="price" name="price" type="text" placeholder="Enter price" value="{{ price }}" style="float:left;"/>
+
+                        <input id="is_free" style="float: left; margin-top: 25px; width: 49px;" name="is_free" type="checkbox" value="0"/>
+                        <label for="is_free" style="float:left;margin-top:24px;">
+                            <i>Is Free</i>
+                        </label>
+
+                    </div>
+                    
+                    <div style="width:100%;float:left;">
+                        <label for="duration">Duration</label>
+                        <select id="duration" name="duration" class="duration-dropdown">
+    						<option value="">Select Duration</option>
+                            <option value="1">1 Month</option>
+                            <option value="6">6 Months</option>
+                            <option value="12">1 Year</option>
+                            <option value="24">2 Years</option>
+                            <option value="60">5 Years</option>
+                            <option value="120">10 Years</option>
+                            <option value="1200">Life Time</option>
+                        </select>
+                    </div>
+
+                    <div style="width:100%;float:left;">
+
+    	                <label for="User-limit"> Maximum Number Of Users </label>
+                        <input id="User-limit" name="users_limit" type="text" placeholder="Enter user's limit" value="{{ users_limit}}" style="float:left"/>
+
+                        <input id="unlimited-user" name="unlimited_user" type="checkbox" style="float: left; margin-top: 25px; width: 49px;"/>
+                        <label for="unlimited-user" style="float:left;margin-top:24px;">
+                            <i>Unlimited Users</i>
+                        </label>
+
+                    </div>
+
+                    <div style="width:100%;float:left;">
+                        
+                        <label for="quota">Quota</label>
+                        <input id="quota" name="quota" type="text" placeholder="Enter Quota in GB" value="{{quota}}" style="float:left"/>
+
+                        <input id="unlimited-space" style="float: left; margin-top: 25px; width: 49px;" name="unlimited_space" type="checkbox" value="unlimited"/>
+                        <label for="unlimited-space" style="float:left;margin-top:24px;">
+                            <i>Unlimited Space</i> 
+                        </label>
+
+                    </div>
+
+                    <div style="width:100%;float:left;">
+                        <input name="upd_existing" id="upd-existing" type="checkbox" style="margin-top: 23px;"/>
+                        <label for="upd-existing" style="float: left; margin-top: 21px;">Update existing users of this plan ?</label>
+                    </div>
+                    <div style="width:100%;float:left;">
+                        <input name="is_default" id="is-default" type="checkbox" style="margin-top: 23px;"/>
+                         <label for="is-default" style="float: left; margin-top: 21px;">Is Default Subscription ?</label>
+                    </div>
+
+                    </fieldset>
+                </form>
+            </div>
+            <div class="plan-update-button submit-subscription">Save</div>
+        </div>
+		<div class="clear"></div> 
+	</div> 
+</div>
+
+
+
+
+
+
+
+
+
+

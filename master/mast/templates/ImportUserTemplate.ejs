@@ -1,0 +1,54 @@
+<div class="import-user-template" align="center" 
+     style="background-clip: padding-box;border-radius: 7px;box-shadow: 0 1px 5px #b3bac4;margin: 40px 2%;padding: 10px;">
+    <br/>
+    <div class="subscription-title title-mod" style="height: 50px;">
+        <div class="title-fix">
+            <span style="">Import Users</span>
+            
+            <div class="clear"></div>
+        </div>
+        <a class="tooltips" href="images/User_Import_csv_sample.csv" style="float: right; margin-bottom: 100px;">
+            <img src="images/FAQ.png">
+            <span >Click here to download Sample csv File</span>
+        </a>
+    </div>
+    <!--<form action="/account/register" method="POST" enctype="multipart/form-data">-->
+    <div style="width:75%" align="center">
+        <div align="left">
+            <div class="center-mod">
+                <!--<h3 class="company-details">Import Users</h3>-->
+                <div class="file">
+                    <div class="company-name"><label>  </label></div>
+                    <input type="file" name="file" id="file"  class="user-file">
+                </div>
+            </div>
+            {% if (!superadmin) { %}
+                <div class="userWorkgroup">
+                    <div class="company-name"><label>WorkGroup Name</label></div>
+                    <select name="workgroup" id="list_workgroup" class='new-user-select user-workgroup'></select>
+                </div>  
+
+                <div class="userRole">
+                    <div class="company-name"><label>Role</label></div>
+                    <select name="role" class="new-user-select user-role">
+                        <option value="">Select Role</option>
+                        <option value="admin">Is Admin</option>
+                        <option value="write">Can Edit</option>
+                        <option value="comment">Can Comment</option>
+                    </select>   
+                </div>  
+
+            {% } %} 
+            <div id="msgid"></div>
+            <div class="">
+                <a class="setting-save-button">
+                    <img src="/images/button_save@2x.png" />
+                </a>
+            </div>
+        </div>
+    </div>
+    <!--</form>-->
+    <div class="csv-user-import-status" align="left" style="width:75%">
+    </div>
+    <div class="clear"></div>
+</div>

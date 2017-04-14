@@ -1,0 +1,77 @@
+<div class="settings-template">
+
+	<!-- upgrade header -->
+	<!-- <div class="title-mod">
+		<div class="title-fix">
+			<span>Need to expand your sharing, storage, and bandwidth capacity?</span>
+			<a class="setting-upgrade-button">
+				<img src="/images/button_upgrade@2x.png" />
+			</a>
+			<div class="clear"></div>
+		</div>
+	</div> -->
+
+	<!-- settings content -->
+	<div class="main-mod" id="main-mod"> 
+		<!-- company details section -->
+		<div class="left-mod">
+			<div class="container">
+			
+				<div class="imageBox" style="background-image: url({{ Mast.Socket.baseurl }}/images/icon_profilePicture_default@2x.png); background-size: 100% 100%; background-position: 0px 0px; background-repeat: no-repeat;">
+        			<div class="thumbBox"></div>
+    			</div>
+
+			    <div class="action">
+			        <input type="button" id="btnCrop" value="Save" style="float: right" onClick="cropImage()" >
+			        <input type="button" id="btnZoomIn" value="+" style="float: right; padding:0px 16px 2px 14px;" onclick="zoomIn()">
+			        <input type="button" id="btnZoomOut" value="-" style="float: right;padding:0px 16px 2px 14px;" onclick="zoomOut()">
+			    </div>
+			  	  <!-- <div class="cropped"></div> -->
+			</div>
+
+			<!-- <h3 class="company-details">Company Details</h3>
+			<div class="company-name">Company Name</div> 
+			<input type="text" placeholder="Enter Name" class="enter_name" >-->
+			
+
+			<!-- <div style="width:600px;height:150px;">
+				<img src="/images/icon_profilePicture_default@2x.png"  id="profImage" class="img-settings" style="width:550px;height:150px;"/> 
+			</div> -->
+			
+			<div>&nbsp;</div>
+				
+				<input id="profileImgage" type="file" name="uploadField" style="display:none;" onchange="fileSelected(this)" />
+				
+				<div class="upload-logo-mod">
+					<span class="right-text">Upload Logo</span>
+					<div class="special-right-text">( jpg, gif or png format )</div>
+					<span>
+						<a class="setting-browse-button" onclick="autoclick('profileImgage')">
+							<img src="/images/button_browse@2x.png" />
+						</a>
+					</span>
+				</div>
+				
+				<div class="clear"></div>
+
+		</div>  
+		<div class="clear"></div> 
+	</div> 
+
+	<!-- save button -->
+	<!-- <div class="footer-mod">
+		<a class="setting-save-button" onclick="uploadFile()">
+			<img src="/images/button_save@2x.png" />
+		</a>
+	</div> -->
+</div>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,480 @@
+/*********************************
+*
+*	file typle images
+*
+**********************************/
+div.file-img {
+    background: url('/images/icon_unknown@2x.png') center center no-repeat;
+    background-size: 100%;
+}
+
+div.file-img.image-png, 
+div.file-img.image-pjpeg, 
+div.file-img.image-jpeg, 
+div.file-img.image-tiff,
+div.file-img.image-x-tiff, 
+div.file-img.image-png,  
+div.file-img.image-gif 
+{
+    background: url('/images/icon_img@2x.png') center center no-repeat;
+
+}
+
+div.file-img.application-pdf,
+div.file-img.application-x-pdf
+{
+    background: url('/images/icon_pdf@2x.png') center center no-repeat;
+}
+
+div.file-img.text-csv
+{
+    background: url('/images/icon_csv@2x.png') center center no-repeat;
+}
+
+div.file-img.application-msword,
+div.file-img.application-vnd-openxmlformats-officedocument-wordprocessingml-document
+{
+    background: url('/images/icon_doc@2x.png') center center no-repeat;
+}
+
+div.file-img.text-plain
+{
+    background: url('/images/icon_txt@2x.png') center center no-repeat;
+}
+div.file-img.audio-mp3, div.file-img.audio-mp4, div.file-img.audio-wav{
+    background: url('/images/icon_music@2x.png') center center no-repeat;
+}
+
+div.file-img.video-mp4,div.file-img.video-quicktime{
+    background: url('/images/icon_video@2x.png') center center no-repeat;
+}
+
+div.file-img.application-excel,
+div.file-img.application-msexcel
+div.file-img.application-vnd-ms-excel,
+div.file-img.application-x-excel,
+div.file-img.application-x-msexcel,
+div.file-img.application-x-ms-excel,
+div.file-img.application-x-dos_ms_excel,
+div.file-img.application-xls,
+div.file-img.application-x-xls,
+div.file-img.application-vnd-openxmlformats-officedocument-spreadsheetml-sheet 
+{
+    background: url('/images/icon_spreadsheet@2x.png') center center no-repeat;
+}
+
+
+div.file-img.application-mspowerpoint,
+div.file-img.application-powerpoint,
+div.file-img.application-vnd-ms-powerpoint,
+div.file-img.application-x-powerpoint,
+div.file-img.application-vnd-openxmlformats-officedocument-presentationml-presentation
+{
+    background: url('/images/icon_ppt@2x.png') center center no-repeat;
+}
+
+/*********************************
+*
+*	inode
+*
+**********************************/
+.inode-template, .trash-template {
+    background: white;
+    border-top: 1px solid @borderGray;
+
+    div.inode-content {
+        font: .7em "ProzimanovaRegular",Helvetica,Ariel,sans-serif;
+        padding: 3px 0;
+        height: 35px;
+        line-height: 35px;
+        color: @textGray;
+        position: relative;
+
+        div.inode-info-container {
+            margin-left: 20px;
+
+            /* Hide expand arrow for non-directories and empty dirs */
+            div.expand-close-arrow.file, div.expand-close-arrow.empty {
+                display:none;
+            }
+
+            div.expand-close-arrow, div.directory-img, span.inode-name {
+                float: left;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                /* width: 150px; */
+            }
+            div.expand-close-arrow {
+                height: 35px;
+                width: 20px;
+                background: url('/images/ClosedArrow.png') center 10px no-repeat;
+                position: relative;
+                .transition(-webkit-transform 150ms);
+                cursor: pointer;
+            }
+            div.expand-close-arrow.expanded {
+                .rotate(90deg);
+            }
+
+            div.dropdown-button {
+                display: none;
+                background: url('/images/downarrow.png') no-repeat;
+                position: absolute;
+                width: 27px;
+                height: 27px;
+                top: 7px;
+                right: 12px;
+                &:hover {
+                    background: url('/images/DownArrow_hover.png') no-repeat;
+                    cursor: pointer;
+                }
+            }
+            div.directory-img {
+                height: 35px;
+                width: 50px;
+                background: url('/images/FolderIcon.png') center center no-repeat;
+
+            }
+            div.directory-img.olympus-drive-dir{
+                background: url('/images/drive-sync-32.png') center center no-repeat;
+            }
+            div.directory-img.olympus-dropbox-dir{
+                background: url('/images/dbox-sync-32.png') center center no-repeat;
+            }
+            /* Compensate for lack of expand/collapse arrow on empty dirs by adding a margin */
+            div.directory-img.empty {
+                margin-left: 20px;
+            }
+
+            /* Draw special image for top-level directory (workgroup) */
+            div.directory-img.orphan {
+                height: 35px;
+                width: 50px;
+                background: url('/images/icon_workgroup@2x.png') center center no-repeat;
+                background-size: 65%;
+            }
+
+            div.file-img {
+                margin-left:31px;
+                margin-right: 8px;
+                height: 31px;
+                width: 25px;
+                // background: url('/images/icon_unknown@2x.png') center center no-repeat;
+                background-size: 100%;
+            }
+
+            // div.file-img.image-png, 
+            // div.file-img.image-pjpeg, 
+            // div.file-img.image-jpeg, 
+            // div.file-img.image-tiff,
+            // div.file-img.image-x-tiff, 
+            // div.file-img.image-png,  
+            // div.file-img.image-gif 
+            // {
+            // 	background: url('/images/icon_img@2x.png') center center no-repeat;
+            // 	background-size: 100%;
+            // }
+
+            // div.file-img.application-pdf,
+            // div.file-img.application-x-pdf
+            // {
+            // 	background: url('/images/icon_pdf@2x.png') center center no-repeat;
+            // 	background-size: 100%;
+            // }
+
+            // div.file-img.text-csv
+            // {
+            // 	background: url('/images/icon_csv@2x.png') center center no-repeat;
+            // 	background-size: 100%;
+            // }
+
+            // div.file-img.application-msword,
+            // div.file-img.application-vnd-openxmlformats-officedocument-wordprocessingml-document
+            // {
+            // 	background: url('/images/icon_doc@2x.png') center center no-repeat;
+            // 	background-size: 100%;
+            // }
+
+            // div.file-img.text-plain
+            // {
+            // 	background: url('/images/icon_txt@2x.png') center center no-repeat;
+            // 	background-size: 100%;
+            // }
+
+            // div.file-img.application-excel,
+            // div.file-img.application-vnd-ms-excel,
+            // div.file-img.application-x-excel,
+            // div.file-img.application-x-msexcel
+            // {
+            // 	background: url('/images/icon_spreadsheet@2x.png') center center no-repeat;
+            // 	background-size: 100%;
+            // }
+
+
+            // div.file-img.application-mspowerpoint,
+            // div.file-img.application-powerpoint,
+            // div.file-img.application-vnd-ms-powerpoint,
+            // div.file-img.application-x-powerpoint,
+            // div.file-img.application-vnd-openxmlformats-officedocument-presentationml-presentation
+            // {
+            // 	background: url('/images/icon_ppt@2x.png') center center no-repeat;
+            // 	background-size: 100%;
+            // }
+
+
+        }
+        div.modified-info {
+
+            span.modified-by {
+                color: @blueLink;
+                cursor: pointer;
+                padding-left: 3px;
+            }
+            span.file-size {
+                color: #bbb;
+                padding-left: 5px;
+            }
+        }
+        div.information-stats {
+            position: relative;
+            span {
+                padding-left: 22px;
+            }
+            span.num-comments {
+                background: url('/images/icon_comment.png') no-repeat;
+                cursor: pointer;
+            }
+            span.num-users {
+                background: url('/images/icon_currentlyViewing.png') no-repeat -5px -4px;
+                width: 29px;
+                height: 12px;
+                background-size: 90%;
+                cursor: pointer;
+            }
+            span.shared_peop {
+                background: url('/images/manage_admin_users_small.png') no-repeat;
+                cursor: pointer;
+            }
+            div.sidebar-button {
+                display: none;
+                background: url('/images/button_expand.png') no-repeat;
+                width: 27px;
+                height: 27px;
+                position: absolute;
+                top: 2px;
+                left: 70%;
+                &:hover {
+                    background: url('/images/button_expandHover.png') no-repeat;
+                    cursor: pointer;
+                }
+            }
+        }
+
+    }
+
+    &:hover {
+        background: #DEE6F5;
+    }
+
+    div.branchOutlet {
+        display:none; 
+        clear:both;
+    }
+}
+
+/*
+ * selected styles
+ */
+.inode-template.selected {
+
+    /* Wraps around only this inode element, and none of its children in branchOutlet */	
+    >div.inode-row {
+        background: #86a7ca; /* Old browsers */
+        background: -moz-linear-gradient(top, #86a7ca 0%, #7697ba 88%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#86a7ca), color-stop(88%,#7697ba)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top, #86a7ca 0%,#7697ba 88%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top, #86a7ca 0%,#7697ba 88%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top, #86a7ca 0%,#7697ba 88%); /* IE10+ */
+        background: linear-gradient(to bottom, #86a7ca 0%,#7697ba 88%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#86a7ca', endColorstr='#7697ba',GradientType=0 ); /* IE6-9 */
+
+        div.inode-content {
+            color: white;
+            font-weight: bold;
+            div.modified-info span.modified-by {
+                color: white;
+                font-weight: normal;
+            }
+            div.sidebar-button {
+                // display: none;
+                background: url('/images/button_selectedExpand.png') no-repeat;
+                width: 27px;
+                height: 27px;
+                position: absolute;
+                top: 2px;
+                left: 70%;
+                &:hover {
+                    background: url('/images/button_expandHover.png') no-repeat;
+                    cursor: pointer;
+                }
+            }
+            div.dropdown-button {
+                background: url('/images/DownArrow_selected.png') no-repeat;
+            }
+
+            span.file-size {
+                color: white!important;
+            }
+        }
+    }
+
+}
+
+.inode-template.expanded {
+    >div.branchOutlet {
+        display:block;
+    }	
+}
+
+.inode-template.loading {
+    >div.branchOutlet {
+        display: block;
+        height:32px;
+        padding-bottom: 15px;
+        background: url('/images/loading-spinner.gif') center center no-repeat;
+    }
+}
+
+.inode-drop {
+    background: #DEE6F5;
+}
+
+.inode-inactive-on-drag:hover {
+    background-color: white;
+}
+
+.inode-left, .inode-middle, .inode-right {
+    float: left;
+}
+.inode-left {
+    width: 45%;
+}
+.inode-middle {
+    width: 22%;
+}
+.inode-right {
+    width: 33%;
+}
+
+.inode-drag-helper {
+    opacity: .85;
+}
+
+.inode-drag-helper .icon {
+    float:left;
+}
+
+.inode-drag-helper .icon.file-img {
+    background-size: 100%;
+    width: 25px;
+    height: 31px;
+}
+
+.inode-drag-helper .inode-name-holder {
+    background-color: #4F7BA9;
+    border-radius: 10px;	
+    padding-left: 5px;
+    padding-right: 5px;
+    float:right;
+}
+
+.inode-drag-helper .inode-name {
+    color: #fff;
+    font: 0.7em/35px "ProzimanovaRegular",Helvetica,Ariel,sans-serif;	
+}
+.inode-template.select .inode div.indo-content {
+    color: white;
+}
+
+.inode-name-input {
+    display: none;
+}
+
+.progress {
+    .progress-bar {
+        width: 75%;
+        float: left;
+        margin-right: 13px;
+        position: relative;
+        top: 6px;
+        display: none;
+        height: 15px;
+        padding: 2px;
+        border: 1px solid gray;
+        .bar {
+            .gradient(#bad761, #6dbe48);
+            height: 100%;
+        } 
+    }
+}
+
+div.thumb {
+    float: left;
+    border: 1px solid #ccc;
+    width: 210px;
+    margin-right: 10px;
+}
+
+.thumb a {
+    display: block;
+    width: 100%;
+    height: 115px;
+    overflow: hidden;
+}
+
+.thumb a img {
+    max-width: 100%;
+}
+
+.thumb div {
+    padding: 10px;
+}
+
+// tooltips
+
+div.tooltips {
+  position: relative;
+  display: inline;
+}
+div.tooltips span {
+  position: absolute;
+  width:140px;
+  color: #DEE6F5;
+  background: #DEE6F5;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  visibility: hidden;
+  border-radius: 10px;
+}
+div.tooltips span:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -8px;
+  width: 0; height: 0;
+  border-right: 8px solid #B5B5B5;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+}
+div:hover.tooltips span {
+  visibility: visible;
+  opacity: 1;
+  left: 100%;
+  top: 50%;
+  margin-top: -50px;
+  margin-left: 15px;
+  z-index: 999;
+}

@@ -1,0 +1,80 @@
+<!-- permission list component -->
+<div class="permission-template">
+
+	<!-- public link stuff -->
+	<div class="sharing-link-container">
+		<div class="public-link-option" style="margin-bottom: 27px;">
+			<label for="public_link_enabled" style="float:left;"> Enable File Download Link </label>
+
+			<input class="public_link_enabled" name="public_link_enabled" type="checkbox" value="yes" style="float:left;">
+
+			<a class="tooltips" href="#" style="float:left;">
+			<img src= "images/FAQ.png">
+			<span>To share a single file with another user, copy the link below and then paste it into an email to them so they can click and download it</span></a>
+		</div>
+
+		<div class="public-sublinks-option">
+			<label for="public_sublinks_enabled">Allow public link for all files and subfolders?</label>
+
+			<input type="checkbox" class="public_sublinks_enabled" name="public_sublinks_enabled" value="yes"/>
+		</div>
+		<div class="public-link">
+			<input type="text" value="{{link}}" />
+		</div>
+	</div>
+
+	  <div class="sharing-form">
+	<div class="comment-form-fix">
+	  	<span class="postComment_title" style="float:left;"> Share this with a friend by entering their email below </span>
+	  	<a class="tooltips_2" href="#" style="float:left;">
+			<img src= "images/FAQ.png">
+			<span style="color:#FFFFFF;">You can share a folder or an individual file privately by entering their email below. They will be sent an invitation to create an account where they can view the content securely. You can set their permission in the box below to comment, editor or administrator</span>
+		</a>
+
+	</div>
+	<div class="comment-form-text permission-form">
+	  <input class="accounts" placeholder="Enter name or email address" />
+	</div>
+	<div class="comment-form-fix" style="float:right;">
+	  <img class="addSharedUser-button"  onclick="ga('send', 'event', 'Shared', 'Shared','Shared');" src="/images/SendInvite_button.png" />
+	</div>
+  </div>
+
+	<span class="access">Who has access</span>
+  <div class="permissionRow-outlet"></div>
+</div>
+
+
+<!-- permission row template -->
+<div class="permissionRow-template">
+  	<div class="sharing-inner-spacing">
+  		{% if (owned_by.profile_image != null) { %}
+		<div class="file-img" style="height: 42px;width: 42px; background: url('{{url}}/images/profile/{{owned_by.profile_image}}') center center no-repeat; background-size: 100%;margin: 3px;"></div>
+  		{% }else{ %}
+		<div class="file-img" style="height: 42px;width: 42px; background: url('{{url}}/images/avatar_anonymous.png') center center no-repeat; background-size: 100%;margin: 3px;"></div>
+		{% } %}
+
+		<div class="comment-user-avatar">
+<!--			<img class="user-avatar" src="{% if (owned_by.profile_image!=null) { %} /images/profile/{{owned_by.profile_image}} {% }else{  %} /images/38.png {% } %}" data-img= "{{owned_by.profile_image}}"/> -->
+		</div>
+		<div class="comment-container-sharing">
+		  <h6><a> {{owned_by.name}} </a></h6>
+		</div>
+
+		{% if (editable) { %}
+		<div class="detail-container-sharing-x">
+		  <h6 class="clearfix remove-shared-user"><a><img src="/images/CloseIcon.png" /></a></h6>
+		</div>
+
+		<div class="detail-container-sharing">
+		  <h6><a class="permission-edit"> {{permission}} <img src="/images/ExpandedArrow.png"/></a></h6>
+		</div>
+		{% } else { %}
+		<div class="detail-container-sharing show-permission">
+		  <h6><span class="permission-show">{{permission}}</span></h6>
+		</div>
+		{% } %}
+		<div class="clear-tab"></div>
+  </div>
+  <div class="comment-border"></div>
+</div>

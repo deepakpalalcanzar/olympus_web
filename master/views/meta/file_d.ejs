@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%- title %></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<%- rigging.css %>
+		
+		<%- rigging.js %>
+		<script type="text/javascript" src="/js/moment.js"></script>
+		<script type="text/javascript" src="/js/fillout.js"></script>
+		
+		<!-- Good ol' css -->
+		<link rel="stylesheet" type="text/css" media="all" href="/stylesheets/reset.css"/>
+		<link rel="stylesheet" type="text/css" media="all" href="/stylesheets/layout.css"/>
+
+		<style>
+
+		</style>
+
+	</head>
+	<body>
+		<div class="reset-password-page portal-only">
+			<a href="/"><img src="/images/logo_loginScreen.png"/></a>
+			<div class="reset-password-outlet" fsname="<%- fsName %>">
+
+
+				<div class="file-password-template" >
+					<div class="header">Enter Password</div>
+
+					<!-- form section -->
+					<form action="/file/publicDownload/<%- fsName %>/<%- name %>" method="POST">
+						<fieldset class="file-password-body clearfix">
+							<label for="password">Enter Password:</label>
+							<input id="password" name="password" type="password" value="" placeholder="Enter Password to unlock this file" />
+							<div class="error"><%- error %></div>
+						</fieldset>
+
+						<!-- footer section -->
+						<fieldset class="footer clearfix">
+							<input id ="submit-file-password" type="submit" value="Submit"/>			
+						</fieldset>
+					</form>
+				</div>
+
+
+			</div>
+		</div>
+
+		<!-- Template library -->
+		<%- rigging.templateLibrary %>
+
+
+		<script type="text/javascript">
+			Mast.raise({
+				// Before router is instantiated and routes are run
+				beforeRouteFn: function() {
+
+					// Create global app object if we are on a mobile device.
+					if (Mast.isMobile) {
+						// Olympus = {
+						// 	mobileApp: new Mast.components.LoginMobile()
+						// };
+
+						// Login page
+						$(".login-page").remove();
+						
+					} else {
+						new Mast.components.FilePasswordComponent({outlet: '.reset-password-outlet'});
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

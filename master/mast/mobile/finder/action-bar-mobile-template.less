@@ -1,0 +1,48 @@
+/* actionBar.m.less */
+.action-bar-mobile-template {
+	background: #555;
+	color: #FFF;
+
+	.disable-select ();
+	.drop-shadow (0, 0, 1px, 1px, 0.75);
+
+	.home-button {
+		background: url(/mobile_images/home_icon.png) no-repeat center center;
+		background-size: 85%;
+		border-right: 1px solid #38404A;
+		box-sizing: border-box;
+		float: left;
+		height: 45px;
+		width: 12.5%;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+	}
+
+	.home-button.tapped {
+		background-color: #444;
+		border-left: 1px solid #444;
+	}
+
+	h2 {
+		border-left: 1px solid #777;
+		border-right: 1px solid #38404A;
+		float: left;
+		font: 1.1em 'ProzimanovaSemiBold',Helvetica,Arial,sans-serif;
+		height: 45px;
+		line-height: 45px;
+		padding-left: 3%;
+		width: 75%;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+	}
+
+	.add-folder-button {
+		border-left: 1px solid #777;
+		box-sizing: border-box;
+		float: left;
+		height: 45px;	
+		width: 12.5%;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+	}
+}

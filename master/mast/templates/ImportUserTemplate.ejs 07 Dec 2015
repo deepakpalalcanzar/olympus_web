@@ -1,0 +1,19 @@
+<div class="import-user-template" align="center" style="background-clip: padding-box;border-radius: 7px;box-shadow: 0 1px 5px #b3bac4;margin: 40px 2%;padding: 10px;">
+    <br/>
+    <form action="/account/register" method="POST" enctype="multipart/form-data">
+        <div class="center-mod">
+            <h3 class="company-details">Import Users</h3>
+            <div class="file">
+                <div class="company-name"><label>  </label></div>
+                <input type="file" name="file"  class="new-user-fields user-file">
+            </div>
+        </div>
+        <div id="msgid"></div>
+        <div class="">
+            <a class="setting-save-button">
+                <img src="/images/button_save@2x.png" />
+            </a>
+        </div>
+    </form>
+    <div class="clear"></div>
+</div>

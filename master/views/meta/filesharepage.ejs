@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%- title %></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAn alyticsObject'] = r;
+                i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-47189718-1', 'auto');
+            ga('send', 'pageview');
+
+        </script>
+        <%- rigging.css %>
+
+        <%- rigging.js %>
+        <script type="text/javascript" src="/js/moment.js"></script>
+        <script type="text/javascript" src="/js/fillout.js"></script>
+        <script type="text/javascript" src="/js/jquery.imagesloaded.min.js"></script>
+        <script type="text/javascript" src="/js/cropbox.js"></script>
+        <script src="js/colpick.js" type="text/javascript"></script>        
+
+        <!-- Good ol' css -->
+        <link rel="stylesheet" type="text/css" media="all" href="/stylesheets/reset.css"/>
+        <link rel="stylesheet" type="text/css" media="all" href="/stylesheets/layout.css"/>
+        <link rel="stylesheet" type="text/css" media="all" href="/stylesheets/style.css"/>
+        <link rel="stylesheet" href="stylesheets/colpick.css" type="text/css"/>
+
+        <!-- Apple web capable -->
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+
+        <!-- <meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" /> -->
+    </head>
+    <body style="color:<%= font_color %>;font-family:<%= font_family %>">
+
+
+
+
+    <!-- <div id="testLoad" style="width:auto;height:auto;max-width:100%;max-height:100%;"></div> -->
+    <!-- FILE SHARE TEMPLATE -->
+    <div class="fileshare-page portal-only" style="display:inline-block; width:100%;">
+        <!-- <a href="/"><img src="/images/logo_loginScreen.png"/></a> -->
+        <% if( (["text/html", "image/jpeg", "image/png", "image/tif", "image/tiff", "video/mp4", "video/3gpp", "audio/mp3", "audio/mpeg", "video/ogg", "video/webm", "video/x-ms-wmv", "video/quicktime", "application/pdf"]).indexOf(mimetype) != -1 ){ %>
+                <div id="testLoad" style="width:auto;height:auto;max-width:100%;max-height:100%;"></div>
+        <% }else{ %>
+            <div class="file-sharepage-outlet" fsname="<%- fsName %>" fileid="<%- fileid %>" filename="<%- name %>" dtoken="<%- dtoken %>" style="width: <% if( mimetype == "text/html" || mimetype == "image/jpeg" || mimetype == "image/png" || mimetype == "image/tif" || mimetype == "image/tiff" || mimetype == "video/mp4" || mimetype == "video/3gpp" || mimetype == "audio/mp3" || mimetype == "audio/mpeg" || mimetype == "application/pdf" ){ %>26<% }else{ %>96<% } %>% ! important; padding: 2%; overflow: auto; float: right; display: inline-block;">
+
+                <div class="file-sharepage-template" style="display: block; text-align: center;">
+                    <!-- <fieldset class="footer clearfix"> -->
+                        <div class=""><b><%- name %></b></div>
+                        <input id ="download-shared-file-button" type="button" value="Download"/>
+                    <!-- </fieldset> -->
+                </div>
+
+                <!-- <iframe src="https://localhost/file/open/<%- fileid %>/<%- name %>"></iframe> -->
+            </div>
+        <% } %>
+    </div>
+<!-- FILE SHARE TEMPLATE END -->
+
+
+
+
+            <script type="text/javascript">
+
+                console.log('mimetype: <%- mimetype %>');
+                var file_url = 'https://<%- sails.config.host %>/file/pPreview/<%- dtoken %>/<%- fileid %>/<%- name %>';
+                <% if(mimetype == "text/html"){ %>
+                    $("#testLoad").load(file_url);
+                <% }else if(mimetype == "image/jpeg" || mimetype == "image/png" ){ %>
+                    $("#testLoad").html('<img src="'+file_url+'" />');
+                <% }else if(mimetype == "video/mp4" || mimetype == "video/3gpp" || mimetype == "audio/mp3" || mimetype == "audio/mpeg" || mimetype == "video/ogg" || mimetype == "video/webm" || mimetype == "video/x-ms-wmv" || mimetype == "video/quicktime" ){ %>
+                    $("#testLoad").html('<video  style="max-width:100%;min-width:100%;" controls="controls"><source src="'+file_url+'" type="video/mp4" />Bummer, your  browser does not support the video tag.</video>');
+                <% }else if(mimetype == "application/pdf"){ %>
+                    $("#testLoad").html('<object  style="max-width:100%;min-width:100%;" data="'+file_url+'" type="application/pdf" ><p>Alternative text - include link <a href="'+file_url+'">to the PDF!</a></p></object>');
+                <% } %>
+
+                  jQuery(window).resize(function(){
+                    resize_window();
+                  });
+
+                  resize_window();
+
+                var wh;
+                function resize_window(){
+                    wh = jQuery(window).height();
+                    jQuery('#testLoad video,#testLoad object').height( wh-5 );
+                }
+
+                Mast.raise({
+                    // Before router is instantiated and routes are run
+                    beforeRouteFn: function() {
+
+                        // Create global app object if we are on a mobile device.
+                        if (Mast.isMobile) {
+                            // Olympus = {
+                            //  mobileApp: new Mast.components.LoginMobile()
+                            // };
+
+                            // Login page
+                            $(".login-page").remove();
+                            
+                        } else {
+                            new Mast.components.FileSharePageComponent({outlet: '.file-sharepage-outlet'});
+                            /*Olympus = {
+                                ui: {
+                                    fileSystem: new Mast.components.SuperAdmin({
+                                        outlet: '#content'
+                                    }),
+                                    actionBar: new Mast.components.UploadSearchComponent(),
+                                    userNavigation: new Mast.components.UserNavigationComponent()
+                                },
+                                util: {
+                                    dropdownHelper: Mast.DropdownHelper
+                                },
+                                //isPrivateDeployment: < % - sails.config.privateDeployment % >
+                            };*/
+                        }
+                    }
+                });
+            </script>
+
+            <!-- Template library -->
+            <%- rigging.templateLibrary %>
+    </body>
+
+
+    <% if(navigation_color!=='#4f7ba9'){ %>
+    <script type="text/javascript">
+        $('.upload-search-template').css({
+            'background': "<%=navigation_color %>"
+        });
+    </script>
+    <% } %>
+
+    <% if(body_background!=='#f9f9f9'){ %>
+    <script type="text/javascript">
+        $('.listusers-outlet, .log-outlet, .dropdownActions-outlet').css({'background': "<%=body_background %>"});
+    </script>
+    <% } %>
+
+    <% if(font_color!=='#585858'){ %>
+
+    <script type="text/javascript">
+        $('body').css({'color': "<%=font_color %>"});
+        $('a').css({'color': "<%=font_color %>"});
+        $('p, label').css({'color': "<%=font_color %>"});
+        $('h1, h2, h3, h4, h5, h6').css({'color': "<%=font_color %>"});
+        $('p.ajax-loader,p.ajax-loader b,.selected .inode-name,.selected .modified-date').css({'color': "#EFEFEF"});//exception
+    </script>       
+    <%  } %>
+
+
+    <% if(font_family !== 'ProzimanovaRegular, Helvetica, Ariel, sans-serif'){ %>
+
+    <script type="text/javascript">
+        $("body, p, a, h1, h2, h3, h4, h5, h6, label, span").css({'font-family': "<%=font_family %>"});
+    </script>       
+
+    <%  } %>
+
+    <script type="text/javascript">
+        $(".upload-file").hide();
+    </script>       
+
+</html>

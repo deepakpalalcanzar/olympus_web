@@ -1,0 +1,103 @@
+.account-profile-mobile-template {
+	margin: 0 auto;
+	padding: 20px 0 40px;
+	width: 90%;
+
+	form {
+
+		fieldset {
+			border: 1px solid @borderGray;
+
+			.border-radius (5px);
+			.drop-shadow (0, 1px, 1px, 0, 0.05);
+
+			div {
+				background: #F8F8F8;
+				border-bottom: 1px solid @borderGray;
+				color: @textGray;
+				padding: 15px 4%; 
+				width: 92%;
+
+				&:first-child {
+					.border-radiuses (5px, 0, 0, 5px);
+				}
+
+				&:last-child {
+					.border-radiuses (0, 5px, 5px, 0);
+				}
+
+				label {
+					display: block;
+					float: left;
+					font: 0.9em "ProzimanovaSemiBold",Helvetica,Ariel,sans-serif;
+					padding-left: 3%;
+					width: 37%;
+				}
+
+				input {
+					background: #F8F8F8;
+					border: none;
+					float: left;
+					width: 60%;
+				}
+			}
+		}
+	}
+
+	// user view styles for later
+	// img {
+	// 	float: left;
+	// 	width: 35%;
+	// }
+
+	// .profile-info {
+	// 	color: @textGray;
+	// 	float: left;
+	// 	margin-left: 5%; 
+	// 	width: 60%;
+
+	// 	h2 {
+	// 		font: 1.2em "ProzimanovaSemiBold",Helvetica,Ariel,sans-serif;
+	// 	}
+
+	// 	h3 {
+	// 		font: lighter 0.9em "ProzimanovaRegular",Helvetica,Ariel,sans-serif;
+	// 		margin-bottom: 7px;
+	// 	}
+
+	// 	.email-info, .phone-info {
+	// 		border: none;
+	// 		background: #F7F7F7;
+	// 		display: block;
+	// 		font: 0.9em 'ProzimanovaSemiBold',Helvetica, Arial, sans-serif;
+	// 		margin-bottom: 5px;
+	// 		padding: 5px 0 5px 18%;
+	// 		width: 80%;
+
+	// 		.border-radius(3px);
+	// 		.drop-shadow (0, 1px, 5px, 0, 0.3);
+	// 	}
+	// }
+}
+
+// extrapolate this into a mobile mixing.less file when we can
+.submit-button {
+	-webkit-appearance: none;
+	border: none;
+	background: @blueLink;
+	color: #FFF;
+	display: block;
+	font: 1.2em 'ProzimanovaSemiBold',Helvetica, Arial, sans-serif;
+	margin: 25px auto 0;
+	padding: 10px 0;
+	text-align: center;
+	width: 175px;
+
+	.border-radius(5px);
+	.drop-shadow (0, 1px, 2px, 0, 0.9);
+	.text-shadow(0 -1px 1px rgba(0, 0, 0, 0.25));
+}
+
+.submit-button.tapped {
+	background: @touchBlue;	
+}

@@ -1,0 +1,115 @@
+/* topbar.m.less */
+.topbar-mobile-template,
+.topbar-header-mobile-template,
+.topbar-specifics-mobile-template {
+
+	background: #4f7ba9; /* Old browsers */
+	background: -moz-linear-gradient(top,  #4f7ba9 0%, #5887ba 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4f7ba9), color-stop(100%,#5887ba)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #4f7ba9 0%,#5887ba 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #4f7ba9 0%,#5887ba 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #4f7ba9 0%,#5887ba 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #4f7ba9 0%,#5887ba 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4f7ba9', endColorstr='#5887ba',GradientType=0 ); /* IE6-9 */
+
+	.drop-shadow (0, 0, 1px, 2px, .30);
+	.disable-select ();
+
+	// all the clickable boxed in topbar share these common styles
+	.topbar-box {
+		border-top: 1px solid #77A4CF;
+		float: left;
+		width: 12.5%;
+		height: 45px;
+
+		.box-sizing ();
+	}
+
+	.topbar-box.tapped {
+		border-top: none;
+	}
+
+	
+	.nav-region {
+		border-right: 1px solid #275580;
+	}
+
+	h1 {
+		border-left: 1px solid #77A4CF;
+		border-right: 1px solid #275580;
+		border-top: 1px solid #77A4CF;
+		color: #FFF;
+		float: left;
+		font: 1.1em 'ProzimanovaSemiBold',Helvetica,Arial,sans-serif;
+		line-height: 45px;
+		text-align: center;
+		width: 75%;
+
+		.box-sizing ();
+		.text-shadow (0 -1px 1px rgba(0, 0, 0, 0.25));
+	}
+
+	.action-box {
+		border-left: 1px solid #77A4CF;
+	}
+
+	// add permission and submit comment context styles
+	.add-permission, .submit-comment {
+		background: url(/mobile_images/BTN_done.png) no-repeat center;
+	}
+
+	.add-permission.tapped, .submit-comment.tapped {
+		background: #376389 url(/mobile_images/BTN_done_DOWN.png) no-repeat center;
+		border-left: 1px solid #275580;
+	}
+
+	// edit profile context styles
+	.edit-profile {
+		background: red;
+	}
+	
+}
+
+.topbar-header-mobile-template {
+	.drop-shadow(0, 0, 1px, 1px, 0.75);
+
+	h1 {
+		float: none;
+		width: 100%;
+		border: none;
+	}
+}
+
+.topbar-specifics-mobile-template {
+	h1 {
+		width: 62.5%;
+
+		.truncate (62.5%);
+	}
+
+	.add-permission-box {
+		background: url(/mobile_images/BTN_add-user.png) no-repeat 65% center;
+		border-left: 1px solid #77A4CF;
+		border-right: 1px solid #275580;
+	}
+
+	.add-permission-box.tapped {
+		background: #376389 url('/mobile_images/BTN_add-user_DOWN.png') no-repeat 65% center;
+		border-color: #275580;
+	}	
+
+	.add-comment-box {
+		background: url(/mobile_images/icon_bubble.png) no-repeat center;
+		background-size: 30px;
+		border-left: 1px solid #77A4CF;
+	}
+
+	.add-comment-box.tapped {
+		background-color: #376389;
+		border-left: 1px solid #275580;
+	}
+
+	.add-comment-box {
+	}
+}
+

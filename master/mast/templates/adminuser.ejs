@@ -1,0 +1,27 @@
+<div class="admin-user-template">
+	<div class="organization-bar clearfix main-mod">
+		<div class="dir-files {{column1.className}} header-color mast-critical mast-column-header" style="height:30px;font-size:24px;">
+			<span>{{column1.name}}</span>
+		</div>
+		<div class="dir-files {{column2.className}} header-color mast-critical mast-column-header" style="height:30px;font-size:24px;">
+			<span>{{column2.name}}</span>
+		</div>
+		<div class="admin-user-outlet clearfix"  style="width:100%;"></div>
+	</div>	
+</div>
+
+<!-- user row template -->
+<div class="admin-user-row-template clearfix" style="width:100%;float:left;">
+	{% if(name !=='error_123'){%}
+	<div class="dir-files profile-column mast-critical mast-column-header features-column-text" >
+		<span class="admin-user-name">{{ name }}</span>
+	</div>
+	<div class="dir-files no-users-column mast-critical mast-column-header">
+		<span class="admin-user-name">
+			{{ usercount }}
+		</span>
+	</div>
+	{% }else{%}
+	 <div class="dir-files" style="font-size:13px;margin-left:50px;">No records found !</div>
+	{% }%}
+</div>

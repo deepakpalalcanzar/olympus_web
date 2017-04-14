@@ -1,0 +1,143 @@
+/* inode.m.less */
+.inode-mobile-template {
+	border-bottom: 1px solid @borderGray;
+	background: #FFF;
+	position: relative;
+
+	.disable-flash ();
+	.disable-select ();
+
+	.inode-info {
+		color: @textGray;
+		float: left;
+		padding: 13px 0 13px 3%;
+		width: 75%;
+
+		h3 {
+			font: 1em 'ProzimanovaSemiBold',Helvetica,Arial,sans-serif;
+		}
+
+		p {
+			font-size: 0.8em;
+		}
+	}
+
+	.inode-details-button {
+		background: @blueSearch url(/mobile_images/icon_rightarrow.png) no-repeat 13px center;
+		background-size: 50%;
+		height: 60%;
+		position: absolute;
+		top: 22%;
+		width: 11%;
+		max-width: 40px;
+
+		right: 0;
+		.border-radiuses (0, 0, 5px, 5px);
+
+		// right: 1%;
+		// .border-radiuses (5px, 5px, 5px, 5px);
+	}
+
+	.inode-details-button.tapped {
+		background-color: @touchBlue;	
+	}
+
+	
+	.file-img, .directory-img {
+		background-size: 100%;
+		float: left;
+		height: 35px;
+		width: 32px;
+		position: relative;
+		margin-left: 2.5%;
+		top: 11px;
+	}
+
+	
+}
+.inode-mobile-template.tapped {
+	background: #DDD;
+}
+
+//
+// file mime types
+//
+.file-img {
+	background: url('/images/icon_unknown@2x.png') center center no-repeat;
+}
+
+.file-img.image-png, 
+.file-img.image-pjpeg, 
+.file-img.image-jpeg, 
+.file-img.image-tiff,
+.file-img.image-x-tiff, 
+.file-img.image-png,  
+.file-img.image-gif 
+{
+	background: url('/images/icon_img@2x.png') center center no-repeat;
+}
+
+.file-img.application-pdf,
+.file-img.application-x-pdf
+{
+	background: url('/images/icon_pdf@2x.png') center center no-repeat;
+}
+.file-img.text-csv
+{
+	background: url('/images/icon_csv@2x.png') center center no-repeat;
+}
+
+.file-img.application-msword,
+.file-img.application-vnd-openxmlformats-officedocument-wordprocessingml-document
+{
+	background: url('/images/icon_doc@2x.png') center center no-repeat;
+}
+
+.file-img.text-plain
+{
+	background: url('/images/icon_txt@2x.png') center center no-repeat;
+}
+.file-img.audio-mp3, .file-img.audio-mp4, .file-img.video-mp4, .file-img.audio-wav{
+	background: url('/images/icon_music@2x.png') center center no-repeat;
+}
+
+.file-img.application-excel,
+.file-img.application-msexcel
+.file-img.application-vnd-ms-excel,
+.file-img.application-x-excel,
+.file-img.application-x-msexcel,
+.file-img.application-x-ms-excel,
+.file-img.application-x-dos_ms_excel,
+.file-img.application-xls,
+.file-img.application-x-xls,
+.file-img.application-vnd-openxmlformats-officedocument-spreadsheetml-sheet 
+{
+	background: url('/images/icon_spreadsheet@2x.png') center center no-repeat;
+}
+
+
+.file-img.application-mspowerpoint,
+.file-img.application-powerpoint,
+.file-img.application-vnd-ms-powerpoint,
+.file-img.application-x-powerpoint,
+.file-img.application-vnd-openxmlformats-officedocument-presentationml-presentation
+{
+	background: url('/images/icon_ppt@2x.png') center center no-repeat;
+}
+
+//
+//	directory mime types
+//
+.directory-img {
+	background: url('/images/FolderIcon.png') center center no-repeat;
+}
+/* Draw special image for top-level directory (workgroup) */
+.directory-img.orphan {
+	background: url('/images/icon_workgroup@2x.png') center center no-repeat;
+}
+
+
+
+
+
+

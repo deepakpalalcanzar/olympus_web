@@ -1,0 +1,93 @@
+div.login-page {
+	background: #3c4151;
+	width: 100%;
+	height: 100%;
+}
+div.login-container {
+    margin:0 auto;
+    padding-top:5%;
+}
+div.login-template {	
+	.border-radius(8px);
+	background: #f0f0f0;
+	width: 450px !important;
+	margin: 0 auto;
+	-moz-box-shadow: 0 0 12px 3px #333;
+  -webkit-box-shadow: 0 0 12px 3px #333;
+
+  div.login-box-head {
+		text-align:center;
+		padding:20px 0px;
+		color: @textGray;
+    font: "ProzimanovaSemiBold",Helvetica,Ariel,sans-serif;
+    font-size:1.25em;
+	}
+
+	form.login-box-body{
+		padding-top: 25px;
+		padding-bottom: 15px;
+		padding-left: 15px;
+		padding-right: 15px;
+		background: white;
+	  vertical-align: middle;
+		border-top: 2px solid @borderGray;
+		border-bottom: 2px solid @borderGray;
+
+		.error-message {
+			color: red;
+			margin-bottom: 20px;
+		}
+
+		input.login-input-field {
+			border: 1px solid @borderGray;
+			margin-top: 7px;
+			margin-bottom: 20px;
+			width: 409px;
+			height: 32px;
+			padding-left: 10px;
+			font-size: .75em;
+		}
+
+		input.login-input-field.error-input {
+			border-color: red; 
+		}
+	}
+}
+.ui-icon-closethick {
+	display: none;
+}
+
+label.text-label{
+	font-family: "ProzimanovaRegular",Helvetica,Ariel,sans-serif;
+	color: @textGray;
+}
+a.reset-password {
+  color: @textGray;
+	font: italic 0.9em "ProzimanovaRegular",Helvetica,Ariel,sans-serif;
+	float: right;
+	margin-top: 18px;
+	margin-right: 15px;
+	&:hover {
+		text-decoration: underline;
+		cursor: default;
+	}
+}
+div.login-box-footer{
+	padding:18px 15px;
+}
+a.signin-button {
+	display: block;
+	float: right;
+}
+a.signin-button:hover {
+	cursor: pointer;
+}
+img.signin-button{
+	height:40px;
+	float:left;
+}
+
+div.login-page img {
+	margin: 0 auto;
+	padding-top: 7%;
+}

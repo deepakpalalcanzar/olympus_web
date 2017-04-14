@@ -1,0 +1,70 @@
+/* inodeSharing.m.less */
+.inode-sharing-mobile-template {
+	padding-top: 20px;
+
+	.loading-spinner{
+		width: 32px;
+		height: 32px;
+		margin: 0 auto;
+		margin-top: 100px;
+		background: url('/images/loading-spinner.gif') no-repeat;
+		background-size: 100%;
+	}
+
+	.inode-sharing-items-region {
+		margin: 0 auto;
+		width: 90%;
+	}
+}
+
+.inode-sharing-item-mobile-template {
+	background: #FFF;
+	border: 1px solid @borderGray;
+	color: @textGray;
+	margin-bottom: 5px;
+	padding: 5px 4%; 
+	position: relative;
+	width: 92%;
+
+	.border-radius(5px);
+	.drop-shadow (0, 1px, 1px, 0, 0.05);
+
+	// user image
+	img {
+		border: 1px solid @borderGray;
+		float: left;
+		height: 30px; 
+		padding: 3px;
+		width: 30px;
+
+		.border-radius(3px);
+		.drop-shadow (0, 1px, 1px, 0, 0.05);
+	}
+
+	// dir or file name
+	h3 {
+		float: left;
+		line-height: 38px;
+		padding-left: 5px;
+
+		.truncate (50%);
+	}
+
+	span {
+		color: @blueLink;
+		float: right;
+		font-size: 0.9em;
+		margin-right: 20px;
+		position: relative;
+		top: 12px;
+	}
+
+	.remove-permission-button {
+		background: url(/images/CloseIcon.png) no-repeat;
+		height: 18px;
+		position: absolute;
+		right: 8px;
+		top: 16px;
+		width: 13px;
+	}
+}
