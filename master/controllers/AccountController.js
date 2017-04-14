@@ -1213,7 +1213,7 @@ console.log('33333333333333333333333333333333333');
           else{
             var splitcurrcommit = stdout.split("\n");
             if(splitcurrcommit.length > 1)
-                var currcommit =  splitcurrcommit[1];
+                var currcommit =  splitcurrcommit[0];
             else
                 var currcommit =  splitcurrcommit[0];
             currcommit = currcommit.toString();
@@ -1253,7 +1253,7 @@ console.log('33333333333333333333333333333333333');
           }
         });
     },
-    
+
     changeLdapSetting: function (req, res) {
 
         var ldap_enabled        = req.param('ldap_enabled');
