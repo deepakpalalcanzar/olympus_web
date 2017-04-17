@@ -22,7 +22,7 @@ exports.API = apiTransform(API);
 exports.API.mini = exports.API;
 
 
-var Directory = function(model) { // Directory
+var Directory = function(model) { // Directory //
 	return _.extend(File(model), {
 		num_children: (+model.num_dir_children + +model.num_file_children) || 0,
 		//num_children: 10,
