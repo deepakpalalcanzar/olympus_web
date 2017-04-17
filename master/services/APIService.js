@@ -42,6 +42,7 @@ var Directory = function(model) { // Directory
 		isOlympusDropboxDir: model.isOlympusDropboxDir,
 		isBoxDir: model.isBoxDir,
 		isOlympusBoxDir: model.isOlympusBoxDir,
+		isOnDrive: model.isDriveDir || model.isOlympusDriveDir,//added to avoid undefined error in inode.ejs template
 		isOnDropbox: model.isDropboxDir || model.isOlympusDropboxDir,//added to avoid undefined error in inode.ejs template
 		isOnBox: model.isBoxDir || model.isOlympusBoxDir,//added to avoid undefined error in inode.ejs template
 	});
