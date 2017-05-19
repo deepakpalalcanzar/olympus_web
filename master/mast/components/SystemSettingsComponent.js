@@ -457,7 +457,7 @@ Mast.components.SystemSettingsComponent  = Mast.Component.extend({
 					//alert(res.currcommit.trim()+'hi'+res.avcommit.trim()+'hi1');
 					if(res.currcommit.trim() == res.avcommit.trim())
 	                {
-	                    alert('No updates Available1.');
+	                    alert('No updates Available.');
 	                    //alert('I have updated some text to check updates');
 	                    //return res.json({ status: 'noupdates'}, 200);
 	                }
@@ -465,7 +465,7 @@ Mast.components.SystemSettingsComponent  = Mast.Component.extend({
 	                {
 	                    //alert('I have updated some text to check updates. ');
 	                    //return res.json({ status: 'updatesavailable'}, 200);
-	                    if(confirm('Updates available1. Do you want to update the source code?')){
+	                    if(confirm('Updates available. Do you want to update the source code?')){
 							console.log('sending request to update the code.');
 							$('body').append('<div id="loader" style="background:rgba(0,0,0,0.7);width:100%;height:100%;position:fixed;top:0;left:0;z-index:9999;color:#fff;font-size:25px;padding-top:'+($(window).height()-15)/2+'px;"><center>Please Wait...</center></div>');
 							Mast.Socket.request('/account/updateCode', {
