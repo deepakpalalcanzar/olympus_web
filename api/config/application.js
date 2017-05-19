@@ -1,4 +1,4 @@
-module.exports = {
+module.exports = { 
 
   // Port this Sails application will live on
 
@@ -27,19 +27,19 @@ module.exports = {
   mailService: 'internal',
   mandrill: {
 
-    token: 'justtestin.......................................................................'
+    token: ''
 
-  },
+  }, 
 
-  smtpDetails: {
+  smtpDetails: { 
 
-	host: 'SMTP_HOST',
+	host: 'smtp.gmail.com', 
 
-	port: 'SMTP_PORT',
+	port: '465', 
 
-	user: 'SMTP_USER',
+	user: 'alcanzartesting@gmail.com', 
 
-	pass: 'SMTP_PASS'
+	pass: 'ErQXFrqErTay9T7c' 
 
   },
 

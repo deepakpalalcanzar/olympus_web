@@ -1,11 +1,5 @@
 module.exports.bootstrap = function (bootstrap_cb) { 
 
-								var schedule = require('node-schedule');
-								Object.keys(sails.config.crontab).forEach(function(key) {
-								    var val = sails.config.crontab[key];
-								    schedule.scheduleJob(key, val);
-								}); 
-
 								async.parallel([ 
 
 									function (cb) { 
@@ -14,7 +8,7 @@ module.exports.bootstrap = function (bootstrap_cb) {
 
 										Account.find({ 
 
-											where: {email: 'ihaveno@email.com'} 
+											where: {email: 'superadmin@olympus.io'} 
 
 										}).done(function (err, account) { 
 
@@ -31,7 +25,7 @@ module.exports.bootstrap = function (bootstrap_cb) {
 
 													title: 'Administrator', 
  
-													email: 'ihaveno@email.com', 
+													email: 'superadmin@olympus.io', 
 
 													password: '123456', 
 
